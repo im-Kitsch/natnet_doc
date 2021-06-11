@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classNatnetDynReconfigure" kind="class" language="C++" prot="public">
+    <compoundname>NatnetDynReconfigure</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classNatnetDynReconfigure_1a508f8ed1179a1fedcb6b709a2c4e9b18" prot="public" static="no" mutable="no">
+        <type>natnet_bridge::NatNetBridgeDynParamConfig</type>
+        <definition>natnet_bridge::NatNetBridgeDynParamConfig NatnetDynReconfigure::dyn_config</definition>
+        <argsstring></argsstring>
+        <name>dyn_config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/src/optitrack_node.cpp" line="38" column="47" bodyfile="natnet_bridge/src/optitrack_node.cpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNatnetDynReconfigure_1a52a3407f0b4a3b6ae4dd640169b3f161" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NatnetDynReconfigure::reset_reconfigured</definition>
+        <argsstring></argsstring>
+        <name>reset_reconfigured</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/src/optitrack_node.cpp" line="39" column="10" bodyfile="natnet_bridge/src/optitrack_node.cpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNatnetDynReconfigure_1a906a3bbb3fed5c1af1899aa4f346c5b1" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NatnetDynReconfigure::publish_reconfigured</definition>
+        <argsstring></argsstring>
+        <name>publish_reconfigured</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/src/optitrack_node.cpp" line="40" column="10" bodyfile="natnet_bridge/src/optitrack_node.cpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNatnetDynReconfigure_1aefbebf1625084bb081af8a2191782578" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>NatnetDynReconfigure::NatnetDynReconfigure</definition>
+        <argsstring>()</argsstring>
+        <name>NatnetDynReconfigure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/src/optitrack_node.cpp" line="16" column="5" bodyfile="natnet_bridge/src/optitrack_node.cpp" bodystart="16" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classNatnetDynReconfigure_1a7fc08ab3bf88082f48b1d15ce6d79375" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void NatnetDynReconfigure::dyn_reconfigure_cb</definition>
+        <argsstring>(const natnet_bridge::NatNetBridgeDynParamConfig &amp;config_in, uint32_t level)</argsstring>
+        <name>dyn_reconfigure_cb</name>
+        <param>
+          <type>const natnet_bridge::NatNetBridgeDynParamConfig &amp;</type>
+          <declname>config_in</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/src/optitrack_node.cpp" line="21" column="10" bodyfile="natnet_bridge/src/optitrack_node.cpp" bodystart="21" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classNatnetDynReconfigure_1ad0008819ddf867a3d728d12f0723a1d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void NatnetDynReconfigure::reconfigure_responded</definition>
+        <argsstring>()</argsstring>
+        <name>reconfigure_responded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/src/optitrack_node.cpp" line="32" column="10" bodyfile="natnet_bridge/src/optitrack_node.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="natnet_bridge/src/optitrack_node.cpp" line="14" column="27" bodyfile="natnet_bridge/src/optitrack_node.cpp" bodystart="14" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classNatnetDynReconfigure_1a508f8ed1179a1fedcb6b709a2c4e9b18" prot="public" virt="non-virtual"><scope>NatnetDynReconfigure</scope><name>dyn_config</name></member>
+      <member refid="classNatnetDynReconfigure_1a7fc08ab3bf88082f48b1d15ce6d79375" prot="public" virt="non-virtual"><scope>NatnetDynReconfigure</scope><name>dyn_reconfigure_cb</name></member>
+      <member refid="classNatnetDynReconfigure_1aefbebf1625084bb081af8a2191782578" prot="public" virt="non-virtual"><scope>NatnetDynReconfigure</scope><name>NatnetDynReconfigure</name></member>
+      <member refid="classNatnetDynReconfigure_1a906a3bbb3fed5c1af1899aa4f346c5b1" prot="public" virt="non-virtual"><scope>NatnetDynReconfigure</scope><name>publish_reconfigured</name></member>
+      <member refid="classNatnetDynReconfigure_1ad0008819ddf867a3d728d12f0723a1d1" prot="public" virt="non-virtual"><scope>NatnetDynReconfigure</scope><name>reconfigure_responded</name></member>
+      <member refid="classNatnetDynReconfigure_1a52a3407f0b4a3b6ae4dd640169b3f161" prot="public" virt="non-virtual"><scope>NatnetDynReconfigure</scope><name>reset_reconfigured</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

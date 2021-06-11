@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Full API &mdash; natnet_bridge 1.00 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> natnet_bridge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/01_other_details.html">Some details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/05_msg_def.html">NatNet Message definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/08.Other%20Resources.html">Other Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/15_possible%20future%20work.html">Advices future work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/20_optitrack_bridge.html">Use optitrack bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/25_draft.html">not documented things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">Library API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">natnet_bridge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Full API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_build_api/unabridged_orphan.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="full-api">
+<h1>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_natnet_bridge.html">Directory bridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_natnet_bridge.html#subdirectories">Subdirectories</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_natnet_bridge_include.html">Directory include</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_natnet_bridge_include.html#subdirectories">Subdirectories</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_natnet_bridge_include_natnet.html">Directory natnet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_natnet_bridge_include_natnet.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_natnet_bridge_include_natnet_bridge.html">Directory bridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_natnet_bridge_include_natnet_bridge.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_natnet_bridge_src.html">Directory src</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_natnet_bridge_src.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_src_natnet_bridge.cpp.html">File natnet_bridge.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_natnet_bridge.cpp.html#definition-natnet-bridge-src-natnet-bridge-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/natnet_bridge.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_src_natnet_bridge.cpp.html">Program Listing for File natnet_bridge.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_natnet_bridge.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_natnet_bridge.cpp.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html">File natnet_bridge.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#definition-natnet-bridge-include-natnet-bridge-natnet-bridge-h">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet_bridge/natnet_bridge.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html">Program Listing for File natnet_bridge.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_config.h.html">File natnet_config.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_config.h.html#definition-natnet-bridge-include-natnet-natnet-config-h">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet/natnet_config.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_include_natnet_natnet_config.h.html">Program Listing for File natnet_config.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_config.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_config.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_config.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_config.h.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_definition.h.html">File natnet_definition.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_definition.h.html#definition-natnet-bridge-include-natnet-natnet-definition-h">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet/natnet_definition.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_include_natnet_natnet_definition.h.html">Program Listing for File natnet_definition.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_definition.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_definition.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_definition.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_definition.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_definition.h.html#defines">Defines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_natnet_definition.h.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_src_optitrack_node.cpp.html">File optitrack_node.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_optitrack_node.cpp.html#definition-natnet-bridge-src-optitrack-node-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/optitrack_node.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_src_optitrack_node.cpp.html">Program Listing for File optitrack_node.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_optitrack_node.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_optitrack_node.cpp.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_optitrack_node.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_src_server_parser.cpp.html">File server_parser.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_server_parser.cpp.html#definition-natnet-bridge-src-server-parser-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/server_parser.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_src_server_parser.cpp.html">Program Listing for File server_parser.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_server_parser.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_server_parser.cpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_server_parser.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_server_parser.h.html">File server_parser.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_server_parser.h.html#definition-natnet-bridge-include-natnet-bridge-server-parser-h">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet_bridge/server_parser.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_include_natnet_bridge_server_parser.h.html">Program Listing for File server_parser.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_server_parser.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_server_parser.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_server_parser.h.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_src_socket.cpp.html">File socket.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_socket.cpp.html#definition-natnet-bridge-src-socket-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/socket.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_src_socket.cpp.html">Program Listing for File socket.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_socket.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_include_natnet_socket.h.html">File socket.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_socket.h.html#definition-natnet-bridge-include-natnet-socket-h">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet/socket.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_include_natnet_socket.h.html">Program Listing for File socket.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_socket.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_socket.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_socket.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_src_unpack.cpp.html">File unpack.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_unpack.cpp.html#definition-natnet-bridge-src-unpack-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/unpack.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_src_unpack.cpp.html">Program Listing for File unpack.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_unpack.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_unpack.cpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_unpack.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_unpack.cpp.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_unpack.h.html">File unpack.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_unpack.h.html#definition-natnet-bridge-include-natnet-bridge-unpack-h">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet_bridge/unpack.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_include_natnet_bridge_unpack.h.html">Program Listing for File unpack.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_unpack.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_unpack.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_unpack.h.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_src_version.cpp.html">File version.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_version.cpp.html#definition-natnet-bridge-src-version-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/version.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_src_version.cpp.html">Program Listing for File version.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_version.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_src_version.cpp.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_version.h.html">File version.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_version.h.html#definition-natnet-bridge-include-natnet-bridge-version-h">Definition (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet_bridge/version.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_natnet_bridge_include_natnet_bridge_version.h.html">Program Listing for File version.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_version.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_version.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_version.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_version.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Zhiyuan Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

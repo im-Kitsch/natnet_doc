@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacenatnet__config_1_1MessageType" kind="namespace" language="C++">
+    <compoundname>natnet_config::MessageType</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1addf7f6603c9448989c7154972bc40510" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::Connect</definition>
+        <argsstring></argsstring>
+        <name>Connect</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="13" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1ae466c6c47d968b5cba0fe5147d4cbd5f" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::ServerInfo</definition>
+        <argsstring></argsstring>
+        <name>ServerInfo</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="14" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1a981b21eba788865ada4047fa08269fc7" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::Request</definition>
+        <argsstring></argsstring>
+        <name>Request</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="15" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1ab00d95940fc50b60fb8050afa6a3e02c" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::Response</definition>
+        <argsstring></argsstring>
+        <name>Response</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="16" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1ace9a7511ce2b537511f8385a364e844e" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::RequestModelDef</definition>
+        <argsstring></argsstring>
+        <name>RequestModelDef</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="17" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1a57d62b3096296ccd6020497c3bb4ae05" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::ModelDef</definition>
+        <argsstring></argsstring>
+        <name>ModelDef</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="18" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1a5164001447abadc2db3b1b87829b8f69" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::RequestFrameOfData</definition>
+        <argsstring></argsstring>
+        <name>RequestFrameOfData</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="19" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1acdccc1c5a0388cefe1ce44b8a2fb767e" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::FrameOfData</definition>
+        <argsstring></argsstring>
+        <name>FrameOfData</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="20" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1a419ea6c02c29802769320233dbbc4b9c" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::MessageString</definition>
+        <argsstring></argsstring>
+        <name>MessageString</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="21" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1a20f0e9b0ce91869f2138efe9f333b860" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::UnrecognizedRequest</definition>
+        <argsstring></argsstring>
+        <name>UnrecognizedRequest</name>
+        <initializer>=100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="22" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenatnet__config_1_1MessageType_1a3c3fe9d878c9880194f7f848c1de420d" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int natnet_config::MessageType::Undefined</definition>
+        <argsstring></argsstring>
+        <name>Undefined</name>
+        <initializer>=999999</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_config.h" line="23" column="19" bodyfile="natnet_bridge/include/natnet/natnet_config.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="natnet_bridge/include/natnet/natnet_config.h" line="12" column="25"/>
+  </compounddef>
+</doxygen>

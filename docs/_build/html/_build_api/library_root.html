@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Library API &mdash; natnet_bridge 1.00 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Namespace natnet_bridge" href="namespace_natnet_bridge.html" />
+    <link rel="prev" title="not documented things" href="../pages/25_draft.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> natnet_bridge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/01_other_details.html">Some details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/05_msg_def.html">NatNet Message definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/08.Other%20Resources.html">Other Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/15_possible%20future%20work.html">Advices future work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/20_optitrack_bridge.html">Use optitrack bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/25_draft.html">not documented things</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Library API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="namespace_natnet_bridge.html">Namespace natnet_bridge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_natnet_config.html">Namespace natnet_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_natnet_config__MessageType.html">Namespace natnet_config::MessageType</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structnatnet__bridge_1_1____attribute____.html">Struct __attribute__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnatnet__bridge_1_1NatNetBridge.html">Class NatNetBridge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnatnet__bridge_1_1Version.html">Class Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classNatnetDynReconfigure.html">Class NatnetDynReconfigure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSocketException.html">Class SocketException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUdpMulticastSocket.html">Class UdpMulticastSocket</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="function_optitrack__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97.html">Function main</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b.html">Function natnet_bridge::buildConnectPacket</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a7964729af44f528fdb5ca019d7f70fc6.html">Function natnet_bridge::DecodeMarkerID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a7d45052550fdf43c478b5a32775ae8c2.html">Function natnet_bridge::DecodeTimecode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1afec92c2de51f4b49c6d13bdf9161bda9.html">Function natnet_bridge::server_info_parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a715104ccb4689ee21a5c67cb226a09aa.html">Template Function natnet_bridge::sprintf_s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a4675a5e84e93eaec00776153641be89b.html">Function natnet_bridge::strcpy_s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a030f578de4dba15ffc8bf1f8e5e166f9.html">Function natnet_bridge::TimecodeStringify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1adfff94168324ba87d569569feadeec73.html">Function natnet_bridge::Unpack</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1addf7f6603c9448989c7154972bc40510.html">Variable natnet_config::MessageType::Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1acdccc1c5a0388cefe1ce44b8a2fb767e.html">Variable natnet_config::MessageType::FrameOfData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a419ea6c02c29802769320233dbbc4b9c.html">Variable natnet_config::MessageType::MessageString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a57d62b3096296ccd6020497c3bb4ae05.html">Variable natnet_config::MessageType::ModelDef</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a981b21eba788865ada4047fa08269fc7.html">Variable natnet_config::MessageType::Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a5164001447abadc2db3b1b87829b8f69.html">Variable natnet_config::MessageType::RequestFrameOfData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ace9a7511ce2b537511f8385a364e844e.html">Variable natnet_config::MessageType::RequestModelDef</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ab00d95940fc50b60fb8050afa6a3e02c.html">Variable natnet_config::MessageType::Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ae466c6c47d968b5cba0fe5147d4cbd5f.html">Variable natnet_config::MessageType::ServerInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a3c3fe9d878c9880194f7f848c1de420d.html">Variable natnet_config::MessageType::Undefined</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a20f0e9b0ce91869f2138efe9f333b860.html">Variable natnet_config::MessageType::UnrecognizedRequest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#defines">Defines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="define_natnet__definition_8h_1a779a77bbfe15b945b946a2e52b27ff33.html">Define MAX_NAMELENGTH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="define_unpack_8cpp_1a779a77bbfe15b945b946a2e52b27ff33.html">Define MAX_NAMELENGTH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="define_natnet__definition_8h_1ac53b290f46325f25340a4b1cb0f3271b.html">Define MAX_PACKETSIZE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#typedefs">Typedefs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespacenatnet__bridge_1aae2b411d513b8d52aeec34e4a3ecde64.html">Typedef natnet_bridge::MessageBuffer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">natnet_bridge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Library API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_build_api/library_root.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="library-api">
+<h1>Library API<a class="headerlink" href="#library-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class-hierarchy">
+<h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="treeView" id="class-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li>Namespace <a href="namespace_natnet_bridge.html#namespace-natnet-bridge">natnet_bridge</a><ul><li>Struct <a href="structnatnet__bridge_1_1____attribute____.html#exhale-struct-structnatnet-bridge-1-1--attribute--">__attribute__</a></li><li>Class <a href="classnatnet__bridge_1_1NatNetBridge.html#exhale-class-classnatnet-bridge-1-1NatNetBridge">NatNetBridge</a></li><li class="lastChild">Class <a href="classnatnet__bridge_1_1Version.html#exhale-class-classnatnet-bridge-1-1Version">Version</a></li></ul></li><li>Class <a href="classNatnetDynReconfigure.html#exhale-class-classNatnetDynReconfigure">NatnetDynReconfigure</a></li><li>Class <a href="classSocketException.html#exhale-class-classSocketException">SocketException</a></li><li class="lastChild">Class <a href="classUdpMulticastSocket.html#exhale-class-classUdpMulticastSocket">UdpMulticastSocket</a></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView class-treeView --></div>
+<div class="section" id="file-hierarchy">
+<h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="treeView" id="file-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li class="lastChild">Directory <a href="dir_natnet_bridge.html#dir-natnet-bridge">bridge</a><ul><li>Directory <a href="dir_natnet_bridge_include.html#dir-natnet-bridge-include">include</a><ul><li>Directory <a href="dir_natnet_bridge_include_natnet.html#dir-natnet-bridge-include-natnet">natnet</a><ul><li>File <a href="file_natnet_bridge_include_natnet_natnet_config.h.html#file-natnet-bridge-include-natnet-natnet-config.h">natnet_config.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_natnet_definition.h.html#file-natnet-bridge-include-natnet-natnet-definition.h">natnet_definition.h</a></li><li class="lastChild">File <a href="file_natnet_bridge_include_natnet_socket.h.html#file-natnet-bridge-include-natnet-socket.h">socket.h</a></li></ul></li><li class="lastChild">Directory <a href="dir_natnet_bridge_include_natnet_bridge.html#dir-natnet-bridge-include-natnet-bridge">bridge</a><ul><li>File <a href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#file-natnet-bridge-include-natnet-bridge-natnet-bridge.h">natnet_bridge.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_bridge_server_parser.h.html#file-natnet-bridge-include-natnet-bridge-server-parser.h">server_parser.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_bridge_unpack.h.html#file-natnet-bridge-include-natnet-bridge-unpack.h">unpack.h</a></li><li class="lastChild">File <a href="file_natnet_bridge_include_natnet_bridge_version.h.html#file-natnet-bridge-include-natnet-bridge-version.h">version.h</a></li></ul></li></ul></li><li class="lastChild">Directory <a href="dir_natnet_bridge_src.html#dir-natnet-bridge-src">src</a><ul><li>File <a href="file_natnet_bridge_src_natnet_bridge.cpp.html#file-natnet-bridge-src-natnet-bridge.cpp">natnet_bridge.cpp</a></li><li>File <a href="file_natnet_bridge_src_optitrack_node.cpp.html#file-natnet-bridge-src-optitrack-node.cpp">optitrack_node.cpp</a></li><li>File <a href="file_natnet_bridge_src_server_parser.cpp.html#file-natnet-bridge-src-server-parser.cpp">server_parser.cpp</a></li><li>File <a href="file_natnet_bridge_src_socket.cpp.html#file-natnet-bridge-src-socket.cpp">socket.cpp</a></li><li>File <a href="file_natnet_bridge_src_unpack.cpp.html#file-natnet-bridge-src-unpack.cpp">unpack.cpp</a></li><li class="lastChild">File <a href="file_natnet_bridge_src_version.cpp.html#file-natnet-bridge-src-version.cpp">version.cpp</a></li></ul></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView file-treeView --></div>
+<div class="section" id="full-api">
+<h2>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_natnet_bridge.html">Namespace natnet_bridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_natnet_bridge.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_natnet_bridge.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_natnet_bridge.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_natnet_config.html">Namespace natnet_config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_natnet_config.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_natnet_config__MessageType.html">Namespace natnet_config::MessageType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_natnet_config__MessageType.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="classes-and-structs">
+<h3>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnatnet__bridge_1_1____attribute____.html">Struct __attribute__</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnatnet__bridge_1_1____attribute____.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnatnet__bridge_1_1NatNetBridge.html">Class NatNetBridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnatnet__bridge_1_1NatNetBridge.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnatnet__bridge_1_1Version.html">Class Version</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnatnet__bridge_1_1Version.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classNatnetDynReconfigure.html">Class NatnetDynReconfigure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classNatnetDynReconfigure.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classSocketException.html">Class SocketException</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classSocketException.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classSocketException.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classSocketException.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classUdpMulticastSocket.html">Class UdpMulticastSocket</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classUdpMulticastSocket.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_optitrack__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97.html">Function main</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_optitrack__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b.html">Function natnet_bridge::buildConnectPacket</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a7964729af44f528fdb5ca019d7f70fc6.html">Function natnet_bridge::DecodeMarkerID</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a7964729af44f528fdb5ca019d7f70fc6.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a7d45052550fdf43c478b5a32775ae8c2.html">Function natnet_bridge::DecodeTimecode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a7d45052550fdf43c478b5a32775ae8c2.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1afec92c2de51f4b49c6d13bdf9161bda9.html">Function natnet_bridge::server_info_parser</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1afec92c2de51f4b49c6d13bdf9161bda9.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a715104ccb4689ee21a5c67cb226a09aa.html">Template Function natnet_bridge::sprintf_s</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a715104ccb4689ee21a5c67cb226a09aa.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a4675a5e84e93eaec00776153641be89b.html">Function natnet_bridge::strcpy_s</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a4675a5e84e93eaec00776153641be89b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a030f578de4dba15ffc8bf1f8e5e166f9.html">Function natnet_bridge::TimecodeStringify</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a030f578de4dba15ffc8bf1f8e5e166f9.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1adfff94168324ba87d569569feadeec73.html">Function natnet_bridge::Unpack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1adfff94168324ba87d569569feadeec73.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1addf7f6603c9448989c7154972bc40510.html">Variable natnet_config::MessageType::Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1addf7f6603c9448989c7154972bc40510.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1acdccc1c5a0388cefe1ce44b8a2fb767e.html">Variable natnet_config::MessageType::FrameOfData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1acdccc1c5a0388cefe1ce44b8a2fb767e.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a419ea6c02c29802769320233dbbc4b9c.html">Variable natnet_config::MessageType::MessageString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a419ea6c02c29802769320233dbbc4b9c.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a57d62b3096296ccd6020497c3bb4ae05.html">Variable natnet_config::MessageType::ModelDef</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a57d62b3096296ccd6020497c3bb4ae05.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a981b21eba788865ada4047fa08269fc7.html">Variable natnet_config::MessageType::Request</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a981b21eba788865ada4047fa08269fc7.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a5164001447abadc2db3b1b87829b8f69.html">Variable natnet_config::MessageType::RequestFrameOfData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a5164001447abadc2db3b1b87829b8f69.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ace9a7511ce2b537511f8385a364e844e.html">Variable natnet_config::MessageType::RequestModelDef</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ace9a7511ce2b537511f8385a364e844e.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ab00d95940fc50b60fb8050afa6a3e02c.html">Variable natnet_config::MessageType::Response</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ab00d95940fc50b60fb8050afa6a3e02c.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ae466c6c47d968b5cba0fe5147d4cbd5f.html">Variable natnet_config::MessageType::ServerInfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1ae466c6c47d968b5cba0fe5147d4cbd5f.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a3c3fe9d878c9880194f7f848c1de420d.html">Variable natnet_config::MessageType::Undefined</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a3c3fe9d878c9880194f7f848c1de420d.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a20f0e9b0ce91869f2138efe9f333b860.html">Variable natnet_config::MessageType::UnrecognizedRequest</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacenatnet__config_1_1MessageType_1a20f0e9b0ce91869f2138efe9f333b860.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="defines">
+<h3>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_natnet__definition_8h_1a779a77bbfe15b945b946a2e52b27ff33.html">Define MAX_NAMELENGTH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_natnet__definition_8h_1a779a77bbfe15b945b946a2e52b27ff33.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_unpack_8cpp_1a779a77bbfe15b945b946a2e52b27ff33.html">Define MAX_NAMELENGTH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_unpack_8cpp_1a779a77bbfe15b945b946a2e52b27ff33.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_natnet__definition_8h_1ac53b290f46325f25340a4b1cb0f3271b.html">Define MAX_PACKETSIZE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_natnet__definition_8h_1ac53b290f46325f25340a4b1cb0f3271b.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="typedefs">
+<h3>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespacenatnet__bridge_1aae2b411d513b8d52aeec34e4a3ecde64.html">Typedef natnet_bridge::MessageBuffer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespacenatnet__bridge_1aae2b411d513b8d52aeec34e4a3ecde64.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="namespace_natnet_bridge.html" class="btn btn-neutral float-right" title="Namespace natnet_bridge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../pages/25_draft.html" class="btn btn-neutral float-left" title="not documented things" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Zhiyuan Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_9c87bbbe2fc5a97616a3afd3a599632a" kind="dir">
+    <compoundname>natnet_bridge/include</compoundname>
+    <innerdir refid="dir_b2853f578466135f992b7d724be5eecd">natnet_bridge/include/natnet</innerdir>
+    <innerdir refid="dir_2a46c20a62b069cf78a5ef8ae178329b">natnet_bridge/include/natnet_bridge</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="natnet_bridge/include/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Program Listing for File natnet_bridge.h &mdash; natnet_bridge 1.00 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> natnet_bridge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/01_other_details.html">Some details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/05_msg_def.html">NatNet Message definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/08.Other%20Resources.html">Other Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/15_possible%20future%20work.html">Advices future work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/20_optitrack_bridge.html">Use optitrack bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/25_draft.html">not documented things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">Library API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">natnet_bridge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Program Listing for File natnet_bridge.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_build_api/program_listing_file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-natnet-bridge-h">
+<span id="program-listing-file-natnet-bridge-include-natnet-bridge-natnet-bridge-h"></span><h1>Program Listing for File natnet_bridge.h<a class="headerlink" href="#program-listing-for-file-natnet-bridge-h" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#file-natnet-bridge-include-natnet-bridge-natnet-bridge-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet_bridge/natnet_bridge.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Created by yuan on 2021/5/23.</span>
+<span class="c1">//</span>
+
+<span class="cp">#ifndef NATNET_BRIDGE_NATNET_BRIDGE_H</span>
+<span class="cp">#define NATNET_BRIDGE_NATNET_BRIDGE_H</span>
+<span class="cp">#include</span> <span class="cpf">&lt;ros/ros.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/version.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;tf/transform_broadcaster.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/NatNetBridgeDynParamConfig.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/NatNetFrame.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">natnet_bridge</span><span class="p">{</span>
+
+<span class="k">class</span> <span class="nc">NatNetBridge</span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">NatNetBridge</span><span class="p">(</span><span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span><span class="o">&amp;</span> <span class="n">nh</span><span class="p">,</span> <span class="k">const</span> <span class="n">NatNetBridgeDynParamConfig</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">);</span>  <span class="c1">// explicit according to warning</span>
+    <span class="kt">bool</span> <span class="nf">re_init_natnet</span><span class="p">(</span><span class="k">const</span> <span class="n">NatNetBridgeDynParamConfig</span><span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">re_init_publish</span><span class="p">(</span><span class="k">const</span> <span class="n">NatNetBridgeDynParamConfig</span><span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">connect_server</span><span class="p">();</span>
+    <span class="kt">bool</span> <span class="nf">receive_data</span><span class="p">();</span>
+
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">publish_rigid_2d_tf</span><span class="p">(</span><span class="k">const</span> <span class="n">NatNetFrame</span> <span class="o">&amp;</span> <span class="n">data_frame</span><span class="p">,</span> <span class="n">ros</span><span class="o">::</span><span class="n">Time</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">publish_rigid_3d_tf</span><span class="p">(</span><span class="k">const</span> <span class="n">NatNetFrame</span> <span class="o">&amp;</span> <span class="n">data_frame</span><span class="p">,</span> <span class="n">ros</span><span class="o">::</span><span class="n">Time</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">);</span>
+
+    <span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span> <span class="n">p_nh</span><span class="p">;</span>
+    <span class="n">Version</span> <span class="n">server_version</span><span class="p">;</span>
+    <span class="n">Version</span> <span class="n">natnet_version</span><span class="p">;</span>
+
+    <span class="c1">// publish config for 2d publish</span>
+    <span class="kt">bool</span> <span class="n">use_2d_bool</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">use_2d_plane_height</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">tf_filter_invalid_2d</span><span class="p">,</span> <span class="n">tf_filter_invalid_3d</span><span class="p">;</span>
+    <span class="c1">// publish config for dataframe publish</span>
+    <span class="kt">bool</span> <span class="n">publish_unidentified</span><span class="p">,</span> <span class="n">publish_skeleton</span><span class="p">,</span> <span class="n">publish_rigid_body</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">publish_marker_assets</span><span class="p">,</span> <span class="n">publish_labeled_marker</span><span class="p">,</span> <span class="n">publish_unlabeled_marker</span><span class="p">;</span>
+    <span class="c1">// tf tree settings</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">tf_world_frame</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">tf_optitrack_frame</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">optitrack_coordinate</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">multicast_ip_address</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">command_port</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">data_port</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">UdpMulticastSocket</span><span class="o">&gt;</span> <span class="n">multicastClientSocketPtr</span><span class="p">;</span>
+
+    <span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span> <span class="n">natnet_frame_publisher</span><span class="p">;</span>
+    <span class="n">tf</span><span class="o">::</span><span class="n">TransformBroadcaster</span> <span class="n">tfPublisher</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="p">}</span> <span class="c1">// end of natnet_bridge</span>
+<span class="cp">#endif </span><span class="c1">//NATNET_BRIDGE_NATNET_BRIDGE_H</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Zhiyuan Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

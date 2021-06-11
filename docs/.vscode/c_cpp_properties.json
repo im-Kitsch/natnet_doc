@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/yuan/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/yuan/catkin_ws/src/optitrack/Reference/mocap_optitrack-master/include/**",
+        "/home/yuan/catkin_ws/src/optitrack/natnet_bridge/include/**",
+        "/home/yuan/catkin_ws/src/optitrack/optitrack_bridge/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

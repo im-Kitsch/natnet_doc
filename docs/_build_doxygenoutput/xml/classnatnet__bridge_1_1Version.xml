@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classnatnet__bridge_1_1Version" kind="class" language="C++" prot="public">
+    <compoundname>natnet_bridge::Version</compoundname>
+    <includes refid="version_8h" local="no">version.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classnatnet__bridge_1_1Version_1a2b4cf885bccb14f6a91eb25d4314178d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int natnet_bridge::Version::v_major</definition>
+        <argsstring></argsstring>
+        <name>v_major</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="31" column="13" bodyfile="natnet_bridge/include/natnet_bridge/version.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnatnet__bridge_1_1Version_1a9900bd9b343a5fbde2f40786a0bab21b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int natnet_bridge::Version::v_minor</definition>
+        <argsstring></argsstring>
+        <name>v_minor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="32" column="13" bodyfile="natnet_bridge/include/natnet_bridge/version.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnatnet__bridge_1_1Version_1a4d774e9673428df65820109d03163f87" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int natnet_bridge::Version::v_revision</definition>
+        <argsstring></argsstring>
+        <name>v_revision</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="33" column="13" bodyfile="natnet_bridge/include/natnet_bridge/version.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnatnet__bridge_1_1Version_1a2a571b7a60284c0097b755e6604a593f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int natnet_bridge::Version::v_build</definition>
+        <argsstring></argsstring>
+        <name>v_build</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="34" column="13" bodyfile="natnet_bridge/include/natnet_bridge/version.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnatnet__bridge_1_1Version_1a80c959078509e2c27a382bea1204e941" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string natnet_bridge::Version::v_string</definition>
+        <argsstring></argsstring>
+        <name>v_string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="35" column="21" bodyfile="natnet_bridge/include/natnet_bridge/version.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1aa012068fb238b5a4ad12a690c4911d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>natnet_bridge::Version::Version</definition>
+        <argsstring>()</argsstring>
+        <name>Version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="18" column="9" bodyfile="natnet_bridge/src/version.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1a6bd44c553b50174b4ee7facd3582a464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>natnet_bridge::Version::Version</definition>
+        <argsstring>(int major, int minor, int revision, int build)</argsstring>
+        <name>Version</name>
+        <param>
+          <type>int</type>
+          <declname>major</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minor</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>revision</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>build</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="19" column="9" bodyfile="natnet_bridge/src/version.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1aa971b04569ae22e9555cb6bc8cc2ab8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>natnet_bridge::Version::Version</definition>
+        <argsstring>(const std::string &amp;version)</argsstring>
+        <name>Version</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="20" column="9" bodyfile="natnet_bridge/src/version.cpp" bodystart="23" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1a5d1ac734f2bb49506ae582bca83c670d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>natnet_bridge::Version::~Version</definition>
+        <argsstring>()</argsstring>
+        <name>~Version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="21" column="9" bodyfile="natnet_bridge/src/version.cpp" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1ad71ed18083e523f96940af1e64839249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void natnet_bridge::Version::setVersion</definition>
+        <argsstring>(int major, int minor, int revision, int build)</argsstring>
+        <name>setVersion</name>
+        <param>
+          <type>int</type>
+          <declname>major</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minor</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>revision</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>build</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="23" column="14" bodyfile="natnet_bridge/src/version.cpp" bodystart="34" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1a2d0e4e32529ca6e3f401bb5fbf3ab48e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string const  &amp;</type>
+        <definition>std::string const  &amp; natnet_bridge::Version::getVersionString</definition>
+        <argsstring>() const</argsstring>
+        <name>getVersionString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="24" column="27" bodyfile="natnet_bridge/src/version.cpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1a64d4d994959b331a920a9ad14d99a483" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool natnet_bridge::Version::operator&gt;</definition>
+        <argsstring>(const Version &amp;comparison) const</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref> &amp;</type>
+          <declname>comparison</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="25" column="14" bodyfile="natnet_bridge/src/version.cpp" bodystart="51" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1a4868aa96b93a639c14977c7e43cfaae0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool natnet_bridge::Version::operator&gt;=</definition>
+        <argsstring>(const Version &amp;comparison) const</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref> &amp;</type>
+          <declname>comparison</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="26" column="14" bodyfile="natnet_bridge/src/version.cpp" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1aa4815afa4a37f8545c1f5a6164367550" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool natnet_bridge::Version::operator&lt;</definition>
+        <argsstring>(const Version &amp;comparison) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref> &amp;</type>
+          <declname>comparison</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="27" column="9" bodyfile="natnet_bridge/src/version.cpp" bodystart="69" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1a7908b5d47998904d29275baa326a13fd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool natnet_bridge::Version::operator&lt;=</definition>
+        <argsstring>(const Version &amp;comparison) const</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref> &amp;</type>
+          <declname>comparison</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="28" column="9" bodyfile="natnet_bridge/src/version.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classnatnet__bridge_1_1Version_1acae984a67e6767260f3605abfeb6a427" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool natnet_bridge::Version::operator==</definition>
+        <argsstring>(const Version &amp;comparison) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref> &amp;</type>
+          <declname>comparison</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet_bridge/version.h" line="29" column="14" bodyfile="natnet_bridge/src/version.cpp" bodystart="87" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>\breif <ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref> class containing the version information and helpers for comparison. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="natnet_bridge/include/natnet_bridge/version.h" line="16" column="1" bodyfile="natnet_bridge/include/natnet_bridge/version.h" bodystart="15" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classnatnet__bridge_1_1Version_1a2d0e4e32529ca6e3f401bb5fbf3ab48e" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>getVersionString</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1aa4815afa4a37f8545c1f5a6164367550" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>operator&lt;</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a7908b5d47998904d29275baa326a13fd" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>operator&lt;=</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1acae984a67e6767260f3605abfeb6a427" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>operator==</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a64d4d994959b331a920a9ad14d99a483" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>operator&gt;</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a4868aa96b93a639c14977c7e43cfaae0" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>operator&gt;=</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1ad71ed18083e523f96940af1e64839249" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>setVersion</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a2a571b7a60284c0097b755e6604a593f" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>v_build</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a2b4cf885bccb14f6a91eb25d4314178d" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>v_major</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a9900bd9b343a5fbde2f40786a0bab21b" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>v_minor</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a4d774e9673428df65820109d03163f87" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>v_revision</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a80c959078509e2c27a382bea1204e941" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>v_string</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1aa012068fb238b5a4ad12a690c4911d9f" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>Version</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a6bd44c553b50174b4ee7facd3582a464" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>Version</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1aa971b04569ae22e9555cb6bc8cc2ab8c" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>Version</name></member>
+      <member refid="classnatnet__bridge_1_1Version_1a5d1ac734f2bb49506ae582bca83c670d" prot="public" virt="non-virtual"><scope>natnet_bridge::Version</scope><name>~Version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

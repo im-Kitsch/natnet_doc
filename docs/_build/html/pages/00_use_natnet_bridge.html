@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Quick start for natnet_bridge &mdash; natnet_bridge 1.00 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Some details" href="01_other_details.html" />
+    <link rel="prev" title="Welcome to natnet_bridge’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> natnet_bridge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick start for natnet_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_other_details.html">Some details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_msg_def.html">NatNet Message definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.Other%20Resources.html">Other Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_possible%20future%20work.html">Advices future work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_optitrack_bridge.html">Use optitrack bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_draft.html">not documented things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_build_api/library_root.html">Library API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">natnet_bridge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Quick start for natnet_bridge</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/pages/00_use_natnet_bridge.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quick-start-for-natnet-bridge">
+<h1>Quick start for natnet_bridge<a class="headerlink" href="#quick-start-for-natnet-bridge" title="Permalink to this headline">¶</a></h1>
+<p>Clone the repo into <code class="docutils literal notranslate"><span class="pre">ROS_Workspace</span></code>, and run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">catkin_make</span></code>.</p>
+<dl>
+<dt><strong>1. Configuring Motive</strong></dt><dd><p>Open the <a class="reference external" href="https://v22.wiki.optitrack.com/index.php?title=Data_Streaming_Pane">Data Streaming Pane</a>
+in Motive by clicking on <code class="docutils literal notranslate"><span class="pre">View-&gt;Data</span> <span class="pre">Streaming</span></code>.
+click on the 3 dots in the right upper corner, then click <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Advanced</span></code>.
+set <code class="docutils literal notranslate"><span class="pre">Type</span></code> in <cite>Advanced Network Settings</cite> to <code class="docutils literal notranslate"><span class="pre">Multicast</span></code>, specify (command and data) <cite>port`(default is 1510 and 1511)
+if necessary and set the ``Multicast Interface`</cite> (default: 239.255.42.99)</p>
+</dd>
+<dt><strong>2. Configuring natnet_bridge</strong></dt><dd><p>Configuring the multicast IP address/data port/command port, iteratively run following commands</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roscd natnet_bridge/config
+$ vim parameter.yaml
+</pre></div>
+</div>
+<p>If you want to use 2d information, specify the <code class="docutils literal notranslate"><span class="pre">use_2d_bool</span></code> and <code class="docutils literal notranslate"><span class="pre">use_2d_plane_height</span></code>.  If you want to additionally get information like <cite>unidentified markers</cite>, change corresponding parameter
+<code class="docutils literal notranslate"><span class="pre">publish_xxx</span></code> as true.</p>
+<p>It could also be configured later via <code class="docutils literal notranslate"><span class="pre">dynamic_reconfigure</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>make sure that the Motive coordinate setting in both Motive-side and Ros-Side(<code class="docutils literal notranslate"><span class="pre">parameter:</span> <span class="pre">optitrack_coordinate</span></code>)
+are the same. Otherwise it will be wrong.</p>
+</div>
+</dd>
+<dt><strong>3.  Run natnet_bridge</strong></dt><dd><p>Run the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch natnet_bridge natnet_bridge.launch
+</pre></div>
+</div>
+<p>If you want to show complete information like ROS_DEBUG information, you can run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch natnet_bridge natnet_bridge.launch show_debug_info:=true
+</pre></div>
+</div>
+<p>Otherwise it is also possible to run following command via running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosconsole set /natnet_node ros.natnet_bridge debug
+</pre></div>
+</div>
+<p>You can also change the configuration while running via,
+it would convenient when you need to change the settings while
+running.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch natnet_bridge natnet_bridge.launch launch_reconfigure:=true
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="comparison-with-prior-optitrack-bridge">
+<h1>Comparison with prior optitrack_bridge<a class="headerlink" href="#comparison-with-prior-optitrack-bridge" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>More stable for running logic.</p></li>
+<li><p>Fixed bugs of optitrack_bridge.</p></li>
+<li><p>Non-Blocking. Saving cpu resources.</p></li>
+<li><p>More completely parsing information of NatNet</p></li>
+<li><p>Controllable loop rate…</p></li>
+<li><p>Time information</p></li>
+<li><p>Get server version and natnet version from the motive serve</p></li>
+<li><p>Friendly parameter setting, friendly information print out…</p></li>
+</ul>
+</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="01_other_details.html" class="btn btn-neutral float-right" title="Some details" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to natnet_bridge’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Zhiyuan Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

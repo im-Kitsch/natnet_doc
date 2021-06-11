@@ -1,0 +1,34 @@
+
+.. _program_listing_file_natnet_bridge_include_natnet_bridge_server_parser.h:
+
+Program Listing for File server_parser.h
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_natnet_bridge_include_natnet_bridge_server_parser.h>` (``natnet_bridge/include/natnet_bridge/server_parser.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by yuan on 2021/5/29.
+   //
+   
+   #ifndef NATNET_BRIDGE_SERVER_PARSER_H
+   #define NATNET_BRIDGE_SERVER_PARSER_H
+   
+   
+   #include "natnet/natnet_config.h"
+   #include "natnet_bridge/version.h"
+   #include <vector>
+   #include <cstring>
+   #include <vector>
+   
+   namespace natnet_bridge{
+   
+       int server_info_parser(std::vector<char> & buffer, Version & server_version, Version & natnet_version);
+       void buildConnectPacket(std::vector<char> & buffer);
+   
+   }
+   
+   #endif //NATNET_BRIDGE_SERVER_PARSER_H

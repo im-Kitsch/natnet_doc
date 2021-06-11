@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="version_8h" kind="file" language="C++">
+    <compoundname>version.h</compoundname>
+    <includes local="no">string</includes>
+    <includedby refid="natnet__bridge_8h" local="yes">natnet_bridge/include/natnet_bridge/natnet_bridge.h</includedby>
+    <includedby refid="server__parser_8h" local="yes">natnet_bridge/include/natnet_bridge/server_parser.h</includedby>
+    <includedby refid="version_8cpp" local="yes">natnet_bridge/src/version.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>natnet_bridge/include/natnet_bridge/version.h</label>
+        <link refid="version_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7">
+        <label>natnet_bridge/src/version.cpp</label>
+        <link refid="version_8cpp"/>
+      </node>
+      <node id="6">
+        <label>natnet_bridge/src/server_parser.cpp</label>
+        <link refid="server__parser_8cpp"/>
+      </node>
+      <node id="4">
+        <label>natnet_bridge/src/optitrack_node.cpp</label>
+        <link refid="optitrack__node_8cpp"/>
+      </node>
+      <node id="2">
+        <label>natnet_bridge/include/natnet_bridge/natnet_bridge.h</label>
+        <link refid="natnet__bridge_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>natnet_bridge/include/natnet_bridge/version.h</label>
+        <link refid="version_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>natnet_bridge/src/natnet_bridge.cpp</label>
+        <link refid="natnet__bridge_8cpp"/>
+      </node>
+      <node id="5">
+        <label>natnet_bridge/include/natnet_bridge/server_parser.h</label>
+        <link refid="server__parser_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classnatnet__bridge_1_1Version" prot="public">natnet_bridge::Version</innerclass>
+    <innernamespace refid="namespacenatnet__bridge">natnet_bridge</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>yuan<sp/>on<sp/>2021/5/23.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>NATNET_BRIDGE_VERSION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NATNET_BRIDGE_VERSION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FIXME<sp/>move<sp/>it<sp/>to<sp/>natnet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacenatnet__bridge" kindref="compound">natnet_bridge</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classnatnet__bridge_1_1Version" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classnatnet__bridge_1_1Version_1aa012068fb238b5a4ad12a690c4911d9f" kindref="member">Version</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classnatnet__bridge_1_1Version_1aa012068fb238b5a4ad12a690c4911d9f" kindref="member">Version</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>major,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>revision,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>build);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classnatnet__bridge_1_1Version_1aa012068fb238b5a4ad12a690c4911d9f" kindref="member">Version</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>version);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classnatnet__bridge_1_1Version_1a5d1ac734f2bb49506ae582bca83c670d" kindref="member">~Version</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1ad71ed18083e523f96940af1e64839249" kindref="member">setVersion</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>major,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>revision,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>build);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="classnatnet__bridge_1_1Version_1a2d0e4e32529ca6e3f401bb5fbf3ab48e" kindref="member">getVersionString</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1a64d4d994959b331a920a9ad14d99a483" kindref="member">operator &gt; </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref>&amp;<sp/>comparison)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1a4868aa96b93a639c14977c7e43cfaae0" kindref="member">operator &gt;= </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref>&amp;<sp/>comparison)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1aa4815afa4a37f8545c1f5a6164367550" kindref="member">operator &lt; </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref>&amp;<sp/>comparison)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1a7908b5d47998904d29275baa326a13fd" kindref="member">operator &lt;= </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref>&amp;<sp/>comparison)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1acae984a67e6767260f3605abfeb6a427" kindref="member">operator == </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version" kindref="compound">Version</ref>&amp;<sp/>comparison)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classnatnet__bridge_1_1Version_1a2b4cf885bccb14f6a91eb25d4314178d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1a2b4cf885bccb14f6a91eb25d4314178d" kindref="member">v_major</ref>;</highlight></codeline>
+<codeline lineno="32" refid="classnatnet__bridge_1_1Version_1a9900bd9b343a5fbde2f40786a0bab21b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1a9900bd9b343a5fbde2f40786a0bab21b" kindref="member">v_minor</ref>;</highlight></codeline>
+<codeline lineno="33" refid="classnatnet__bridge_1_1Version_1a4d774e9673428df65820109d03163f87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1a4d774e9673428df65820109d03163f87" kindref="member">v_revision</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classnatnet__bridge_1_1Version_1a2a571b7a60284c0097b755e6604a593f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classnatnet__bridge_1_1Version_1a2a571b7a60284c0097b755e6604a593f" kindref="member">v_build</ref>;</highlight></codeline>
+<codeline lineno="35" refid="classnatnet__bridge_1_1Version_1a80c959078509e2c27a382bea1204e941" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classnatnet__bridge_1_1Version_1a80c959078509e2c27a382bea1204e941" kindref="member">v_string</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//NATNET_BRIDGE_VERSION_H</highlight></codeline>
+    </programlisting>
+    <location file="natnet_bridge/include/natnet_bridge/version.h"/>
+  </compounddef>
+</doxygen>

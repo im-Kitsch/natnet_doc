@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structnatnet__bridge_1_1____attribute____" kind="struct" language="C++" prot="public">
+    <compoundname>natnet_bridge::__attribute__</compoundname>
+    <includes refid="natnet__definition_8h" local="no">natnet_definition.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1a85dae189018ad7f961fd8610e32ea853" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char natnet_bridge::__attribute__::szName[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>szName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="23" column="14" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1a146ce1225d5c09f4e45e215eb7f4db8b" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char natnet_bridge::__attribute__::Version[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>Version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="24" column="23" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1a0cbc0b60c9bc6dd3f4e2c6691c35fc63" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char natnet_bridge::__attribute__::NatNetVersion[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>NatNetVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="25" column="23" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1ad00c46648bb505736b40a36b8434a24d" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short natnet_bridge::__attribute__::iMessage</definition>
+        <argsstring></argsstring>
+        <name>iMessage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="30" column="24" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1a9db4097482e8070c26e2f38319169f0a" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short natnet_bridge::__attribute__::nDataBytes</definition>
+        <argsstring></argsstring>
+        <name>nDataBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="31" column="24" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1a8b331d1018e67c70c4eb6a67e5c05150" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char natnet_bridge::__attribute__::cData[100000]</definition>
+        <argsstring>[100000]</argsstring>
+        <name>cData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="34" column="28" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1a725ef30a7bd0583e73da931dbfb2e6af" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char natnet_bridge::__attribute__::szData[100000]</definition>
+        <argsstring>[100000]</argsstring>
+        <name>szData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="35" column="28" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1ad0268d12dfe56593fd10a4fe81ab9829" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long natnet_bridge::__attribute__::lData[100000/4]</definition>
+        <argsstring>[100000/4]</argsstring>
+        <name>lData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="36" column="28" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1a1b6622903299959768d94e0f8e56cba8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float natnet_bridge::__attribute__::fData[100000/4]</definition>
+        <argsstring>[100000/4]</argsstring>
+        <name>fData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="37" column="28" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1afe6cf211cb0b081c9507530d1f53ad10" prot="public" static="no" mutable="no">
+        <type>sSender</type>
+        <definition>sSender natnet_bridge::__attribute__::Sender</definition>
+        <argsstring></argsstring>
+        <name>Sender</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="38" column="28" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnatnet__bridge_1_1____attribute_____1a7bc841f3230a920fc4c5d34699395cbd" prot="public" static="no" mutable="no">
+        <type>union natnet_bridge::__attribute__::@0</type>
+        <definition>union natnet_bridge::__attribute__::@0 natnet_bridge::__attribute__::Data</definition>
+        <argsstring></argsstring>
+        <name>Data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="natnet_bridge/include/natnet/natnet_definition.h" line="39" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="natnet_bridge/include/natnet/natnet_definition.h" line="22" column="1" bodyfile="natnet_bridge/include/natnet/natnet_definition.h" bodystart="21" bodyend="26"/>
+    <listofallmembers>
+      <member refid="structnatnet__bridge_1_1____attribute_____1a8b331d1018e67c70c4eb6a67e5c05150" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>cData</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1a7bc841f3230a920fc4c5d34699395cbd" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>Data</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1a1b6622903299959768d94e0f8e56cba8" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>fData</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1ad00c46648bb505736b40a36b8434a24d" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>iMessage</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1ad0268d12dfe56593fd10a4fe81ab9829" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>lData</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1a0cbc0b60c9bc6dd3f4e2c6691c35fc63" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>NatNetVersion</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1a9db4097482e8070c26e2f38319169f0a" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>nDataBytes</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1afe6cf211cb0b081c9507530d1f53ad10" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>Sender</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1a725ef30a7bd0583e73da931dbfb2e6af" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>szData</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1a85dae189018ad7f961fd8610e32ea853" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>szName</name></member>
+      <member refid="structnatnet__bridge_1_1____attribute_____1a146ce1225d5c09f4e45e215eb7f4db8b" prot="public" virt="non-virtual"><scope>natnet_bridge::__attribute__</scope><name>Version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Class UdpMulticastSocket &mdash; natnet_bridge 1.00 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Function main" href="function_optitrack__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97.html" />
+    <link rel="prev" title="Class SocketException" href="classSocketException.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> natnet_bridge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/01_other_details.html">Some details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/05_msg_def.html">NatNet Message definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/08.Other%20Resources.html">Other Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/15_possible%20future%20work.html">Advices future work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/20_optitrack_bridge.html">Use optitrack bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/25_draft.html">not documented things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">Library API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">natnet_bridge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="library_root.html">Library API</a> &raquo;</li>
+        
+      <li>Class UdpMulticastSocket</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_build_api/classUdpMulticastSocket.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-udpmulticastsocket">
+<span id="exhale-class-classudpmulticastsocket"></span><h1>Class UdpMulticastSocket<a class="headerlink" href="#class-udpmulticastsocket" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_natnet_bridge_include_natnet_socket.h.html#file-natnet-bridge-include-natnet-socket-h"><span class="std std-ref">File socket.h</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv418UdpMulticastSocket">
+<span id="_CPPv318UdpMulticastSocket"></span><span id="_CPPv218UdpMulticastSocket"></span><span id="UdpMulticastSocket"></span><span class="target" id="classUdpMulticastSocket"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UdpMulticastSocket</span></span></span><a class="headerlink" href="#_CPPv418UdpMulticastSocket" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Allows to retrieve data from a UDP multicast group. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N18UdpMulticastSocket18UdpMulticastSocketEKiKNSt6stringE">
+<span id="_CPPv3N18UdpMulticastSocket18UdpMulticastSocketEKiKNSt6stringE"></span><span id="_CPPv2N18UdpMulticastSocket18UdpMulticastSocketEKiKNSt6stringE"></span><span id="UdpMulticastSocket::UdpMulticastSocket__iC.ssC"></span><span class="target" id="classUdpMulticastSocket_1ae2c964bc47ae5053c0a4053fbe5bdcb3"></span><span class="sig-name descname"><span class="n"><span class="pre">UdpMulticastSocket</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">local_port</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">multicast_ip</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;224.0.0.1&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18UdpMulticastSocket18UdpMulticastSocketEKiKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a socket and joins the multicast group with the given address. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N18UdpMulticastSocketD0Ev">
+<span id="_CPPv3N18UdpMulticastSocketD0Ev"></span><span id="_CPPv2N18UdpMulticastSocketD0Ev"></span><span id="UdpMulticastSocket::~UdpMulticastSocket"></span><span class="target" id="classUdpMulticastSocket_1a0e64ebc7bfda84e521766885f2ca9727"></span><span class="sig-name descname"><span class="n"><span class="pre">~UdpMulticastSocket</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18UdpMulticastSocketD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N18UdpMulticastSocket4recvEv">
+<span id="_CPPv3N18UdpMulticastSocket4recvEv"></span><span id="_CPPv2N18UdpMulticastSocket4recvEv"></span><span id="UdpMulticastSocket::recv"></span><span class="target" id="classUdpMulticastSocket_1a5584c3d0d9501c72957a417240f6cb31"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">recv</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18UdpMulticastSocket4recvEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Retrieve data from multicast group. </p>
+<p>
+This call is non-blocking. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of bytes received or -1 if no data is available</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N18UdpMulticastSocket9getBufferEv">
+<span id="_CPPv3N18UdpMulticastSocket9getBufferEv"></span><span id="_CPPv2N18UdpMulticastSocket9getBufferEv"></span><span id="UdpMulticastSocket::getBuffer"></span><span class="target" id="classUdpMulticastSocket_1ab2a9c5fed0a7b21b7943c76f29091236"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getBuffer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18UdpMulticastSocket9getBufferEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a pointer to the internal buffer, holding the received data. </p>
+<p>The buffer size may be obtained from MAXRECV. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N18UdpMulticastSocket4sendEPKcji">
+<span id="_CPPv3N18UdpMulticastSocket4sendEPKcji"></span><span id="_CPPv2N18UdpMulticastSocket4sendEPKcji"></span><span id="UdpMulticastSocket::send__cCP.unsigned-i.i"></span><span class="target" id="classUdpMulticastSocket_1a2a8082d349529fad7040c907b2e630e6"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">send</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">buf</span></span>, <span class="kt"><span class="pre">unsigned</span> <span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sz</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">port</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18UdpMulticastSocket4sendEPKcji" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18UdpMulticastSocket7MAXRECVE">
+<span id="_CPPv3N18UdpMulticastSocket7MAXRECVE"></span><span id="_CPPv2N18UdpMulticastSocket7MAXRECVE"></span><span id="UdpMulticastSocket::MAXRECV__iC"></span><span class="target" id="classUdpMulticastSocket_1ac5d9a1d34112e9e6a49aaac7038035d8"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MAXRECV</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">3000</span></span><a class="headerlink" href="#_CPPv4N18UdpMulticastSocket7MAXRECVE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Maximum number of bytse that can be read at a time. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="function_optitrack__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97.html" class="btn btn-neutral float-right" title="Function main" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="classSocketException.html" class="btn btn-neutral float-left" title="Class SocketException" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Zhiyuan Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

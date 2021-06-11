@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Program Listing for File socket.cpp &mdash; natnet_bridge 1.00 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> natnet_bridge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/01_other_details.html">Some details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/05_msg_def.html">NatNet Message definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/08.Other%20Resources.html">Other Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/15_possible%20future%20work.html">Advices future work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/20_optitrack_bridge.html">Use optitrack bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/25_draft.html">not documented things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">Library API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">natnet_bridge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Program Listing for File socket.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_build_api/program_listing_file_natnet_bridge_src_socket.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-socket-cpp">
+<span id="program-listing-file-natnet-bridge-src-socket-cpp"></span><h1>Program Listing for File socket.cpp<a class="headerlink" href="#program-listing-for-file-socket-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_natnet_bridge_src_socket.cpp.html#file-natnet-bridge-src-socket-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/socket.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Created by yuan on 2021/5/23.</span>
+<span class="c1">// Copied from Mocap_Optitrack</span>
+<span class="c1">//</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;natnet/socket.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cerrno&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;fcntl.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ros/ros.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// Reference ros package of mocap_optitrack</span>
+
+<span class="n">UdpMulticastSocket</span><span class="o">::</span><span class="n">UdpMulticastSocket</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">local_port</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">multicast_ip</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">remote_ip_exist</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// Create a UDP socket</span>
+    <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Creating socket...&quot;</span><span class="p">);</span>
+    <span class="n">m_socket</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_socket</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">throw</span> <span class="n">SocketException</span><span class="p">(</span><span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">));</span>
+
+    <span class="c1">// Allow reuse of local addresses</span>
+    <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Setting socket options...&quot;</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">option_value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">setsockopt</span><span class="p">(</span><span class="n">m_socket</span><span class="p">,</span> <span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">SO_REUSEADDR</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">option_value</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">-1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">error</span><span class="p">;</span>
+        <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Failed to set socket option: &quot;</span><span class="p">;</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">errno</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="nl">EBADF</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EBADF&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nl">EFAULT</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EFAULT&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nl">EINVAL</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EINVAL&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nl">ENOPROTOOPT</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ENOPROTOOPT&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nl">ENOTSOCK</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ENOTSOCK&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="o">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;unknown error&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">throw</span> <span class="n">SocketException</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">str</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Fill struct for local address</span>
+    <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_local_addr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_local_addr</span><span class="p">));</span>
+    <span class="n">m_local_addr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>
+    <span class="n">m_local_addr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">htonl</span><span class="p">(</span><span class="n">INADDR_ANY</span><span class="p">);</span>
+    <span class="n">m_local_addr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="n">local_port</span><span class="p">);</span>
+    <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Local address: %s:%i&quot;</span><span class="p">,</span> <span class="n">inet_ntoa</span><span class="p">(</span><span class="n">m_local_addr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">),</span> <span class="n">ntohs</span><span class="p">(</span><span class="n">m_local_addr</span><span class="p">.</span><span class="n">sin_port</span><span class="p">));</span>
+
+    <span class="c1">// Bind the socket</span>
+    <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Binding socket to local address...&quot;</span><span class="p">);</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">bind</span><span class="p">(</span><span class="n">m_socket</span><span class="p">,</span> <span class="p">(</span><span class="n">sockaddr</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">m_local_addr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_local_addr</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">-1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">error</span><span class="p">;</span>
+        <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Failed to bind socket to local address:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">);</span>
+        <span class="k">throw</span> <span class="nf">SocketException</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">str</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Join multicast group</span>
+    <span class="k">struct</span> <span class="nc">ip_mreq</span> <span class="n">mreq</span><span class="p">;</span>
+    <span class="n">mreq</span><span class="p">.</span><span class="n">imr_multiaddr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">inet_addr</span><span class="p">(</span><span class="n">multicast_ip</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">mreq</span><span class="p">.</span><span class="n">imr_interface</span> <span class="o">=</span> <span class="n">m_local_addr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">;</span>
+    <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Joining multicast group %s...&quot;</span><span class="p">,</span> <span class="n">inet_ntoa</span><span class="p">(</span><span class="n">mreq</span><span class="p">.</span><span class="n">imr_multiaddr</span><span class="p">));</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">setsockopt</span><span class="p">(</span><span class="n">m_socket</span><span class="p">,</span> <span class="n">IPPROTO_IP</span><span class="p">,</span> <span class="n">IP_ADD_MEMBERSHIP</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">mreq</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">mreq</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">-1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">error</span><span class="p">;</span>
+        <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Failed to set socket option: &quot;</span><span class="p">;</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">errno</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="nl">EBADF</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EBADF&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nl">EFAULT</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EFAULT&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nl">EINVAL</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EINVAL&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nl">ENOPROTOOPT</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ENOPROTOOPT&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nl">ENOTSOCK</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ENOTSOCK&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="o">:</span>
+                <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;unknown error&quot;</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">throw</span> <span class="n">SocketException</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">str</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Make socket non-blocking</span>
+    <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Enabling non-blocking I/O&quot;</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">fcntl</span><span class="p">(</span><span class="n">m_socket</span><span class="p">,</span> <span class="n">F_GETFL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">fcntl</span><span class="p">(</span><span class="n">m_socket</span><span class="p">,</span> <span class="n">F_SETFL</span><span class="p">,</span> <span class="n">flags</span> <span class="o">|</span> <span class="n">O_NONBLOCK</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mi">-1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">error</span><span class="p">;</span>
+        <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Failed to enable non-blocking I/O: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">);</span>
+        <span class="k">throw</span> <span class="nf">SocketException</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">str</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">UdpMulticastSocket</span><span class="o">::~</span><span class="n">UdpMulticastSocket</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">close</span><span class="p">(</span><span class="n">m_socket</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">UdpMulticastSocket</span><span class="o">::</span><span class="n">recv</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MAXRECV</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="n">sockaddr_in</span> <span class="n">remote_addr</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">addr_len</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="nc">sockaddr</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">status</span> <span class="o">=</span> <span class="n">recvfrom</span><span class="p">(</span>
+            <span class="n">m_socket</span><span class="p">,</span>
+            <span class="n">buf</span><span class="p">,</span>
+            <span class="n">MAXRECV</span><span class="p">,</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">remote_addr</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">socklen_t</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">addr_len</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;%4i bytes received from %s:%i&quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">inet_ntoa</span><span class="p">(</span><span class="n">remote_addr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">),</span> <span class="n">ntohs</span><span class="p">(</span><span class="n">remote_addr</span><span class="p">.</span><span class="n">sin_port</span><span class="p">));</span>
+    <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Connection closed by peer&quot;</span><span class="p">);</span>
+
+    <span class="n">HostAddr</span><span class="p">.</span><span class="n">sin_addr</span> <span class="o">=</span> <span class="n">remote_addr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">;</span>
+    <span class="n">remote_ip_exist</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">status</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">UdpMulticastSocket</span><span class="o">::</span><span class="n">send</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">sz</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">HostAddr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>
+    <span class="n">HostAddr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="n">port</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nf">sendto</span><span class="p">(</span><span class="n">m_socket</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">sockaddr</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">HostAddr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">HostAddr</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Zhiyuan Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

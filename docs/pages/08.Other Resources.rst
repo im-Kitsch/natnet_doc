@@ -1,0 +1,47 @@
+Other Resources
+===============
+
+
+Reference Src:
+
+optitrack_bridge, prior work, see other branches
+
+natnet_sdk: https://optitrack.com/software/natnet-sdk/
+
+mocap_optitrack:
+
+​	https://github.com/ros-drivers/mocap_optitrack
+
+​	https://tuw-cpsg.github.io/tutorials/optitrack-and-ros/
+
+netnet_ros:  https://github.com/mje-nz/natnet_ros
+
+PacketClient/PtyhonClient: NatNet SDK for windows
+
+
+
+Some Collections
+
+https://v22.wiki.optitrack.com/index.php?title=NatNet:_Sample_Projects
+
+https://python-natnet.readthedocs.io/en/latest/index.html
+
+https://v22.wiki.optitrack.com/index.php?title=NatNet:_Data_Types
+
+QuickStart for Optitrack overview
+
+https://v22.wiki.optitrack.com/index.php?title=Quick_Start_Guide:_Getting_Started#Streaming_Protocols
+
+SDK sample project intro
+
+http://wiki.optitrack.com.cn/index.php?title=NatNet-_Sample_Projects 
+
+SDK intro
+
+http://wiki.optitrack.com.cn/index.php?title=NatNet_SDK#File_List
+
+SDK functions,  https://v22.wiki.optitrack.com/index.php?title=NatNet:_Class/Function_Reference#NatNetClient::GetDataDescriptionList
+
+Forum 
+
+https://forums.naturalpoint.com/index.php

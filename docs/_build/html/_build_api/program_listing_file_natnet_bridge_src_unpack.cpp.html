@@ -1,0 +1,745 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Program Listing for File unpack.cpp &mdash; natnet_bridge 1.00 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> natnet_bridge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/01_other_details.html">Some details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/05_msg_def.html">NatNet Message definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/08.Other%20Resources.html">Other Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/15_possible%20future%20work.html">Advices future work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/20_optitrack_bridge.html">Use optitrack bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/25_draft.html">not documented things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">Library API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">natnet_bridge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Program Listing for File unpack.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_build_api/program_listing_file_natnet_bridge_src_unpack.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-unpack-cpp">
+<span id="program-listing-file-natnet-bridge-src-unpack-cpp"></span><h1>Program Listing for File unpack.cpp<a class="headerlink" href="#program-listing-for-file-unpack-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_natnet_bridge_src_unpack.cpp.html#file-natnet-bridge-src-unpack-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/unpack.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Created by yuan on 2021/5/29.</span>
+<span class="c1">//</span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;inttypes.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ros/ros.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/unpack.h&quot;</span><span class="cp"></span>
+
+
+<span class="cp">#define MAX_NAMELENGTH              256</span>
+
+<span class="c1">// TODO, ROS_DEBUG as verbose</span>
+
+<span class="k">namespace</span> <span class="n">natnet_bridge</span><span class="p">{</span>
+
+<span class="c1">// non-standard/optional extension of C; define an unsafe version here</span>
+<span class="c1">// to not change example code below</span>
+<span class="kt">int</span> <span class="nf">strcpy_s</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">src</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">sprintf_s</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">bufsz</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">format</span><span class="p">,</span> <span class="n">Args</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nf">sprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">format</span><span class="p">,</span> <span class="n">args</span><span class="p">...);</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Funtion that assigns a time code values to 5 variables passed as arguments</span>
+<span class="c1">// Requires an integer from the packet as the timecode and timecodeSubframe</span>
+<span class="kt">bool</span> <span class="n">DecodeTimecode</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">inTimecode</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">inTimecodeSubframe</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">hour</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">minute</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">second</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">frame</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">subframe</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">bValid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="o">*</span><span class="n">hour</span> <span class="o">=</span> <span class="p">(</span><span class="n">inTimecode</span><span class="o">&gt;&gt;</span><span class="mi">24</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">255</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">minute</span> <span class="o">=</span> <span class="p">(</span><span class="n">inTimecode</span><span class="o">&gt;&gt;</span><span class="mi">16</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">255</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">second</span> <span class="o">=</span> <span class="p">(</span><span class="n">inTimecode</span><span class="o">&gt;&gt;</span><span class="mi">8</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">255</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">frame</span> <span class="o">=</span> <span class="n">inTimecode</span><span class="o">&amp;</span><span class="mi">255</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">subframe</span> <span class="o">=</span> <span class="n">inTimecodeSubframe</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">bValid</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Takes timecode and assigns it to a string</span>
+<span class="kt">bool</span> <span class="n">TimecodeStringify</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">inTimecode</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">inTimecodeSubframe</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">Buffer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">BufferSize</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">bValid</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">subframe</span><span class="p">;</span>
+    <span class="n">bValid</span> <span class="o">=</span> <span class="n">DecodeTimecode</span><span class="p">(</span><span class="n">inTimecode</span><span class="p">,</span> <span class="n">inTimecodeSubframe</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hour</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">minute</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">second</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">subframe</span><span class="p">);</span>
+
+    <span class="n">sprintf_s</span><span class="p">(</span><span class="n">Buffer</span><span class="p">,</span><span class="n">BufferSize</span><span class="p">,</span><span class="s">&quot;%2d:%2d:%2d:%2d.%d&quot;</span><span class="p">,</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">subframe</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">strlen</span><span class="p">(</span><span class="n">Buffer</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">Buffer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39; &#39;</span><span class="p">)</span>
+            <span class="n">Buffer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">bValid</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">DecodeMarkerID</span><span class="p">(</span><span class="kt">int</span> <span class="n">sourceID</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">pOutEntityID</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">pOutMemberID</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pOutEntityID</span><span class="p">)</span>
+        <span class="o">*</span><span class="n">pOutEntityID</span> <span class="o">=</span> <span class="n">sourceID</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">pOutMemberID</span><span class="p">)</span>
+        <span class="o">*</span><span class="n">pOutMemberID</span> <span class="o">=</span> <span class="n">sourceID</span> <span class="o">&amp;</span> <span class="mh">0x0000ffff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// *********************************************************************</span>
+<span class="c1">//</span>
+<span class="c1">//  Unpack Data:</span>
+<span class="c1">//      Recieves pointer to bytes that represent a packet of data</span>
+<span class="c1">//</span>
+<span class="c1">//      There are lots of print statements that show what</span>
+<span class="c1">//      data is being stored</span>
+<span class="c1">//</span>
+<span class="c1">//      Most memcpy functions will assign the data to a variable.</span>
+<span class="c1">//      Use this variable at your descretion.</span>
+<span class="c1">//      Variables created for storing data do not exceed the</span>
+<span class="c1">//      scope of this function.</span>
+<span class="c1">//</span>
+<span class="c1">// *********************************************************************</span>
+<span class="kt">void</span> <span class="n">Unpack</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">pData</span><span class="p">,</span> <span class="kt">int</span> <span class="n">major</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minor</span><span class="p">,</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">NatNetFrame</span><span class="o">&amp;</span> <span class="n">natnet_data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Checks for NatNet Version number. Used later in function. Packets may be different depending on NatNet version.</span>
+<span class="c1">//    int major = NatNetVersion[0];</span>
+<span class="c1">//    int minor = NatNetVersion[1];</span>
+
+    <span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">pData</span><span class="p">;</span>
+
+<span class="c1">//    printf(&quot;Begin Packet\n-------\n&quot;);</span>
+    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;--------- Begin Packet -------&quot;</span><span class="p">);</span>
+
+    <span class="c1">// First 2 Bytes is message ID</span>
+    <span class="kt">int</span> <span class="n">MessageID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">MessageID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//    printf(&quot;Message ID : %d\n&quot;, MessageID);</span>
+    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Message ID : %d&quot;</span><span class="p">,</span> <span class="n">MessageID</span><span class="p">);</span>
+
+    <span class="c1">// Second 2 Bytes is the size of the packet</span>
+    <span class="kt">int</span> <span class="n">nBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nBytes</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//    printf(&quot;Byte count : %d\n&quot;, nBytes);</span>
+    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Byte count : %d&quot;</span><span class="p">,</span> <span class="n">nBytes</span><span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">MessageID</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span>      <span class="c1">// FRAME OF MOCAP DATA packet</span>
+    <span class="p">{</span>
+        <span class="c1">// Next 4 Bytes is the frame number</span>
+        <span class="kt">int</span> <span class="n">frameNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">frameNumber</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//        printf(&quot;Frame # : %d\n&quot;, frameNumber);</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Frame # : %d&quot;</span><span class="p">,</span> <span class="n">frameNumber</span><span class="p">);</span>
+        <span class="n">natnet_data</span><span class="p">.</span><span class="n">natnet_frame_number</span> <span class="o">=</span> <span class="n">frameNumber</span><span class="p">;</span>
+
+        <span class="c1">// Next 4 Bytes is the number of data sets (markersets, rigidbodies, etc)</span>
+        <span class="kt">int</span> <span class="n">nMarkerSets</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nMarkerSets</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//        printf(&quot;Marker Set Count : %d\n&quot;, nMarkerSets);</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Marker Set Count : %d&quot;</span><span class="p">,</span> <span class="n">nMarkerSets</span><span class="p">);</span>
+
+        <span class="c1">// Loop through number of marker sets and get name and data</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nMarkerSets</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Markerset name</span>
+            <span class="kt">char</span> <span class="n">szName</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+            <span class="n">strcpy_s</span><span class="p">(</span><span class="n">szName</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">nDataBytes</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">strlen</span><span class="p">(</span><span class="n">szName</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">ptr</span> <span class="o">+=</span> <span class="n">nDataBytes</span><span class="p">;</span>
+<span class="c1">//            printf(&quot;Model Name: %s\n&quot;, szName);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Model Name: %s&quot;</span><span class="p">,</span> <span class="n">szName</span><span class="p">);</span>
+
+            <span class="c1">// marker data</span>
+            <span class="kt">int</span> <span class="n">nMarkers</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nMarkers</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//            printf(&quot;Marker Count : %d\n&quot;, nMarkers);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Marker Count : %d&quot;</span><span class="p">,</span> <span class="n">nMarkers</span><span class="p">);</span>
+
+            <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">MarkerSet</span> <span class="n">marker_set</span><span class="p">;</span>
+            <span class="n">marker_set</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">szName</span><span class="p">;</span>
+            <span class="n">marker_set</span><span class="p">.</span><span class="n">n_markers</span> <span class="o">=</span> <span class="n">nMarkers</span><span class="p">;</span>
+
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nMarkers</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">y</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">z</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;\tMarker %d : [x=%3.2f,y=%3.2f,z=%3.2f]\n&quot;,j,x,y,z);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">Marker %d : [x=%3.2f,y=%3.2f,z=%3.2f] &quot;</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">);</span>
+<span class="c1">//                marker_set.markers.push_back(natnet_bridge::PointFloat32(x, y, z));</span>
+                <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">PointFloat32</span> <span class="n">pp</span><span class="p">;</span>
+                <span class="n">pp</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">pp</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>  <span class="n">pp</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+                <span class="n">marker_set</span><span class="p">.</span><span class="n">markers</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pp</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">natnet_data</span><span class="p">.</span><span class="n">marker_sets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">marker_set</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Loop through unidentified markers</span>
+        <span class="kt">int</span> <span class="n">nOtherMarkers</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nOtherMarkers</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="c1">// OtherMarker list is Deprecated</span>
+        <span class="c1">//printf(&quot;Unidentified Marker Count : %d\n&quot;, nOtherMarkers);</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Unidentified Marker Count : %d &quot;</span><span class="p">,</span> <span class="n">nOtherMarkers</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nOtherMarkers</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">y</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">z</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+
+            <span class="c1">// Deprecated</span>
+            <span class="c1">//printf(&quot;\tMarker %d : pos = [%3.2f,%3.2f,%3.2f]\n&quot;,j,x,y,z);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">Marker %d : pos = [%3.2f,%3.2f,%3.2f]&quot;</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">);</span>
+            <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">PointFloat32</span> <span class="n">marker</span><span class="p">;</span>
+            <span class="n">marker</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">marker</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span> <span class="n">marker</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+            <span class="n">natnet_data</span><span class="p">.</span><span class="n">unidentified_markers</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">marker</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Loop through rigidbodies</span>
+        <span class="kt">int</span> <span class="n">nRigidBodies</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nRigidBodies</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//        printf(&quot;Rigid Body Count : %d\n&quot;, nRigidBodies);</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Rigid Body Count : %d&quot;</span><span class="p">,</span> <span class="n">nRigidBodies</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nRigidBodies</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Rigid body position and orientation</span>
+            <span class="kt">int</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">y</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">z</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">qx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">qx</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">qy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">qy</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">qz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">qz</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">qw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">qw</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//            printf(&quot;ID : %d\n&quot;, ID);</span>
+<span class="c1">//            printf(&quot;pos: [%3.2f,%3.2f,%3.2f]\n&quot;, x,y,z);</span>
+<span class="c1">//            printf(&quot;ori: [%3.2f,%3.2f,%3.2f,%3.2f]\n&quot;, qx,qy,qz,qw);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;ID : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ID</span><span class="p">);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;pos: [%3.2f,%3.2f,%3.2f]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;ori: [%3.2f,%3.2f,%3.2f,%3.2f]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span><span class="n">qy</span><span class="p">,</span><span class="n">qz</span><span class="p">,</span><span class="n">qw</span><span class="p">);</span>
+            <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">RigidBody</span> <span class="n">rigid_body</span><span class="p">;</span>
+            <span class="n">rigid_body</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ID</span><span class="p">;</span>
+            <span class="n">rigid_body</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">rigid_body</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span> <span class="n">rigid_body</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+            <span class="n">rigid_body</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">qw</span><span class="p">;</span> <span class="n">rigid_body</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">qx</span><span class="p">;</span>
+            <span class="n">rigid_body</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">qy</span><span class="p">;</span> <span class="n">rigid_body</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">qz</span><span class="p">;</span>
+
+
+            <span class="c1">// NatNet version 2.0 and later</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// Mean marker error</span>
+                <span class="kt">float</span> <span class="n">fError</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fError</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;Mean marker error: %3.2f\n&quot;, fError);</span>
+
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Mean marker error: %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">fError</span><span class="p">);</span>
+                <span class="n">rigid_body</span><span class="p">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">fError</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">// NatNet version 2.6 and later</span>
+            <span class="k">if</span><span class="p">(</span> <span class="p">((</span><span class="n">major</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// params</span>
+                <span class="kt">short</span> <span class="n">params</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">params</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+                <span class="kt">bool</span> <span class="n">bTrackingValid</span> <span class="o">=</span> <span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x01</span><span class="p">;</span> <span class="c1">// 0x01 : rigid body was successfully tracked in this frame</span>
+
+                <span class="n">rigid_body</span><span class="p">.</span><span class="n">track_valid</span> <span class="o">=</span> <span class="n">bTrackingValid</span><span class="p">;</span>
+                <span class="n">ROS_DEBUG_STREAM</span><span class="p">(</span><span class="s">&quot;track valid  &quot;</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">bTrackingValid</span> <span class="o">?</span> <span class="s">&quot;true&quot;</span><span class="o">:</span> <span class="s">&quot;false&quot;</span><span class="p">)</span> <span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">natnet_data</span><span class="p">.</span><span class="n">rigid_bodies</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">rigid_body</span><span class="p">);</span>
+
+        <span class="p">}</span> <span class="c1">// Go to next rigid body</span>
+
+
+        <span class="c1">// Skeletons (NatNet version 2.1 and later)</span>
+        <span class="k">if</span><span class="p">(</span> <span class="p">((</span><span class="n">major</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">minor</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">nSkeletons</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nSkeletons</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//            printf(&quot;Skeleton Count : %d\n&quot;, nSkeletons);</span>
+
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Skeleton Count : %d &quot;</span><span class="p">,</span> <span class="n">nSkeletons</span><span class="p">);</span>
+
+            <span class="c1">// Loop through skeletons</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nSkeletons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// skeleton id</span>
+                <span class="kt">int</span> <span class="n">skeletonID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">skeletonID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+
+                <span class="c1">// Number of rigid bodies (bones) in skeleton</span>
+                <span class="kt">int</span> <span class="n">nRigidBodies</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nRigidBodies</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;Rigid Body Count : %d\n&quot;, nRigidBodies);</span>
+
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Skeleton ID %d Rigid Body Count : %d &quot;</span><span class="p">,</span> <span class="n">skeletonID</span><span class="p">,</span> <span class="n">nRigidBodies</span><span class="p">);</span>
+
+                <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">Skeleton</span> <span class="n">skeleton</span><span class="p">;</span>
+                <span class="n">skeleton</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">skeletonID</span><span class="p">;</span> <span class="n">skeleton</span><span class="p">.</span><span class="n">n_rigid_bodies</span> <span class="o">=</span> <span class="n">nRigidBodies</span><span class="p">;</span>
+
+                <span class="c1">// Loop through rigid bodies (bones) in skeleton</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nRigidBodies</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="c1">// Rigid body position and orientation</span>
+                    <span class="kt">int</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">y</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">z</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="kt">float</span> <span class="n">qx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">qx</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="kt">float</span> <span class="n">qy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">qy</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="kt">float</span> <span class="n">qz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">qz</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="kt">float</span> <span class="n">qw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">qw</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                    printf(&quot;ID : %d\n&quot;, ID);</span>
+<span class="c1">//                    printf(&quot;pos: [%3.2f,%3.2f,%3.2f]\n&quot;, x,y,z);</span>
+<span class="c1">//                    printf(&quot;ori: [%3.2f,%3.2f,%3.2f,%3.2f]\n&quot;, qx,qy,qz,qw);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;ID : %d&quot;</span><span class="p">,</span> <span class="n">ID</span><span class="p">);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;pos: [%3.2f,%3.2f,%3.2f]&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;ori: [%3.2f,%3.2f,%3.2f,%3.2f]&quot;</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span><span class="n">qy</span><span class="p">,</span><span class="n">qz</span><span class="p">,</span><span class="n">qw</span><span class="p">);</span>
+
+                    <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">RigidBody</span> <span class="n">rigid_body_ske</span><span class="p">;</span>
+                    <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ID</span><span class="p">;</span>
+                    <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+                    <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+                    <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">qx</span><span class="p">;</span> <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">qy</span><span class="p">;</span>
+                    <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">qz</span><span class="p">;</span> <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">qw</span><span class="p">;</span>
+
+                    <span class="c1">// Mean marker error (NatNet version 2.0 and later)</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="kt">float</span> <span class="n">fError</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fError</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                        printf(&quot;Mean marker error: %3.2f\n&quot;, fError);</span>
+
+                        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Mean marker error: %3.2f&quot;</span><span class="p">,</span> <span class="n">fError</span><span class="p">);</span>
+                        <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">fError</span><span class="p">;</span>
+                    <span class="p">}</span>
+
+                    <span class="c1">// Tracking flags (NatNet version 2.6 and later)</span>
+                    <span class="k">if</span><span class="p">(</span> <span class="p">((</span><span class="n">major</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="c1">// params</span>
+                        <span class="kt">short</span> <span class="n">params</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">params</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+                        <span class="kt">bool</span> <span class="n">bTrackingValid</span> <span class="o">=</span> <span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x01</span><span class="p">;</span> <span class="c1">// 0x01 : rigid body was successfully tracked in this frame</span>
+
+                        <span class="n">ROS_DEBUG_STREAM</span><span class="p">(</span><span class="s">&quot;track valid &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">bTrackingValid</span> <span class="o">?</span> <span class="s">&quot;true&quot;</span> <span class="o">:</span> <span class="s">&quot;false&quot;</span><span class="p">));</span>
+                        <span class="n">rigid_body_ske</span><span class="p">.</span><span class="n">track_valid</span> <span class="o">=</span> <span class="n">bTrackingValid</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="n">skeleton</span><span class="p">.</span><span class="n">rigid_bodies</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">rigid_body_ske</span><span class="p">);</span>
+
+                <span class="p">}</span> <span class="c1">// next rigid body</span>
+                <span class="n">natnet_data</span><span class="p">.</span><span class="n">skeletons</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">skeleton</span><span class="p">);</span>
+            <span class="p">}</span> <span class="c1">// next skeleton</span>
+        <span class="p">}</span>
+
+        <span class="c1">// labeled markers (NatNet version 2.3 and later)</span>
+        <span class="c1">// labeled markers - this includes all markers: Active, Passive, and &#39;unlabeled&#39; (markers with no asset but a PointCloud ID)</span>
+        <span class="k">if</span><span class="p">(</span> <span class="p">((</span><span class="n">major</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">minor</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">nLabeledMarkers</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nLabeledMarkers</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//            printf(&quot;Labeled Marker Count : %d\n&quot;, nLabeledMarkers);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Labeled Marker Count : %d &quot;</span><span class="p">,</span> <span class="n">nLabeledMarkers</span><span class="p">);</span>
+
+            <span class="c1">// Loop through labeled markers</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nLabeledMarkers</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// id</span>
+                <span class="c1">// Marker ID Scheme:</span>
+                <span class="c1">// Active Markers:</span>
+                <span class="c1">//   ID = ActiveID, correlates to RB ActiveLabels list</span>
+                <span class="c1">// Passive Markers:</span>
+                <span class="c1">//   If Asset with Legacy Labels</span>
+                <span class="c1">//      AssetID     (Hi Word)</span>
+                <span class="c1">//      MemberID    (Lo Word)</span>
+                <span class="c1">//   Else</span>
+                <span class="c1">//      PointCloud ID</span>
+                <span class="kt">int</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">modelID</span><span class="p">,</span> <span class="n">markerID</span><span class="p">;</span>
+                <span class="n">DecodeMarkerID</span><span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">modelID</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">markerID</span><span class="p">);</span>
+
+
+                <span class="c1">// x</span>
+                <span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="c1">// y</span>
+                <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">y</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="c1">// z</span>
+                <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">z</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="c1">// size</span>
+                <span class="kt">float</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">size</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+
+                <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">LabeledMarker</span> <span class="n">l_marker</span><span class="p">;</span>
+                <span class="n">l_marker</span><span class="p">.</span><span class="n">b_unlabeled</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// again ensure default is unlabeled marker</span>
+
+                <span class="c1">// NatNet version 2.6 and later</span>
+                <span class="k">if</span><span class="p">(</span> <span class="p">((</span><span class="n">major</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="c1">// marker params</span>
+                    <span class="kt">short</span> <span class="n">params</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">params</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+                    <span class="kt">bool</span> <span class="n">bOccluded</span> <span class="o">=</span> <span class="p">(</span><span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x01</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>     <span class="c1">// marker was not visible (occluded) in this frame</span>
+                    <span class="kt">bool</span> <span class="n">bPCSolved</span> <span class="o">=</span> <span class="p">(</span><span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x02</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>     <span class="c1">// position provided by point cloud solve</span>
+                    <span class="kt">bool</span> <span class="n">bModelSolved</span> <span class="o">=</span> <span class="p">(</span><span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x04</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// position provided by model solve</span>
+                    <span class="n">l_marker</span><span class="p">.</span><span class="n">b_occluded</span> <span class="o">=</span> <span class="n">bOccluded</span><span class="p">;</span> <span class="n">l_marker</span><span class="p">.</span><span class="n">b_pc_solved</span> <span class="o">=</span> <span class="n">bPCSolved</span><span class="p">;</span>
+                    <span class="n">l_marker</span><span class="p">.</span><span class="n">b_model_solved</span><span class="o">=</span><span class="n">bModelSolved</span><span class="p">;</span>
+                    <span class="k">if</span> <span class="p">((</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+                    <span class="p">{</span>
+                        <span class="kt">bool</span> <span class="n">bHasModel</span> <span class="o">=</span> <span class="p">(</span><span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x08</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>     <span class="c1">// marker has an associated asset in the data stream</span>
+                        <span class="kt">bool</span> <span class="n">bUnlabeled</span> <span class="o">=</span> <span class="p">(</span><span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x10</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>    <span class="c1">// marker is &#39;unlabeled&#39;, but has a point cloud ID</span>
+                        <span class="kt">bool</span> <span class="n">bActiveMarker</span> <span class="o">=</span> <span class="p">(</span><span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x20</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// marker is an actively labeled LED marker</span>
+                        <span class="n">l_marker</span><span class="p">.</span><span class="n">b_has_model</span> <span class="o">=</span> <span class="n">bHasModel</span><span class="p">;</span> <span class="n">l_marker</span><span class="p">.</span><span class="n">b_unlabeled</span> <span class="o">=</span> <span class="n">bUnlabeled</span><span class="p">;</span>
+                        <span class="n">l_marker</span><span class="p">.</span><span class="n">b_activeMarker</span> <span class="o">=</span> <span class="n">bActiveMarker</span><span class="p">;</span>
+                    <span class="p">}</span>
+
+                <span class="p">}</span>
+
+                <span class="c1">// NatNet version 3.0 and later</span>
+                <span class="kt">float</span> <span class="n">residual</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="c1">// Marker residual</span>
+                    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">residual</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="p">}</span>
+
+<span class="c1">//                printf(&quot;ID  : [MarkerID: %d] [ModelID: %d]\n&quot;, markerID, modelID);</span>
+<span class="c1">//                printf(&quot;pos : [%3.2f,%3.2f,%3.2f]\n&quot;, x,y,z);</span>
+<span class="c1">//                printf(&quot;size: [%3.2f]\n&quot;, size);</span>
+<span class="c1">//                printf(&quot;err:  [%3.2f]\n&quot;, residual);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;ID  : [MarkerID: %d] [ModelID: %d]&quot;</span><span class="p">,</span> <span class="n">markerID</span><span class="p">,</span> <span class="n">modelID</span><span class="p">);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;pos : [%3.2f,%3.2f,%3.2f]&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;size: [%3.2f]&quot;</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;err:  [%3.2f]&quot;</span><span class="p">,</span> <span class="n">residual</span><span class="p">);</span>
+                <span class="n">l_marker</span><span class="p">.</span><span class="n">marker_id</span> <span class="o">=</span> <span class="n">markerID</span><span class="p">;</span> <span class="n">l_marker</span><span class="p">.</span><span class="n">model_id</span> <span class="o">=</span> <span class="n">modelID</span><span class="p">;</span>
+                <span class="n">l_marker</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">l_marker</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span> <span class="n">l_marker</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+                <span class="n">l_marker</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span> <span class="n">l_marker</span><span class="p">.</span><span class="n">residual</span> <span class="o">=</span> <span class="n">residual</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">l_marker</span><span class="p">.</span><span class="n">b_unlabeled</span><span class="p">)</span>
+                    <span class="n">natnet_data</span><span class="p">.</span><span class="n">labeled_markers</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">l_marker</span><span class="p">);</span>
+                <span class="k">else</span>
+                    <span class="n">natnet_data</span><span class="p">.</span><span class="n">unlabeled_markers</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">l_marker</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Not need to parse since it doesn&#39;t send for IAS</span>
+        <span class="c1">// Force Plate data (NatNet version 2.9 and later)</span>
+        <span class="k">if</span> <span class="p">(((</span><span class="n">major</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">9</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">nForcePlates</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nForcePlates</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">iForcePlate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">iForcePlate</span> <span class="o">&lt;</span> <span class="n">nForcePlates</span><span class="p">;</span> <span class="n">iForcePlate</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// ID</span>
+                <span class="kt">int</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Force Plate : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ID</span><span class="p">);</span>
+
+                <span class="c1">// Channel Count</span>
+                <span class="kt">int</span> <span class="n">nChannels</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nChannels</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+
+                <span class="c1">// Channel Data</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nChannels</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">printf</span><span class="p">(</span><span class="s">&quot; Channel %d : &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                    <span class="kt">int</span> <span class="n">nFrames</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nFrames</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nFrames</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="kt">float</span> <span class="n">val</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>  <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">val</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3.2f   &quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Not need to parse since it doesn&#39;t send for IAS</span>
+        <span class="c1">// Device data (NatNet version 3.0 and later)</span>
+        <span class="k">if</span> <span class="p">(((</span><span class="n">major</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">nDevices</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nDevices</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">iDevice</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">iDevice</span> <span class="o">&lt;</span> <span class="n">nDevices</span><span class="p">;</span> <span class="n">iDevice</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// ID</span>
+                <span class="kt">int</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Device : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ID</span><span class="p">);</span>
+
+                <span class="c1">// Channel Count</span>
+                <span class="kt">int</span> <span class="n">nChannels</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nChannels</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+
+                <span class="c1">// Channel Data</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nChannels</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">printf</span><span class="p">(</span><span class="s">&quot; Channel %d : &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                    <span class="kt">int</span> <span class="n">nFrames</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nFrames</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nFrames</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="kt">float</span> <span class="n">val</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>  <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">val</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3.2f   &quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// software latency (removed in version 3.0)</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">major</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">float</span> <span class="n">softwareLatency</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">softwareLatency</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//            printf(&quot;software latency : %3.3f\n&quot;, softwareLatency);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;software latency : %3.3f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">softwareLatency</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// timecode</span>
+        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">timecode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timecode</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>  <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">timecodeSub</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timecodeSub</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">szTimecode</span><span class="p">[</span><span class="mi">128</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+        <span class="n">TimecodeStringify</span><span class="p">(</span><span class="n">timecode</span><span class="p">,</span> <span class="n">timecodeSub</span><span class="p">,</span> <span class="n">szTimecode</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
+
+        <span class="c1">// timestamp</span>
+        <span class="kt">double</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>
+
+        <span class="c1">// NatNet version 2.7 and later - increased from single to double precision</span>
+        <span class="k">if</span><span class="p">(</span> <span class="p">((</span><span class="n">major</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">minor</span><span class="o">&gt;=</span><span class="mi">7</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">8</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="kt">float</span> <span class="n">fTemp</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fTemp</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="n">timestamp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">fTemp</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="c1">//        printf(&quot;Timestamp : %3.3f\n&quot;, timestamp);</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Timestamp : %3.3f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">);</span>
+
+        <span class="c1">// high res timestamps (version 3.0 and later)</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">major</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">uint64_t</span> <span class="n">cameraMidExposureTimestamp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">cameraMidExposureTimestamp</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">8</span> <span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="c1">//            printf( &quot;Mid-exposure timestamp : %&quot; PRIu64&quot;\n&quot;, cameraMidExposureTimestamp );</span>
+
+            <span class="kt">uint64_t</span> <span class="n">cameraDataReceivedTimestamp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">cameraDataReceivedTimestamp</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">8</span> <span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="c1">//            printf( &quot;Camera data received timestamp : %&quot; PRIu64&quot;\n&quot;, cameraDataReceivedTimestamp );</span>
+
+            <span class="kt">uint64_t</span> <span class="n">transmitTimestamp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">transmitTimestamp</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">8</span> <span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="c1">//            printf( &quot;Transmit timestamp : %&quot; PRIu64&quot;\n&quot;, transmitTimestamp );</span>
+
+            <span class="n">ROS_DEBUG</span><span class="p">(</span> <span class="s">&quot;Mid-exposure timestamp : %&quot;</span> <span class="n">PRIu64</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">cameraMidExposureTimestamp</span> <span class="p">);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span> <span class="s">&quot;Camera data received timestamp : %&quot;</span> <span class="n">PRIu64</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">cameraDataReceivedTimestamp</span> <span class="p">);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span> <span class="s">&quot;Transmit timestamp : %&quot;</span> <span class="n">PRIu64</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">transmitTimestamp</span> <span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// frame params</span>
+        <span class="kt">short</span> <span class="n">params</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">params</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">bIsRecording</span> <span class="o">=</span> <span class="p">(</span><span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x01</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>                  <span class="c1">// 0x01 Motive is recording</span>
+        <span class="kt">bool</span> <span class="n">bTrackedModelsChanged</span> <span class="o">=</span> <span class="p">(</span><span class="n">params</span> <span class="o">&amp;</span> <span class="mh">0x02</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// 0x02 Actively tracked model list has changed</span>
+
+
+        <span class="c1">// end of data tag</span>
+        <span class="kt">int</span> <span class="n">eod</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">eod</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;-----------------End Packet-------------&quot;</span><span class="p">);</span>
+
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">ROS_WARN</span><span class="p">(</span><span class="s">&quot;Unrecognized Packet Type. Message ID: %d&quot;</span><span class="p">,</span> <span class="n">MessageID</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Zhiyuan Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

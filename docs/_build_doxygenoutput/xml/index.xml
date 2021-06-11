@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="structnatnet__bridge_1_1____attribute____" kind="struct"><name>natnet_bridge::__attribute__</name>
+    <member refid="structnatnet__bridge_1_1____attribute_____1a85dae189018ad7f961fd8610e32ea853" kind="variable"><name>szName</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1a146ce1225d5c09f4e45e215eb7f4db8b" kind="variable"><name>Version</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1a0cbc0b60c9bc6dd3f4e2c6691c35fc63" kind="variable"><name>NatNetVersion</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1ad00c46648bb505736b40a36b8434a24d" kind="variable"><name>iMessage</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1a9db4097482e8070c26e2f38319169f0a" kind="variable"><name>nDataBytes</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1a8b331d1018e67c70c4eb6a67e5c05150" kind="variable"><name>cData</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1a725ef30a7bd0583e73da931dbfb2e6af" kind="variable"><name>szData</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1ad0268d12dfe56593fd10a4fe81ab9829" kind="variable"><name>lData</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1a1b6622903299959768d94e0f8e56cba8" kind="variable"><name>fData</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1afe6cf211cb0b081c9507530d1f53ad10" kind="variable"><name>Sender</name></member>
+    <member refid="structnatnet__bridge_1_1____attribute_____1a7bc841f3230a920fc4c5d34699395cbd" kind="variable"><name>Data</name></member>
+  </compound>
+  <compound refid="classnatnet__bridge_1_1NatNetBridge" kind="class"><name>natnet_bridge::NatNetBridge</name>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a81a73f761eb14c3baa91cc5bce1a8e2c" kind="variable"><name>p_nh</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a4364d61580e84177968bbe3fe3894166" kind="variable"><name>server_version</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1accbdebf241a0576842fa37ce8131cde9" kind="variable"><name>natnet_version</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a06d3d8264d4a3da2d3511885d0b1c1fa" kind="variable"><name>use_2d_bool</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1aea8f96fdca2ef50d3fdbec5e69195a36" kind="variable"><name>use_2d_plane_height</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a33d210d29bac102e9b27d382b33a1fb4" kind="variable"><name>tf_filter_invalid_2d</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a49a8c784ccc454e91b0ca2b5a764e647" kind="variable"><name>tf_filter_invalid_3d</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1ac32876aa3b1355ec4746e2d27f7f3a9a" kind="variable"><name>publish_unidentified</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a8b902e75198119612274eb3dbbf81478" kind="variable"><name>publish_skeleton</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a45f94315315b102bb93014744d56bfe4" kind="variable"><name>publish_rigid_body</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1abb2d595996ff09fc94549132ea736e18" kind="variable"><name>publish_marker_assets</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a811e9da891409c3f4fe470d0bcfeedaa" kind="variable"><name>publish_labeled_marker</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1af0ac570cb4c8fce87b775c8607a8642a" kind="variable"><name>publish_unlabeled_marker</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1ad0cffaf52ef0cf10090d69545677984c" kind="variable"><name>tf_world_frame</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1abdbc5f0e7bfaab86df68a1aeba26ae2f" kind="variable"><name>tf_optitrack_frame</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a143a23125e6ad7edd4a3c3324a9bd4b3" kind="variable"><name>optitrack_coordinate</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1abd43970079092f684fc1111765d6baff" kind="variable"><name>multicast_ip_address</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a93e8f971242233d0b2cf427db978f45d" kind="variable"><name>command_port</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a3dce0db23555c57c9a103571dcc7962e" kind="variable"><name>data_port</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1ae5873dded907e6fe0876311ac7a94152" kind="variable"><name>multicastClientSocketPtr</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1ab4d55ee87da03af88dd88ebc0891e05e" kind="variable"><name>natnet_frame_publisher</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a6eb8ee0bd2fc9b7325e25d4104128607" kind="variable"><name>tfPublisher</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1aefe157199878fee48e2601aa48c65738" kind="function"><name>NatNetBridge</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a96d39f8fa00c42ad1ceb047794dcfa15" kind="function"><name>re_init_natnet</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a301a430bfc03eda4e44f14cbfcd77638" kind="function"><name>re_init_publish</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1ae9b4e7466d4992af562b5a07e7def3f2" kind="function"><name>connect_server</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a6b2eac572d3866cd4d70d6e73849c924" kind="function"><name>receive_data</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a599da7d047ad76f3c95044ddc61efac1" kind="function"><name>publish_rigid_2d_tf</name></member>
+    <member refid="classnatnet__bridge_1_1NatNetBridge_1a741fe13f7e164d154bcd2fe790dfd143" kind="function"><name>publish_rigid_3d_tf</name></member>
+  </compound>
+  <compound refid="classNatnetDynReconfigure" kind="class"><name>NatnetDynReconfigure</name>
+    <member refid="classNatnetDynReconfigure_1a508f8ed1179a1fedcb6b709a2c4e9b18" kind="variable"><name>dyn_config</name></member>
+    <member refid="classNatnetDynReconfigure_1a52a3407f0b4a3b6ae4dd640169b3f161" kind="variable"><name>reset_reconfigured</name></member>
+    <member refid="classNatnetDynReconfigure_1a906a3bbb3fed5c1af1899aa4f346c5b1" kind="variable"><name>publish_reconfigured</name></member>
+    <member refid="classNatnetDynReconfigure_1aefbebf1625084bb081af8a2191782578" kind="function"><name>NatnetDynReconfigure</name></member>
+    <member refid="classNatnetDynReconfigure_1a7fc08ab3bf88082f48b1d15ce6d79375" kind="function"><name>dyn_reconfigure_cb</name></member>
+    <member refid="classNatnetDynReconfigure_1ad0008819ddf867a3d728d12f0723a1d1" kind="function"><name>reconfigure_responded</name></member>
+  </compound>
+  <compound refid="classSocketException" kind="class"><name>SocketException</name>
+    <member refid="classSocketException_1ae53b08d668ce545418c843da2872571f" kind="function"><name>SocketException</name></member>
+    <member refid="classSocketException_1a659557c899329aea01977c980c4db9b9" kind="function"><name>~SocketException</name></member>
+  </compound>
+  <compound refid="classUdpMulticastSocket" kind="class"><name>UdpMulticastSocket</name>
+    <member refid="classUdpMulticastSocket_1ac5d9a1d34112e9e6a49aaac7038035d8" kind="variable"><name>MAXRECV</name></member>
+    <member refid="classUdpMulticastSocket_1a32bca4420a1d935ac2e8c5d291d3bbf2" kind="variable"><name>m_socket</name></member>
+    <member refid="classUdpMulticastSocket_1ac698ef1a545e70f5fdc5326029175124" kind="variable"><name>m_local_addr</name></member>
+    <member refid="classUdpMulticastSocket_1ace043265729c5d81cfad909e7e62bc61" kind="variable"><name>HostAddr</name></member>
+    <member refid="classUdpMulticastSocket_1a9a97849cb8b384e358810966bac75f12" kind="variable"><name>remote_ip_exist</name></member>
+    <member refid="classUdpMulticastSocket_1a3fbd50322dced663dd75a8af74739f13" kind="variable"><name>buf</name></member>
+    <member refid="classUdpMulticastSocket_1ae2c964bc47ae5053c0a4053fbe5bdcb3" kind="function"><name>UdpMulticastSocket</name></member>
+    <member refid="classUdpMulticastSocket_1a0e64ebc7bfda84e521766885f2ca9727" kind="function"><name>~UdpMulticastSocket</name></member>
+    <member refid="classUdpMulticastSocket_1a5584c3d0d9501c72957a417240f6cb31" kind="function"><name>recv</name></member>
+    <member refid="classUdpMulticastSocket_1ab2a9c5fed0a7b21b7943c76f29091236" kind="function"><name>getBuffer</name></member>
+    <member refid="classUdpMulticastSocket_1a2a8082d349529fad7040c907b2e630e6" kind="function"><name>send</name></member>
+  </compound>
+  <compound refid="classnatnet__bridge_1_1Version" kind="class"><name>natnet_bridge::Version</name>
+    <member refid="classnatnet__bridge_1_1Version_1a2b4cf885bccb14f6a91eb25d4314178d" kind="variable"><name>v_major</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a9900bd9b343a5fbde2f40786a0bab21b" kind="variable"><name>v_minor</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a4d774e9673428df65820109d03163f87" kind="variable"><name>v_revision</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a2a571b7a60284c0097b755e6604a593f" kind="variable"><name>v_build</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a80c959078509e2c27a382bea1204e941" kind="variable"><name>v_string</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1aa012068fb238b5a4ad12a690c4911d9f" kind="function"><name>Version</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a6bd44c553b50174b4ee7facd3582a464" kind="function"><name>Version</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1aa971b04569ae22e9555cb6bc8cc2ab8c" kind="function"><name>Version</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a5d1ac734f2bb49506ae582bca83c670d" kind="function"><name>~Version</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1ad71ed18083e523f96940af1e64839249" kind="function"><name>setVersion</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a2d0e4e32529ca6e3f401bb5fbf3ab48e" kind="function"><name>getVersionString</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a64d4d994959b331a920a9ad14d99a483" kind="function"><name>operator&gt;</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a4868aa96b93a639c14977c7e43cfaae0" kind="function"><name>operator&gt;=</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1aa4815afa4a37f8545c1f5a6164367550" kind="function"><name>operator&lt;</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1a7908b5d47998904d29275baa326a13fd" kind="function"><name>operator&lt;=</name></member>
+    <member refid="classnatnet__bridge_1_1Version_1acae984a67e6767260f3605abfeb6a427" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="namespacenatnet__bridge" kind="namespace"><name>natnet_bridge</name>
+    <member refid="namespacenatnet__bridge_1aae2b411d513b8d52aeec34e4a3ecde64" kind="typedef"><name>MessageBuffer</name></member>
+    <member refid="namespacenatnet__bridge_1afec92c2de51f4b49c6d13bdf9161bda9" kind="function"><name>server_info_parser</name></member>
+    <member refid="namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b" kind="function"><name>buildConnectPacket</name></member>
+    <member refid="namespacenatnet__bridge_1adfff94168324ba87d569569feadeec73" kind="function"><name>Unpack</name></member>
+    <member refid="namespacenatnet__bridge_1a4675a5e84e93eaec00776153641be89b" kind="function"><name>strcpy_s</name></member>
+    <member refid="namespacenatnet__bridge_1a715104ccb4689ee21a5c67cb226a09aa" kind="function"><name>sprintf_s</name></member>
+    <member refid="namespacenatnet__bridge_1a7d45052550fdf43c478b5a32775ae8c2" kind="function"><name>DecodeTimecode</name></member>
+    <member refid="namespacenatnet__bridge_1a030f578de4dba15ffc8bf1f8e5e166f9" kind="function"><name>TimecodeStringify</name></member>
+    <member refid="namespacenatnet__bridge_1a7964729af44f528fdb5ca019d7f70fc6" kind="function"><name>DecodeMarkerID</name></member>
+  </compound>
+  <compound refid="namespacenatnet__config" kind="namespace"><name>natnet_config</name>
+  </compound>
+  <compound refid="namespacenatnet__config_1_1MessageType" kind="namespace"><name>natnet_config::MessageType</name>
+    <member refid="namespacenatnet__config_1_1MessageType_1addf7f6603c9448989c7154972bc40510" kind="variable"><name>Connect</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1ae466c6c47d968b5cba0fe5147d4cbd5f" kind="variable"><name>ServerInfo</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1a981b21eba788865ada4047fa08269fc7" kind="variable"><name>Request</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1ab00d95940fc50b60fb8050afa6a3e02c" kind="variable"><name>Response</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1ace9a7511ce2b537511f8385a364e844e" kind="variable"><name>RequestModelDef</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1a57d62b3096296ccd6020497c3bb4ae05" kind="variable"><name>ModelDef</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1a5164001447abadc2db3b1b87829b8f69" kind="variable"><name>RequestFrameOfData</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1acdccc1c5a0388cefe1ce44b8a2fb767e" kind="variable"><name>FrameOfData</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1a419ea6c02c29802769320233dbbc4b9c" kind="variable"><name>MessageString</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1a20f0e9b0ce91869f2138efe9f333b860" kind="variable"><name>UnrecognizedRequest</name></member>
+    <member refid="namespacenatnet__config_1_1MessageType_1a3c3fe9d878c9880194f7f848c1de420d" kind="variable"><name>Undefined</name></member>
+  </compound>
+  <compound refid="natnet__config_8h" kind="file"><name>natnet_config.h</name>
+  </compound>
+  <compound refid="natnet__definition_8h" kind="file"><name>natnet_definition.h</name>
+    <member refid="natnet__definition_8h_1a779a77bbfe15b945b946a2e52b27ff33" kind="define"><name>MAX_NAMELENGTH</name></member>
+    <member refid="natnet__definition_8h_1ac53b290f46325f25340a4b1cb0f3271b" kind="define"><name>MAX_PACKETSIZE</name></member>
+  </compound>
+  <compound refid="socket_8h" kind="file"><name>socket.h</name>
+  </compound>
+  <compound refid="natnet__bridge_8h" kind="file"><name>natnet_bridge.h</name>
+  </compound>
+  <compound refid="server__parser_8h" kind="file"><name>server_parser.h</name>
+  </compound>
+  <compound refid="unpack_8h" kind="file"><name>unpack.h</name>
+  </compound>
+  <compound refid="version_8h" kind="file"><name>version.h</name>
+  </compound>
+  <compound refid="natnet__bridge_8cpp" kind="file"><name>natnet_bridge.cpp</name>
+  </compound>
+  <compound refid="optitrack__node_8cpp" kind="file"><name>optitrack_node.cpp</name>
+    <member refid="optitrack__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="server__parser_8cpp" kind="file"><name>server_parser.cpp</name>
+  </compound>
+  <compound refid="socket_8cpp" kind="file"><name>socket.cpp</name>
+  </compound>
+  <compound refid="unpack_8cpp" kind="file"><name>unpack.cpp</name>
+    <member refid="unpack_8cpp_1a779a77bbfe15b945b946a2e52b27ff33" kind="define"><name>MAX_NAMELENGTH</name></member>
+  </compound>
+  <compound refid="version_8cpp" kind="file"><name>version.cpp</name>
+  </compound>
+  <compound refid="dir_9c87bbbe2fc5a97616a3afd3a599632a" kind="dir"><name>natnet_bridge/include</name>
+  </compound>
+  <compound refid="dir_b2853f578466135f992b7d724be5eecd" kind="dir"><name>natnet_bridge/include/natnet</name>
+  </compound>
+  <compound refid="dir_2a46c20a62b069cf78a5ef8ae178329b" kind="dir"><name>natnet_bridge/include/natnet_bridge</name>
+  </compound>
+  <compound refid="dir_f6a3e07e2b28f5136aec888cc02cdb8f" kind="dir"><name>natnet_bridge</name>
+  </compound>
+  <compound refid="dir_d7e34a12cb2b0431ce9654bcea62fa70" kind="dir"><name>natnet_bridge/src</name>
+  </compound>
+</doxygenindex>

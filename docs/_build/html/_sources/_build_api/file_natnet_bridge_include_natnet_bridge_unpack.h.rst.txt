@@ -1,0 +1,52 @@
+
+.. _file_natnet_bridge_include_natnet_bridge_unpack.h:
+
+File unpack.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_natnet_bridge_include_natnet_bridge>` (``natnet_bridge/include/natnet_bridge``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``natnet_bridge/include/natnet_bridge/unpack.h``)
+-------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_natnet_bridge_include_natnet_bridge_unpack.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``natnet_bridge/NatNetFrame.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_natnet_bridge_src_natnet_bridge.cpp`
+
+- :ref:`file_natnet_bridge_src_unpack.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_natnet_bridge`
+
