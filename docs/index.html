@@ -92,7 +92,6 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/01_other_details.html">Some details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/05_msg_def.html">NatNet Message definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/08.Other%20Resources.html">Other Resources</a></li>
@@ -169,8 +168,31 @@
             
   <div class="section" id="welcome-to-natnet-bridge-s-documentation">
 <h1>Welcome to natnet_bridge’s documentation!<a class="headerlink" href="#welcome-to-natnet-bridge-s-documentation" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>Clone the repo into <code class="docutils literal notranslate"><span class="pre">ROS_Workspace</span></code>, and run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">catkin_make</span></code>.</p>
+<div class="section" id="project-structure">
+<h2>Project Structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Project</span>
+<span class="o">|---</span><span class="n">natnet_bridg</span>\
+<span class="o">|</span>    <span class="o">|</span>       <span class="n">src</span>\
+<span class="o">|</span>    <span class="o">|</span>       <span class="n">include</span>\
+<span class="o">|</span>    <span class="o">|</span>       <span class="o">...</span>\
+<span class="o">|--</span><span class="n">optitrack_bridge</span>\
+<span class="o">|---</span><span class="n">reference</span>
+<span class="o">|</span>    <span class="o">|</span>       <span class="n">CATKIN_IGNORE</span>  <span class="c1"># This is to ignore the packages in this folder</span>
+<span class="o">|</span>    <span class="o">|</span>       <span class="n">optitrack_bridge</span>\
+<span class="o">|</span>    <span class="o">|</span>   <span class="n">natnet_sdk</span>\
+<span class="o">|</span>    <span class="o">|</span>   <span class="n">NatNetSDKCrossplatform</span><span class="o">-</span><span class="n">master</span>\ <span class="c1"># this is Linux version of NatNetSDK &#39;Packet Client example&#39; in github</span>
+<span class="o">|</span>    <span class="o">|</span>       <span class="n">mocap_optitrack</span><span class="o">-</span><span class="n">master</span>\  <span class="c1"># widely used third party Optitrack-ROS bridge</span>
+<span class="o">|</span>    <span class="o">|</span>       <span class="n">PacketClient</span>\  <span class="c1"># windows SDK</span>
+<span class="o">|</span>    <span class="o">|</span>       <span class="n">PythonClient</span>\  <span class="c1"># windows SDK</span>
+<span class="o">|---</span><span class="n">docs</span>\
+<span class="o">|---...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="quick-start-for-natnet-bridge">
+<h1>Quick start for natnet_bridge<a class="headerlink" href="#quick-start-for-natnet-bridge" title="Permalink to this headline">¶</a></h1>
+<p>Clone the repo into <code class="docutils literal notranslate"><span class="pre">ROS_Workspace</span></code>, and run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">catkin_make</span></code>.</p>
 <dl>
 <dt><strong>1. Configuring Motive</strong></dt><dd><p>Open the <a class="reference external" href="https://v22.wiki.optitrack.com/index.php?title=Data_Streaming_Pane">Data Streaming Pane</a>
 in Motive by clicking on <code class="docutils literal notranslate"><span class="pre">View-&gt;Data</span> <span class="pre">Streaming</span></code>.
@@ -210,8 +232,13 @@ running.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch natnet_bridge natnet_bridge.launch launch_reconfigure:=true
 </pre></div>
 </div>
+<div class="figure align-default">
+<img alt="_images/dyn_conf.png" src="_images/dyn_conf.png" />
+</div>
 </dd>
 </dl>
+<div class="section" id="comparison-with-prior-optitrack-bridge">
+<h2>Comparison with prior optitrack_bridge<a class="headerlink" href="#comparison-with-prior-optitrack-bridge" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>More stable for running logic.</p></li>
@@ -224,12 +251,13 @@ running.:</p>
 <li><p>Friendly parameter setting, friendly information print out…</p></li>
 </ul>
 </div></blockquote>
-</div></blockquote>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/00_use_natnet_bridge.html">Quick start for natnet_bridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/00_use_natnet_bridge.html#comparison-with-prior-optitrack-bridge">Comparison with prior optitrack_bridge</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="pages/01_other_details.html">Some details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/05_msg_def.html">NatNet Message definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/08.Other%20Resources.html">Other Resources</a></li>
@@ -262,6 +290,7 @@ running.:</p>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
+</div>
 </div>
 
 

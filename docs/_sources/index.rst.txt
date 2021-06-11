@@ -8,10 +8,30 @@ Welcome to natnet_bridge's documentation!
 
 
 
+Project Structure
+-------------------
+::
+
+   Project
+   |---natnet_bridg\
+   |	|	src\
+   |	|	include\
+   |	| 	...\
+   |--optitrack_bridge\
+   |---reference	
+   |	|	CATKIN_IGNORE  # This is to ignore the packages in this folder
+   |	|	optitrack_bridge\
+   |	|   natnet_sdk\
+   |	|   NatNetSDKCrossplatform-master\ # this is Linux version of NatNetSDK 'Packet Client example' in github
+   |	|	mocap_optitrack-master\  # widely used third party Optitrack-ROS bridge
+   |	|	PacketClient\  # windows SDK
+   |	|	PythonClient\  # windows SDK
+   |---docs\
+   |---...
 
 
+.. include :: ./pages/00_use_natnet_bridge.rst
 
- .. include :: ./pages/00_use_natnet_bridge.rst
 
 .. toctree::
    :maxdepth: 3
