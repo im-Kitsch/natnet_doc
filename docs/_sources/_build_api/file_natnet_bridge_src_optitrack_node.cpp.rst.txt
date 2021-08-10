@@ -31,13 +31,23 @@ Includes
 
 - ``dynamic_reconfigure/server.h``
 
+- ``map``
+
+- ``natnet/natnet_definition.h`` (:ref:`file_natnet_bridge_include_natnet_natnet_definition.h`)
+
 - ``natnet/socket.h`` (:ref:`file_natnet_bridge_include_natnet_socket.h`)
 
 - ``natnet_bridge/NatNetBridgeDynParamConfig.h``
 
 - ``natnet_bridge/NatNetFrame.h``
 
+- ``natnet_bridge/model_def.h`` (:ref:`file_natnet_bridge_include_natnet_bridge_model_def.h`)
+
 - ``natnet_bridge/natnet_bridge.h`` (:ref:`file_natnet_bridge_include_natnet_bridge_natnet_bridge.h`)
+
+- ``natnet_bridge/server_parser.h`` (:ref:`file_natnet_bridge_include_natnet_bridge_server_parser.h`)
+
+- ``natnet_bridge/unpack.h`` (:ref:`file_natnet_bridge_include_natnet_bridge_unpack.h`)
 
 - ``ros/console.h``
 

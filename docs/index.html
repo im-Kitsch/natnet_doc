@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Welcome to natnet_bridge’s documentation! &mdash; natnet_bridge 1.00 documentation</title>
@@ -166,9 +167,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-natnet-bridge-s-documentation">
+  <section id="welcome-to-natnet-bridge-s-documentation">
 <h1>Welcome to natnet_bridge’s documentation!<a class="headerlink" href="#welcome-to-natnet-bridge-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="project-structure">
+<section id="project-structure">
 <h2>Project Structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Project</span>
 <span class="o">|---</span><span class="n">natnet_bridg</span>\
@@ -188,9 +189,9 @@
 <span class="o">|---...</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="quick-start-for-natnet-bridge">
+</section>
+</section>
+<section id="quick-start-for-natnet-bridge">
 <h1>Quick start for natnet_bridge<a class="headerlink" href="#quick-start-for-natnet-bridge" title="Permalink to this headline">¶</a></h1>
 <p>Clone the repo into <code class="docutils literal notranslate"><span class="pre">ROS_Workspace</span></code>, and run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">catkin_make</span></code>.</p>
 <dl>
@@ -232,12 +233,21 @@ running.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch natnet_bridge natnet_bridge.launch launch_reconfigure:=true
 </pre></div>
 </div>
-<div class="figure align-default">
-<img alt="_images/dyn_conf.png" src="_images/dyn_conf.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The rigid bodys’ name will be identical with the definition in windows’ Motive side setting.
+But you have to firstly name the rigid body’s before run natnet_node.
+Since in case of updating of rigid body’s setting like ID/name, Motive will not notify receiver.</p>
+<p>Make sure your setting of rigid bodies, ID and names do not repeat. It is important.
+NatnetNode will check repeating while initializing but does not check while receiving.
+If you add rigid body while receiving, the unknown rigid body will be published as <code class="docutils literal notranslate"><span class="pre">&quot;unknown&quot;+ID</span></code>.</p>
 </div>
+<figure class="align-default">
+<img alt="_images/dyn_conf.png" src="_images/dyn_conf.png" />
+</figure>
 </dd>
 </dl>
-<div class="section" id="comparison-with-prior-optitrack-bridge">
+<section id="comparison-with-prior-optitrack-bridge">
 <h2>Comparison with prior optitrack_bridge<a class="headerlink" href="#comparison-with-prior-optitrack-bridge" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
@@ -290,8 +300,8 @@ running.:</p>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

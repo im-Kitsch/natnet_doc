@@ -21,6 +21,7 @@ Program Listing for File natnet_bridge.h
    #include "tf/transform_broadcaster.h"
    #include "natnet_bridge/NatNetBridgeDynParamConfig.h"
    #include "natnet_bridge/NatNetFrame.h"
+   #include "natnet_bridge/model_def.h"
    #include <cstdlib>
    
    namespace natnet_bridge{
@@ -32,6 +33,7 @@ Program Listing for File natnet_bridge.h
        bool re_init_publish(const NatNetBridgeDynParamConfig&);
        bool connect_server();
        bool receive_data();
+       bool get_model_def();
    
    
    private:
@@ -62,6 +64,8 @@ Program Listing for File natnet_bridge.h
    
        ros::Publisher natnet_frame_publisher;
        tf::TransformBroadcaster tfPublisher;
+   
+       RigidBodyModelDef model_def;
    };
    
    } // end of natnet_bridge

@@ -35,6 +35,8 @@ Includes
 
 - ``natnet_bridge/NatNetFrame.h``
 
+- ``natnet_bridge/model_def.h`` (:ref:`file_natnet_bridge_include_natnet_bridge_model_def.h`)
+
 - ``natnet_bridge/version.h`` (:ref:`file_natnet_bridge_include_natnet_bridge_version.h`)
 
 - ``ros/ros.h``

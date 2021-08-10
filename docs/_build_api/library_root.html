@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Library API &mdash; natnet_bridge 1.00 documentation</title>
@@ -112,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#classes-and-structs">Classes and Structs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="structnatnet__bridge_1_1____attribute____.html">Struct __attribute__</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classnatnet__bridge_1_1NatNetBridge.html">Class NatNetBridge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnatnet__bridge_1_1RigidBodyModelDef.html">Class RigidBodyModelDef</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classnatnet__bridge_1_1Version.html">Class Version</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classNatnetDynReconfigure.html">Class NatnetDynReconfigure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSocketException.html">Class SocketException</a></li>
@@ -121,6 +123,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="function_optitrack__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97.html">Function main</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b.html">Function natnet_bridge::buildConnectPacket</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a8cfb238ad92b1ea1268af28f80bda232.html">Function natnet_bridge::buildModelDefPacket</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a7964729af44f528fdb5ca019d7f70fc6.html">Function natnet_bridge::DecodeMarkerID</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a7d45052550fdf43c478b5a32775ae8c2.html">Function natnet_bridge::DecodeTimecode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1afec92c2de51f4b49c6d13bdf9161bda9.html">Function natnet_bridge::server_info_parser</a></li>
@@ -128,6 +131,7 @@
 <li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a4675a5e84e93eaec00776153641be89b.html">Function natnet_bridge::strcpy_s</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a030f578de4dba15ffc8bf1f8e5e166f9.html">Function natnet_bridge::TimecodeStringify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1adfff94168324ba87d569569feadeec73.html">Function natnet_bridge::Unpack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacenatnet__bridge_1a74e572554cde0777f165329968879fb8.html">Function natnet_bridge::Unpack2</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a><ul>
@@ -225,29 +229,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="library-api">
+  <section id="library-api">
 <h1>Library API<a class="headerlink" href="#library-api" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="class-hierarchy">
+<section id="class-hierarchy">
 <h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this headline">¶</a></h2>
 <ul class="treeView" id="class-treeView">
   <li>
     <ul class="collapsibleList">
-      <li>Namespace <a href="namespace_natnet_bridge.html#namespace-natnet-bridge">natnet_bridge</a><ul><li>Struct <a href="structnatnet__bridge_1_1____attribute____.html#exhale-struct-structnatnet-bridge-1-1--attribute--">__attribute__</a></li><li>Class <a href="classnatnet__bridge_1_1NatNetBridge.html#exhale-class-classnatnet-bridge-1-1NatNetBridge">NatNetBridge</a></li><li class="lastChild">Class <a href="classnatnet__bridge_1_1Version.html#exhale-class-classnatnet-bridge-1-1Version">Version</a></li></ul></li><li>Class <a href="classNatnetDynReconfigure.html#exhale-class-classNatnetDynReconfigure">NatnetDynReconfigure</a></li><li>Class <a href="classSocketException.html#exhale-class-classSocketException">SocketException</a></li><li class="lastChild">Class <a href="classUdpMulticastSocket.html#exhale-class-classUdpMulticastSocket">UdpMulticastSocket</a></li>
+      <li>Namespace <a href="namespace_natnet_bridge.html#namespace-natnet-bridge">natnet_bridge</a><ul><li>Struct <a href="structnatnet__bridge_1_1____attribute____.html#exhale-struct-structnatnet-bridge-1-1--attribute--">__attribute__</a></li><li>Class <a href="classnatnet__bridge_1_1NatNetBridge.html#exhale-class-classnatnet-bridge-1-1NatNetBridge">NatNetBridge</a></li><li>Class <a href="classnatnet__bridge_1_1RigidBodyModelDef.html#exhale-class-classnatnet-bridge-1-1RigidBodyModelDef">RigidBodyModelDef</a></li><li class="lastChild">Class <a href="classnatnet__bridge_1_1Version.html#exhale-class-classnatnet-bridge-1-1Version">Version</a></li></ul></li><li>Class <a href="classNatnetDynReconfigure.html#exhale-class-classNatnetDynReconfigure">NatnetDynReconfigure</a></li><li>Class <a href="classSocketException.html#exhale-class-classSocketException">SocketException</a></li><li class="lastChild">Class <a href="classUdpMulticastSocket.html#exhale-class-classUdpMulticastSocket">UdpMulticastSocket</a></li>
     </ul>
   </li><!-- only tree view element -->
-</ul><!-- /treeView class-treeView --></div>
-<div class="section" id="file-hierarchy">
+</ul><!-- /treeView class-treeView --></section>
+<section id="file-hierarchy">
 <h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h2>
 <ul class="treeView" id="file-treeView">
   <li>
     <ul class="collapsibleList">
-      <li class="lastChild">Directory <a href="dir_natnet_bridge.html#dir-natnet-bridge">bridge</a><ul><li>Directory <a href="dir_natnet_bridge_include.html#dir-natnet-bridge-include">include</a><ul><li>Directory <a href="dir_natnet_bridge_include_natnet.html#dir-natnet-bridge-include-natnet">natnet</a><ul><li>File <a href="file_natnet_bridge_include_natnet_natnet_config.h.html#file-natnet-bridge-include-natnet-natnet-config.h">natnet_config.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_natnet_definition.h.html#file-natnet-bridge-include-natnet-natnet-definition.h">natnet_definition.h</a></li><li class="lastChild">File <a href="file_natnet_bridge_include_natnet_socket.h.html#file-natnet-bridge-include-natnet-socket.h">socket.h</a></li></ul></li><li class="lastChild">Directory <a href="dir_natnet_bridge_include_natnet_bridge.html#dir-natnet-bridge-include-natnet-bridge">bridge</a><ul><li>File <a href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#file-natnet-bridge-include-natnet-bridge-natnet-bridge.h">natnet_bridge.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_bridge_server_parser.h.html#file-natnet-bridge-include-natnet-bridge-server-parser.h">server_parser.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_bridge_unpack.h.html#file-natnet-bridge-include-natnet-bridge-unpack.h">unpack.h</a></li><li class="lastChild">File <a href="file_natnet_bridge_include_natnet_bridge_version.h.html#file-natnet-bridge-include-natnet-bridge-version.h">version.h</a></li></ul></li></ul></li><li class="lastChild">Directory <a href="dir_natnet_bridge_src.html#dir-natnet-bridge-src">src</a><ul><li>File <a href="file_natnet_bridge_src_natnet_bridge.cpp.html#file-natnet-bridge-src-natnet-bridge.cpp">natnet_bridge.cpp</a></li><li>File <a href="file_natnet_bridge_src_optitrack_node.cpp.html#file-natnet-bridge-src-optitrack-node.cpp">optitrack_node.cpp</a></li><li>File <a href="file_natnet_bridge_src_server_parser.cpp.html#file-natnet-bridge-src-server-parser.cpp">server_parser.cpp</a></li><li>File <a href="file_natnet_bridge_src_socket.cpp.html#file-natnet-bridge-src-socket.cpp">socket.cpp</a></li><li>File <a href="file_natnet_bridge_src_unpack.cpp.html#file-natnet-bridge-src-unpack.cpp">unpack.cpp</a></li><li class="lastChild">File <a href="file_natnet_bridge_src_version.cpp.html#file-natnet-bridge-src-version.cpp">version.cpp</a></li></ul></li></ul></li>
+      <li class="lastChild">Directory <a href="dir_natnet_bridge.html#dir-natnet-bridge">bridge</a><ul><li>Directory <a href="dir_natnet_bridge_include.html#dir-natnet-bridge-include">include</a><ul><li>Directory <a href="dir_natnet_bridge_include_natnet.html#dir-natnet-bridge-include-natnet">natnet</a><ul><li>File <a href="file_natnet_bridge_include_natnet_natnet_config.h.html#file-natnet-bridge-include-natnet-natnet-config.h">natnet_config.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_natnet_definition.h.html#file-natnet-bridge-include-natnet-natnet-definition.h">natnet_definition.h</a></li><li class="lastChild">File <a href="file_natnet_bridge_include_natnet_socket.h.html#file-natnet-bridge-include-natnet-socket.h">socket.h</a></li></ul></li><li class="lastChild">Directory <a href="dir_natnet_bridge_include_natnet_bridge.html#dir-natnet-bridge-include-natnet-bridge">bridge</a><ul><li>File <a href="file_natnet_bridge_include_natnet_bridge_model_def.h.html#file-natnet-bridge-include-natnet-bridge-model-def.h">model_def.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#file-natnet-bridge-include-natnet-bridge-natnet-bridge.h">natnet_bridge.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_bridge_server_parser.h.html#file-natnet-bridge-include-natnet-bridge-server-parser.h">server_parser.h</a></li><li>File <a href="file_natnet_bridge_include_natnet_bridge_unpack.h.html#file-natnet-bridge-include-natnet-bridge-unpack.h">unpack.h</a></li><li class="lastChild">File <a href="file_natnet_bridge_include_natnet_bridge_version.h.html#file-natnet-bridge-include-natnet-bridge-version.h">version.h</a></li></ul></li></ul></li><li class="lastChild">Directory <a href="dir_natnet_bridge_src.html#dir-natnet-bridge-src">src</a><ul><li>File <a href="file_natnet_bridge_src_model_def.cpp.html#file-natnet-bridge-src-model-def.cpp">model_def.cpp</a></li><li>File <a href="file_natnet_bridge_src_natnet_bridge.cpp.html#file-natnet-bridge-src-natnet-bridge.cpp">natnet_bridge.cpp</a></li><li>File <a href="file_natnet_bridge_src_optitrack_node.cpp.html#file-natnet-bridge-src-optitrack-node.cpp">optitrack_node.cpp</a></li><li>File <a href="file_natnet_bridge_src_server_parser.cpp.html#file-natnet-bridge-src-server-parser.cpp">server_parser.cpp</a></li><li>File <a href="file_natnet_bridge_src_socket.cpp.html#file-natnet-bridge-src-socket.cpp">socket.cpp</a></li><li>File <a href="file_natnet_bridge_src_unpack.cpp.html#file-natnet-bridge-src-unpack.cpp">unpack.cpp</a></li><li class="lastChild">File <a href="file_natnet_bridge_src_version.cpp.html#file-natnet-bridge-src-version.cpp">version.cpp</a></li></ul></li></ul></li>
     </ul>
   </li><!-- only tree view element -->
-</ul><!-- /treeView file-treeView --></div>
-<div class="section" id="full-api">
+</ul><!-- /treeView file-treeView --></section>
+<section id="full-api">
 <h2>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="namespaces">
+<section id="namespaces">
 <h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
@@ -275,8 +279,8 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="classes-and-structs">
+</section>
+<section id="classes-and-structs">
 <h3>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
@@ -290,6 +294,14 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="classnatnet__bridge_1_1NatNetBridge.html">Class NatNetBridge</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="classnatnet__bridge_1_1NatNetBridge.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnatnet__bridge_1_1RigidBodyModelDef.html">Class RigidBodyModelDef</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnatnet__bridge_1_1RigidBodyModelDef.html#class-documentation">Class Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -330,8 +342,8 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="functions">
+</section>
+<section id="functions">
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
@@ -345,6 +357,14 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b.html">Function natnet_bridge::buildConnectPacket</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a8cfb238ad92b1ea1268af28f80bda232.html">Function natnet_bridge::buildModelDefPacket</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a8cfb238ad92b1ea1268af28f80bda232.html#function-documentation">Function Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -405,8 +425,16 @@
 </li>
 </ul>
 </div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacenatnet__bridge_1a74e572554cde0777f165329968879fb8.html">Function natnet_bridge::Unpack2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacenatnet__bridge_1a74e572554cde0777f165329968879fb8.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="section" id="variables">
+</section>
+<section id="variables">
 <h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
@@ -496,8 +524,8 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="defines">
+</section>
+<section id="defines">
 <h3>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
@@ -523,8 +551,8 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="typedefs">
+</section>
+<section id="typedefs">
 <h3>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
@@ -534,9 +562,9 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

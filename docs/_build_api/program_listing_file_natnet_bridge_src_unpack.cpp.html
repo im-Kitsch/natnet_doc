@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Program Listing for File unpack.cpp &mdash; natnet_bridge 1.00 documentation</title>
@@ -165,7 +166,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="program-listing-for-file-unpack-cpp">
+  <section id="program-listing-for-file-unpack-cpp">
 <span id="program-listing-file-natnet-bridge-src-unpack-cpp"></span><h1>Program Listing for File unpack.cpp<a class="headerlink" href="#program-listing-for-file-unpack-cpp" title="Permalink to this headline">¶</a></h1>
 <p>↰ <a class="reference internal" href="file_natnet_bridge_src_unpack.cpp.html#file-natnet-bridge-src-unpack-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/unpack.cpp</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
@@ -692,10 +693,215 @@
 
 <span class="p">}</span>
 
+<span class="c1">// copied from SDK, adjust it when protocol changes</span>
+<span class="kt">void</span> <span class="n">Unpack2</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">pData</span><span class="p">,</span> <span class="kt">int</span> <span class="n">major</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minor</span><span class="p">,</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">RigidBodyModelDef</span> <span class="o">&amp;</span> <span class="n">model_def</span><span class="p">){</span>
+    <span class="c1">// Checks for NatNet Version number. Used later in function. Packets may be different depending on NatNet version.</span>
+
+    <span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">pData</span><span class="p">;</span>
+
+<span class="c1">//    printf(&quot;Begin Packet\n-------\n&quot;);</span>
+    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Begin Packet</span><span class="se">\n</span><span class="s">-------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="c1">// First 2 Bytes is message ID</span>
+    <span class="kt">int</span> <span class="n">MessageID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">MessageID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//    printf(&quot;Message ID : %d\n&quot;, MessageID);</span>
+    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Message ID : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">MessageID</span><span class="p">);</span>
+
+    <span class="c1">// Second 2 Bytes is the size of the packet</span>
+    <span class="kt">int</span> <span class="n">nBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nBytes</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//    printf(&quot;Byte count : %d\n&quot;, nBytes);</span>
+    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Byte count : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nBytes</span><span class="p">);</span>
+
+
+    <span class="k">if</span><span class="p">(</span><span class="n">MessageID</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">// Data Descriptions</span>
+    <span class="p">{</span>
+        <span class="n">model_def</span><span class="p">.</span><span class="n">begin_update</span><span class="p">();</span>
+        <span class="c1">// number of datasets</span>
+        <span class="kt">int</span> <span class="n">nDatasets</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nDatasets</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//        printf(&quot;Dataset Count : %d\n&quot;, nDatasets);</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Dataset Count : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nDatasets</span><span class="p">);</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nDatasets</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+<span class="c1">//            printf(&quot;Dataset %d\n&quot;, i);</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Dataset %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+
+            <span class="kt">int</span> <span class="n">type</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">type</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">//            printf(&quot;Type : %d\n&quot;, i, type);</span>
+            <span class="c1">// printf(&quot;Type : %d\n&quot;, type);  // SDK is wrong here</span>
+            <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Type : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">type</span><span class="p">);</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>   <span class="c1">// markerset</span>
+            <span class="p">{</span>
+                <span class="c1">// name</span>
+                <span class="kt">char</span> <span class="n">szName</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+                <span class="n">strcpy</span><span class="p">(</span><span class="n">szName</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">nDataBytes</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">strlen</span><span class="p">(</span><span class="n">szName</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="n">ptr</span> <span class="o">+=</span> <span class="n">nDataBytes</span><span class="p">;</span>
+                <span class="c1">// printf(&quot;Markerset Name: %s\n&quot;, szName);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Markerset Name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">szName</span><span class="p">);</span>
+
+                <span class="c1">// marker data</span>
+                <span class="kt">int</span> <span class="n">nMarkers</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nMarkers</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="c1">// printf(&quot;Marker Count : %d\n&quot;, nMarkers);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Marker Count : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nMarkers</span><span class="p">);</span>
+
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nMarkers</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">char</span> <span class="n">szName</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+                    <span class="n">strcpy</span><span class="p">(</span><span class="n">szName</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+                    <span class="kt">int</span> <span class="n">nDataBytes</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">strlen</span><span class="p">(</span><span class="n">szName</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="n">ptr</span> <span class="o">+=</span> <span class="n">nDataBytes</span><span class="p">;</span>
+                    <span class="c1">// printf(&quot;Marker Name: %s\n&quot;, szName);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Marker Name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">szName</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">type</span> <span class="o">==</span><span class="mi">1</span><span class="p">)</span>   <span class="c1">// rigid body</span>
+            <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="c1">// name</span>
+                    <span class="kt">char</span> <span class="n">szName</span><span class="p">[</span><span class="n">MAX_NAMELENGTH</span><span class="p">];</span>
+                    <span class="n">strcpy</span><span class="p">(</span><span class="n">szName</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+                    <span class="n">ptr</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">//                    printf(&quot;Name: %s\n&quot;, szName);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">szName</span><span class="p">);</span>
+                    <span class="n">_name</span> <span class="o">=</span> <span class="n">szName</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span><span class="p">{</span>
+                    <span class="n">_name</span> <span class="o">=</span> <span class="s">&quot;rigid_body&quot;</span><span class="p">;</span>
+                    <span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;you have to update NatNet version to enable define the name&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="kt">int</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;ID : %d\n&quot;, ID);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;ID : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ID</span><span class="p">);</span>
+
+                <span class="n">model_def</span><span class="p">.</span><span class="n">push_pair</span><span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">_name</span><span class="p">);</span>
+
+                <span class="kt">int</span> <span class="n">parentID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">parentID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;Parent ID : %d\n&quot;, parentID);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Parent ID : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">parentID</span><span class="p">);</span>
+
+                <span class="kt">float</span> <span class="n">xoffset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">xoffset</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;X Offset : %3.2f\n&quot;, xoffset);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;X Offset : %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">xoffset</span><span class="p">);</span>
+
+                <span class="kt">float</span> <span class="n">yoffset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">yoffset</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;Y Offset : %3.2f\n&quot;, yoffset);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Y Offset : %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">yoffset</span><span class="p">);</span>
+
+                <span class="kt">float</span> <span class="n">zoffset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">zoffset</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;Z Offset : %3.2f\n&quot;, zoffset);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Z Offset : %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">zoffset</span><span class="p">);</span>
+
+                <span class="c1">// Per-marker data (NatNet 3.0 and later)</span>
+                <span class="k">if</span> <span class="p">(</span> <span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">int</span> <span class="n">nMarkers</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">nMarkers</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span> <span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">;</span>
+
+                    <span class="c1">// Marker positions</span>
+                    <span class="n">nBytes</span> <span class="o">=</span> <span class="n">nMarkers</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span> <span class="kt">float</span> <span class="p">);</span>
+                    <span class="kt">float</span><span class="o">*</span> <span class="n">markerPositions</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span> <span class="n">nBytes</span> <span class="p">);</span>
+                    <span class="n">memcpy</span><span class="p">(</span> <span class="n">markerPositions</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">nBytes</span> <span class="p">);</span>
+                    <span class="n">ptr</span> <span class="o">+=</span> <span class="n">nBytes</span><span class="p">;</span>
+
+                    <span class="c1">// Marker required active labels</span>
+                    <span class="n">nBytes</span> <span class="o">=</span> <span class="n">nMarkers</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span> <span class="kt">int</span> <span class="p">);</span>
+                    <span class="kt">int</span><span class="o">*</span> <span class="n">markerRequiredLabels</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span> <span class="n">nBytes</span> <span class="p">);</span>
+                    <span class="n">memcpy</span><span class="p">(</span> <span class="n">markerRequiredLabels</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">nBytes</span> <span class="p">);</span>
+                    <span class="n">ptr</span> <span class="o">+=</span> <span class="n">nBytes</span><span class="p">;</span>
+
+                    <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">markerIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">markerIdx</span> <span class="o">&lt;</span> <span class="n">nMarkers</span><span class="p">;</span> <span class="o">++</span><span class="n">markerIdx</span> <span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="kt">float</span><span class="o">*</span> <span class="n">markerPosition</span> <span class="o">=</span> <span class="n">markerPositions</span> <span class="o">+</span> <span class="n">markerIdx</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+                        <span class="k">const</span> <span class="kt">int</span> <span class="n">markerRequiredLabel</span> <span class="o">=</span> <span class="n">markerRequiredLabels</span><span class="p">[</span><span class="n">markerIdx</span><span class="p">];</span>
+
+<span class="c1">//                        printf( &quot;\tMarker #%d:\n&quot;, markerIdx );</span>
+<span class="c1">//                        printf( &quot;\t\tPosition: %.2f, %.2f, %.2f\n&quot;, markerPosition[0], markerPosition[1], markerPosition[2] );</span>
+                        <span class="n">ROS_DEBUG</span><span class="p">(</span> <span class="s">&quot;</span><span class="se">\t</span><span class="s">Marker #%d:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">markerIdx</span> <span class="p">);</span>
+                        <span class="n">ROS_DEBUG</span><span class="p">(</span> <span class="s">&quot;</span><span class="se">\t\t</span><span class="s">Position: %.2f, %.2f, %.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">markerPosition</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">markerPosition</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">markerPosition</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">);</span>
+
+                        <span class="k">if</span> <span class="p">(</span> <span class="n">markerRequiredLabel</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">)</span>
+                        <span class="p">{</span>
+<span class="c1">//                            printf( &quot;\t\tRequired active label: %d\n&quot;, markerRequiredLabel );</span>
+                            <span class="n">ROS_DEBUG</span><span class="p">(</span> <span class="s">&quot;</span><span class="se">\t\t</span><span class="s">Required active label: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">markerRequiredLabel</span> <span class="p">);</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+
+                    <span class="n">free</span><span class="p">(</span> <span class="n">markerPositions</span> <span class="p">);</span>
+                    <span class="n">free</span><span class="p">(</span> <span class="n">markerRequiredLabels</span> <span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">type</span> <span class="o">==</span><span class="mi">2</span><span class="p">)</span>   <span class="c1">// skeleton</span>
+            <span class="p">{</span>
+                <span class="kt">char</span> <span class="n">szName</span><span class="p">[</span><span class="n">MAX_NAMELENGTH</span><span class="p">];</span>
+                <span class="n">strcpy</span><span class="p">(</span><span class="n">szName</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+                <span class="n">ptr</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;Name: %s\n&quot;, szName);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">szName</span><span class="p">);</span>
+
+                <span class="kt">int</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;ID : %d\n&quot;, ID);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;ID : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ID</span><span class="p">);</span>
+
+                <span class="kt">int</span> <span class="n">nRigidBodies</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nRigidBodies</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                printf(&quot;RigidBody (Bone) Count : %d\n&quot;, nRigidBodies);</span>
+                <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;RigidBody (Bone) Count : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nRigidBodies</span><span class="p">);</span>
+
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">nRigidBodies</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="c1">// RB name</span>
+                        <span class="kt">char</span> <span class="n">szName</span><span class="p">[</span><span class="n">MAX_NAMELENGTH</span><span class="p">];</span>
+                        <span class="n">strcpy</span><span class="p">(</span><span class="n">szName</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+                        <span class="n">ptr</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">//                        printf(&quot;Rigid Body Name: %s\n&quot;, szName);</span>
+                        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Rigid Body Name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">szName</span><span class="p">);</span>
+                    <span class="p">}</span>
+
+                    <span class="kt">int</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                    printf(&quot;RigidBody ID : %d\n&quot;, ID);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;RigidBody ID : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ID</span><span class="p">);</span>
+
+                    <span class="kt">int</span> <span class="n">parentID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">parentID</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                    printf(&quot;Parent ID : %d\n&quot;, parentID);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Parent ID : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">parentID</span><span class="p">);</span>
+
+                    <span class="kt">float</span> <span class="n">xoffset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">xoffset</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                    printf(&quot;X Offset : %3.2f\n&quot;, xoffset);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;X Offset : %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">xoffset</span><span class="p">);</span>
+
+                    <span class="kt">float</span> <span class="n">yoffset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">yoffset</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                    printf(&quot;Y Offset : %3.2f\n&quot;, yoffset);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Y Offset : %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">yoffset</span><span class="p">);</span>
+
+                    <span class="kt">float</span> <span class="n">zoffset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">zoffset</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="n">ptr</span> <span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+<span class="c1">//                    printf(&quot;Z Offset : %3.2f\n&quot;, zoffset);</span>
+                    <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Z Offset : %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">zoffset</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+        <span class="p">}</span>   <span class="c1">// next dataset</span>
+
+        <span class="c1">// printf(&quot;End Packet\n-------------\n&quot;);</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;End Packet</span><span class="se">\n</span><span class="s">-------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="kt">bool</span> <span class="n">succes</span> <span class="o">=</span> <span class="n">model_def</span><span class="p">.</span><span class="n">finish_update</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// printf(&quot;Unrecognized Packet Type.\n&quot;);</span>
+        <span class="n">ROS_DEBUG</span><span class="p">(</span><span class="s">&quot;Unrecognized Packet Type.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

@@ -1,0 +1,44 @@
+
+.. _program_listing_file_natnet_bridge_include_natnet_bridge_model_def.h:
+
+Program Listing for File model_def.h
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_natnet_bridge_include_natnet_bridge_model_def.h>` (``natnet_bridge/include/natnet_bridge/model_def.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by yuan on 2021/8/6.
+   //
+   
+   #ifndef NATNET_BRIDGE_MODEL_DEF_H
+   #define NATNET_BRIDGE_MODEL_DEF_H
+   #include <map>
+   #include <vector>
+   
+   namespace natnet_bridge{
+   
+   class RigidBodyModelDef{
+   public:
+       RigidBodyModelDef();
+       std::string assign_name(int rigid_body_id);
+   
+       void begin_update();
+       bool push_pair(int id, std::string name);
+       bool finish_update();
+   
+       bool has_valid_def= false;
+   
+   private:
+       std::map<int, std::string> name_map;
+       std::vector<std::string> key_list;
+       std::vector<int> id_list;
+   };
+   //FIXME, add _id_vec for safe check
+   //FIXME, consider map.clear() safe or not
+   
+   }
+   #endif //NATNET_BRIDGE_MODEL_DEF_H

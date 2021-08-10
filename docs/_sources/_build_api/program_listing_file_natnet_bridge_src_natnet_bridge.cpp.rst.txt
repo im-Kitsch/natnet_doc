@@ -38,6 +38,7 @@ Program Listing for File natnet_bridge.cpp
            multicastClientSocketPtr.reset(
                    new UdpMulticastSocket(data_port, multicast_ip_address)
            );
+           model_def.begin_update();
            return true;
        }
    
@@ -68,7 +69,7 @@ Program Listing for File natnet_bridge.cpp
    
            if (this->optitrack_coordinate == NatNetBridgeDynParam_Z_UP){
                for (auto rb_i: data_frame.rigid_bodies) {
-                   if (tf_filter_invalid_2d && rb_i.track_valid)
+                   if (tf_filter_invalid_2d && !rb_i.track_valid)
                        continue;
                    tf::Quaternion quad(rb_i.pose.orientation.x, rb_i.pose.orientation.y,
                                        rb_i.pose.orientation.z, rb_i.pose.orientation.w);
@@ -80,12 +81,14 @@ Program Listing for File natnet_bridge.cpp
                    tfPublisher.sendTransform(
                        tf::StampedTransform(
                                trans_i, time,
-                               this->tf_world_frame, "rigid_body_2d_"+std::to_string(rb_i.id))
-                   );
+                               this->tf_world_frame,
+                               //  "rigid_body_2d_"+std::to_string(rb_i.id))
+                               model_def.assign_name(rb_i.id) + "2d"
+                       ));
                }
            } else if(this->optitrack_coordinate == NatNetBridgeDynParam_Y_UP){
                for (auto rb_i: data_frame.rigid_bodies) {
-                   if (tf_filter_invalid_2d && rb_i.track_valid)
+                   if (tf_filter_invalid_2d && !rb_i.track_valid)
                        continue;
                    tf::Quaternion q_rot_W_Op, q_W_Rb, q_Op_Rb;
                    q_Op_Rb = tf::Quaternion(rb_i.pose.orientation.x, rb_i.pose.orientation.y,
@@ -102,8 +105,10 @@ Program Listing for File natnet_bridge.cpp
                    tfPublisher.sendTransform(
                            tf::StampedTransform(
                                    trans_i, time,
-                                   this->tf_world_frame, "rigid_body_2d"+std::to_string(rb_i.id))
-                   );
+                                   this->tf_world_frame,
+                                   // "rigid_body_2d"+std::to_string(rb_i.id)
+                                   model_def.assign_name(rb_i.id) + "2d"
+                                   ));
                }
            } else{
                ROS_ERROR("Not right optitrack coordinate definition");
@@ -113,7 +118,7 @@ Program Listing for File natnet_bridge.cpp
    
        bool NatNetBridge::publish_rigid_3d_tf(const NatNetFrame & data_frame, ros::Time& time){
            for (auto rigid_body_i : data_frame.rigid_bodies){
-               if (tf_filter_invalid_3d && rigid_body_i.track_valid)
+               if (tf_filter_invalid_3d && !rigid_body_i.track_valid)
                    continue;
    
                tf::Vector3 r_i_point(
@@ -128,7 +133,9 @@ Program Listing for File natnet_bridge.cpp
                        tf::StampedTransform(
                                tf::Transform(r_i_quaternion, r_i_point),
                                time, this->tf_optitrack_frame,
-                               "rigid_body" + std::to_string(rigid_body_i.id)));
+                               // "rigid_body" + std::to_string(rigid_body_i.id)
+                               model_def.assign_name(rigid_body_i.id)
+                               ));
            }
            return true;
        }
@@ -143,45 +150,48 @@ Program Listing for File natnet_bridge.cpp
            } else{
                const char* pMsgBuffer = multicastClientSocketPtr->getBuffer(); //TODO const?
                std::vector<char> msgBuffer(pMsgBuffer, pMsgBuffer + numBytesReceived);
+               const natnet_bridge::sPacket* replyPacket = reinterpret_cast<const natnet_bridge::sPacket*>(msgBuffer.data());
+               if (replyPacket->iMessage == natnet_config::MessageType::FrameOfData){
+                   Unpack(msgBuffer.data(), natnet_version.v_major, natnet_version.v_minor, data_frame);
    
-               Unpack(msgBuffer.data(), natnet_version.v_major, natnet_version.v_minor, data_frame);
+                   ros::Time time = ros::Time::now();
    
-               ros::Time time = ros::Time::now();
+                   if (this->optitrack_coordinate == natnet_bridge::NatNetBridgeDynParam_Y_UP){
+                       tf::Quaternion world2optitrack_quaternion(M_SQRT2/2., 0., 0., M_SQRT2/2.);
+                       tf::Vector3 world2optitrack_vec(0., 0., 0.);
+                       tfPublisher.sendTransform(
+                               tf::StampedTransform(tf::Transform(world2optitrack_quaternion, world2optitrack_vec),
+                                                    time, this->tf_world_frame, tf_optitrack_frame));
+                   }
+                   else if (this->optitrack_coordinate == natnet_bridge::NatNetBridgeDynParam_Z_UP){
+                       tf::Quaternion world2optitrack_quaternion(0., 0., 0., 0.);
+                       tf::Vector3 world2optitrack_vec(0., 0., 0.);
+                       tfPublisher.sendTransform(
+                               tf::StampedTransform(tf::Transform(world2optitrack_quaternion, world2optitrack_vec),
+                                                    time, this->tf_world_frame, tf_optitrack_frame));
+                   }
+                   else
+                       ROS_ERROR("Not right optitrack coordinate configuration");
    
-               if (this->optitrack_coordinate == natnet_bridge::NatNetBridgeDynParam_Y_UP){
-                   tf::Quaternion world2optitrack_quaternion(M_SQRT2/2., 0., 0., M_SQRT2/2.);
-                   tf::Vector3 world2optitrack_vec(0., 0., 0.);
-                   tfPublisher.sendTransform(
-                       tf::StampedTransform(tf::Transform(world2optitrack_quaternion, world2optitrack_vec),
-                                    time, this->tf_world_frame, tf_optitrack_frame));
+                   // Publish rigid bodies tf 2d
+                   this-> publish_rigid_3d_tf(data_frame, time);
+                   if (this->use_2d_bool)
+                       this->publish_rigid_2d_tf(data_frame, time);
+   
+                   if (!publish_unidentified) data_frame.unlabeled_markers.clear();
+                   if (!publish_skeleton) data_frame.skeletons.clear();
+                   if (!publish_rigid_body) data_frame.rigid_bodies.clear();
+                   if (!publish_marker_assets) data_frame.marker_sets.clear();
+                   if (!publish_labeled_marker) data_frame.labeled_markers.clear();
+                   if (!publish_unlabeled_marker) data_frame.unlabeled_markers.clear();
+                   data_frame.header.stamp = time;
+                   data_frame.header.frame_id = "header";
+                   data_frame.reference_frame = tf_optitrack_frame;
+                   natnet_frame_publisher.publish(data_frame);
+                   return true;
                }
-               else if (this->optitrack_coordinate == natnet_bridge::NatNetBridgeDynParam_Z_UP){
-                   tf::Quaternion world2optitrack_quaternion(0., 0., 0., 0.);
-                   tf::Vector3 world2optitrack_vec(0., 0., 0.);
-                   tfPublisher.sendTransform(
-                       tf::StampedTransform(tf::Transform(world2optitrack_quaternion, world2optitrack_vec),
-                                   time, this->tf_world_frame, tf_optitrack_frame));
-               }
-               else
-                   ROS_ERROR("Not right optitrack coordinate configuration");
-   
-               // Publish rigid bodies tf 2d
-               this-> publish_rigid_3d_tf(data_frame, time);
-               if (this->use_2d_bool)
-                   this->publish_rigid_2d_tf(data_frame, time);
-   
-               if (publish_unidentified) data_frame.unlabeled_markers.clear();
-               if (publish_skeleton) data_frame.skeletons.clear();
-               if (publish_rigid_body) data_frame.rigid_bodies.clear();
-               if (publish_marker_assets) data_frame.marker_sets.clear();
-               if (publish_labeled_marker) data_frame.labeled_markers.clear();
-               if (publish_unlabeled_marker) data_frame.unlabeled_markers.clear();
-               data_frame.header.stamp = time;
-               data_frame.header.frame_id = "header";
-               data_frame.reference_frame = tf_optitrack_frame;
-               natnet_frame_publisher.publish(data_frame);
-               return true;
            }
+           return false;
        }
    
        bool NatNetBridge::connect_server() {
@@ -222,6 +232,49 @@ Program Listing for File natnet_bridge.cpp
            }
            else
                return false;
+       }
+   
+       bool NatNetBridge::get_model_def() {
+           bool connected= false;
+           int n_trial = 5;
+   
+           while( ros::ok() && (n_trial--)){
+   
+               std::vector<char> connect_command_msg;
+               buildModelDefPacket(connect_command_msg);
+               int ret = multicastClientSocketPtr->send(connect_command_msg.data(), connect_command_msg.size(), command_port);
+               if (ret == -1) ROS_ERROR("Failed for sending Msg CONNECT to server, I will try again ");
+   
+               int numBytesReceived = multicastClientSocketPtr->recv();
+               if (numBytesReceived > 0){
+                   // Grab latest message buffer
+                   const char* pMsgBuffer = multicastClientSocketPtr->getBuffer();
+                   std::vector<char> msgBuffer(pMsgBuffer, pMsgBuffer + numBytesReceived);
+   
+                   const natnet_bridge::sPacket* replyPacket = reinterpret_cast<const natnet_bridge::sPacket*>(msgBuffer.data());
+   
+                   if (replyPacket->iMessage == natnet_config::MessageType::ModelDef){
+                       natnet_bridge::Unpack2(msgBuffer.data(), 3, 1, this->model_def);
+                       if (model_def.has_valid_def){
+                           connected = true;
+                           ROS_INFO("received model definition");
+                           break;
+                       } else{
+                           connected = false;
+                       }
+                   }
+               }
+               ros::Duration(0.001).sleep();
+               ros::spinOnce();
+           }
+   
+           if (connected){
+               return true;
+           }
+           else{
+               ROS_ERROR("your data definition is wrong, re-check it in windows please");
+               return false;
+           }
        }
    
        NatNetBridge::NatNetBridge(ros::NodeHandle& nh, const NatNetBridgeDynParamConfig& config): p_nh(nh){

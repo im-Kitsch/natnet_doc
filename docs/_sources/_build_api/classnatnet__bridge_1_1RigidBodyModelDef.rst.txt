@@ -1,0 +1,16 @@
+.. _exhale_class_classnatnet__bridge_1_1RigidBodyModelDef:
+
+Class RigidBodyModelDef
+=======================
+
+- Defined in :ref:`file_natnet_bridge_include_natnet_bridge_model_def.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: natnet_bridge::RigidBodyModelDef
+   :members:
+   :protected-members:
+   :undoc-members:

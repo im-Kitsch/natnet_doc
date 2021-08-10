@@ -42,8 +42,20 @@ Clone the repo into ``ROS_Workspace``, and run ``$ catkin_make``.
    running.::
 
       $ roslaunch natnet_bridge natnet_bridge.launch launch_reconfigure:=true
+   
+   .. note::
+      The rigid bodys' name will be identical with the definition in windows' Motive side setting. 
+      But you have to firstly name the rigid body's before run natnet_node. 
+      Since in case of updating of rigid body's setting like ID/name, Motive will not notify receiver. 
+      
+      Make sure your setting of rigid bodies, ID and names do not repeat. It is important.
+      NatnetNode will check repeating while initializing but does not check while receiving. 
+      If you add rigid body while receiving, the unknown rigid body will be published as ``"unknown"+ID``. 
 
    .. figure:: img/dyn_conf.png
+
+
+      
 
 Comparison with prior optitrack_bridge
 --------------------------------------

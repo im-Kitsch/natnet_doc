@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Program Listing for File server_parser.cpp &mdash; natnet_bridge 1.00 documentation</title>
@@ -165,7 +166,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="program-listing-for-file-server-parser-cpp">
+  <section id="program-listing-for-file-server-parser-cpp">
 <span id="program-listing-file-natnet-bridge-src-server-parser-cpp"></span><h1>Program Listing for File server_parser.cpp<a class="headerlink" href="#program-listing-for-file-server-parser-cpp" title="Permalink to this headline">¶</a></h1>
 <p>↰ <a class="reference internal" href="file_natnet_bridge_src_server_parser.cpp.html#file-natnet-bridge-src-server-parser-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/server_parser.cpp</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
@@ -184,6 +185,14 @@
     <span class="p">{</span>
         <span class="n">sPacket</span> <span class="n">packet</span><span class="p">;</span>
         <span class="n">packet</span><span class="p">.</span><span class="n">iMessage</span> <span class="o">=</span> <span class="n">natnet_config</span><span class="o">::</span><span class="n">MessageType</span><span class="o">::</span><span class="n">Connect</span><span class="p">;</span>
+        <span class="n">packet</span><span class="p">.</span><span class="n">nDataBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">buffer</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">buffer</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">packet</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">buildModelDefPacket</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">buffer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">sPacket</span> <span class="n">packet</span><span class="p">;</span>
+        <span class="n">packet</span><span class="p">.</span><span class="n">iMessage</span> <span class="o">=</span> <span class="n">natnet_config</span><span class="o">::</span><span class="n">MessageType</span><span class="o">::</span><span class="n">RequestModelDef</span><span class="p">;</span>
         <span class="n">packet</span><span class="p">.</span><span class="n">nDataBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="n">buffer</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
         <span class="n">memcpy</span><span class="p">(</span><span class="n">buffer</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">packet</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
@@ -215,7 +224,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

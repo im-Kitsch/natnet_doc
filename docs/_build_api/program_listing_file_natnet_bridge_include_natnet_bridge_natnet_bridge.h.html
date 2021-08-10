@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Program Listing for File natnet_bridge.h &mdash; natnet_bridge 1.00 documentation</title>
@@ -165,7 +166,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="program-listing-for-file-natnet-bridge-h">
+  <section id="program-listing-for-file-natnet-bridge-h">
 <span id="program-listing-file-natnet-bridge-include-natnet-bridge-natnet-bridge-h"></span><h1>Program Listing for File natnet_bridge.h<a class="headerlink" href="#program-listing-for-file-natnet-bridge-h" title="Permalink to this headline">¶</a></h1>
 <p>↰ <a class="reference internal" href="file_natnet_bridge_include_natnet_bridge_natnet_bridge.h.html#file-natnet-bridge-include-natnet-bridge-natnet-bridge-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/include/natnet_bridge/natnet_bridge.h</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
@@ -179,6 +180,7 @@
 <span class="cp">#include</span> <span class="cpf">&quot;tf/transform_broadcaster.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/NatNetBridgeDynParamConfig.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/NatNetFrame.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/model_def.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="n">natnet_bridge</span><span class="p">{</span>
@@ -190,6 +192,7 @@
     <span class="kt">bool</span> <span class="nf">re_init_publish</span><span class="p">(</span><span class="k">const</span> <span class="n">NatNetBridgeDynParamConfig</span><span class="o">&amp;</span><span class="p">);</span>
     <span class="kt">bool</span> <span class="nf">connect_server</span><span class="p">();</span>
     <span class="kt">bool</span> <span class="nf">receive_data</span><span class="p">();</span>
+    <span class="kt">bool</span> <span class="nf">get_model_def</span><span class="p">();</span>
 
 
 <span class="k">private</span><span class="o">:</span>
@@ -220,13 +223,15 @@
 
     <span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span> <span class="n">natnet_frame_publisher</span><span class="p">;</span>
     <span class="n">tf</span><span class="o">::</span><span class="n">TransformBroadcaster</span> <span class="n">tfPublisher</span><span class="p">;</span>
+
+    <span class="n">RigidBodyModelDef</span> <span class="n">model_def</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="p">}</span> <span class="c1">// end of natnet_bridge</span>
 <span class="cp">#endif </span><span class="c1">//NATNET_BRIDGE_NATNET_BRIDGE_H</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

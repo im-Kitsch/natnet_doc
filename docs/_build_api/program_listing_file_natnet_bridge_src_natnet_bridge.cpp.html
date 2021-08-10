@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Program Listing for File natnet_bridge.cpp &mdash; natnet_bridge 1.00 documentation</title>
@@ -165,7 +166,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="program-listing-for-file-natnet-bridge-cpp">
+  <section id="program-listing-for-file-natnet-bridge-cpp">
 <span id="program-listing-file-natnet-bridge-src-natnet-bridge-cpp"></span><h1>Program Listing for File natnet_bridge.cpp<a class="headerlink" href="#program-listing-for-file-natnet-bridge-cpp" title="Permalink to this headline">¶</a></h1>
 <p>↰ <a class="reference internal" href="file_natnet_bridge_src_natnet_bridge.cpp.html#file-natnet-bridge-src-natnet-bridge-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/natnet_bridge.cpp</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
@@ -196,6 +197,7 @@
         <span class="n">multicastClientSocketPtr</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span>
                 <span class="k">new</span> <span class="n">UdpMulticastSocket</span><span class="p">(</span><span class="n">data_port</span><span class="p">,</span> <span class="n">multicast_ip_address</span><span class="p">)</span>
         <span class="p">);</span>
+        <span class="n">model_def</span><span class="p">.</span><span class="n">begin_update</span><span class="p">();</span>
         <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
     <span class="p">}</span>
 
@@ -226,7 +228,7 @@
 
         <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">optitrack_coordinate</span> <span class="o">==</span> <span class="n">NatNetBridgeDynParam_Z_UP</span><span class="p">){</span>
             <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">rb_i</span><span class="p">:</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">rigid_bodies</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">tf_filter_invalid_2d</span> <span class="o">&amp;&amp;</span> <span class="n">rb_i</span><span class="p">.</span><span class="n">track_valid</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">tf_filter_invalid_2d</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">rb_i</span><span class="p">.</span><span class="n">track_valid</span><span class="p">)</span>
                     <span class="k">continue</span><span class="p">;</span>
                 <span class="n">tf</span><span class="o">::</span><span class="n">Quaternion</span> <span class="n">quad</span><span class="p">(</span><span class="n">rb_i</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">rb_i</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
                                     <span class="n">rb_i</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span><span class="p">,</span> <span class="n">rb_i</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="p">);</span>
@@ -238,12 +240,14 @@
                 <span class="n">tfPublisher</span><span class="p">.</span><span class="n">sendTransform</span><span class="p">(</span>
                     <span class="n">tf</span><span class="o">::</span><span class="n">StampedTransform</span><span class="p">(</span>
                             <span class="n">trans_i</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span>
-                            <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_world_frame</span><span class="p">,</span> <span class="s">&quot;rigid_body_2d_&quot;</span><span class="o">+</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">rb_i</span><span class="p">.</span><span class="n">id</span><span class="p">))</span>
-                <span class="p">);</span>
+                            <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_world_frame</span><span class="p">,</span>
+                            <span class="c1">//  &quot;rigid_body_2d_&quot;+std::to_string(rb_i.id))</span>
+                            <span class="n">model_def</span><span class="p">.</span><span class="n">assign_name</span><span class="p">(</span><span class="n">rb_i</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;2d&quot;</span>
+                    <span class="p">));</span>
             <span class="p">}</span>
         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">optitrack_coordinate</span> <span class="o">==</span> <span class="n">NatNetBridgeDynParam_Y_UP</span><span class="p">){</span>
             <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">rb_i</span><span class="p">:</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">rigid_bodies</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">tf_filter_invalid_2d</span> <span class="o">&amp;&amp;</span> <span class="n">rb_i</span><span class="p">.</span><span class="n">track_valid</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">tf_filter_invalid_2d</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">rb_i</span><span class="p">.</span><span class="n">track_valid</span><span class="p">)</span>
                     <span class="k">continue</span><span class="p">;</span>
                 <span class="n">tf</span><span class="o">::</span><span class="n">Quaternion</span> <span class="n">q_rot_W_Op</span><span class="p">,</span> <span class="n">q_W_Rb</span><span class="p">,</span> <span class="n">q_Op_Rb</span><span class="p">;</span>
                 <span class="n">q_Op_Rb</span> <span class="o">=</span> <span class="n">tf</span><span class="o">::</span><span class="n">Quaternion</span><span class="p">(</span><span class="n">rb_i</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">rb_i</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
@@ -260,8 +264,10 @@
                 <span class="n">tfPublisher</span><span class="p">.</span><span class="n">sendTransform</span><span class="p">(</span>
                         <span class="n">tf</span><span class="o">::</span><span class="n">StampedTransform</span><span class="p">(</span>
                                 <span class="n">trans_i</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span>
-                                <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_world_frame</span><span class="p">,</span> <span class="s">&quot;rigid_body_2d&quot;</span><span class="o">+</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">rb_i</span><span class="p">.</span><span class="n">id</span><span class="p">))</span>
-                <span class="p">);</span>
+                                <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_world_frame</span><span class="p">,</span>
+                                <span class="c1">// &quot;rigid_body_2d&quot;+std::to_string(rb_i.id)</span>
+                                <span class="n">model_def</span><span class="p">.</span><span class="n">assign_name</span><span class="p">(</span><span class="n">rb_i</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;2d&quot;</span>
+                                <span class="p">));</span>
             <span class="p">}</span>
         <span class="p">}</span> <span class="k">else</span><span class="p">{</span>
             <span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;Not right optitrack coordinate definition&quot;</span><span class="p">);</span>
@@ -271,7 +277,7 @@
 
     <span class="kt">bool</span> <span class="n">NatNetBridge</span><span class="o">::</span><span class="n">publish_rigid_3d_tf</span><span class="p">(</span><span class="k">const</span> <span class="n">NatNetFrame</span> <span class="o">&amp;</span> <span class="n">data_frame</span><span class="p">,</span> <span class="n">ros</span><span class="o">::</span><span class="n">Time</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">){</span>
         <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">rigid_body_i</span> <span class="p">:</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">rigid_bodies</span><span class="p">){</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">tf_filter_invalid_3d</span> <span class="o">&amp;&amp;</span> <span class="n">rigid_body_i</span><span class="p">.</span><span class="n">track_valid</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">tf_filter_invalid_3d</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">rigid_body_i</span><span class="p">.</span><span class="n">track_valid</span><span class="p">)</span>
                 <span class="k">continue</span><span class="p">;</span>
 
             <span class="n">tf</span><span class="o">::</span><span class="n">Vector3</span> <span class="n">r_i_point</span><span class="p">(</span>
@@ -286,7 +292,9 @@
                     <span class="n">tf</span><span class="o">::</span><span class="n">StampedTransform</span><span class="p">(</span>
                             <span class="n">tf</span><span class="o">::</span><span class="n">Transform</span><span class="p">(</span><span class="n">r_i_quaternion</span><span class="p">,</span> <span class="n">r_i_point</span><span class="p">),</span>
                             <span class="n">time</span><span class="p">,</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_optitrack_frame</span><span class="p">,</span>
-                            <span class="s">&quot;rigid_body&quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">rigid_body_i</span><span class="p">.</span><span class="n">id</span><span class="p">)));</span>
+                            <span class="c1">// &quot;rigid_body&quot; + std::to_string(rigid_body_i.id)</span>
+                            <span class="n">model_def</span><span class="p">.</span><span class="n">assign_name</span><span class="p">(</span><span class="n">rigid_body_i</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+                            <span class="p">));</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
     <span class="p">}</span>
@@ -301,45 +309,48 @@
         <span class="p">}</span> <span class="k">else</span><span class="p">{</span>
             <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">pMsgBuffer</span> <span class="o">=</span> <span class="n">multicastClientSocketPtr</span><span class="o">-&gt;</span><span class="n">getBuffer</span><span class="p">();</span> <span class="c1">//TODO const?</span>
             <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">msgBuffer</span><span class="p">(</span><span class="n">pMsgBuffer</span><span class="p">,</span> <span class="n">pMsgBuffer</span> <span class="o">+</span> <span class="n">numBytesReceived</span><span class="p">);</span>
+            <span class="k">const</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">sPacket</span><span class="o">*</span> <span class="n">replyPacket</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">sPacket</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">msgBuffer</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">replyPacket</span><span class="o">-&gt;</span><span class="n">iMessage</span> <span class="o">==</span> <span class="n">natnet_config</span><span class="o">::</span><span class="n">MessageType</span><span class="o">::</span><span class="n">FrameOfData</span><span class="p">){</span>
+                <span class="n">Unpack</span><span class="p">(</span><span class="n">msgBuffer</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">natnet_version</span><span class="p">.</span><span class="n">v_major</span><span class="p">,</span> <span class="n">natnet_version</span><span class="p">.</span><span class="n">v_minor</span><span class="p">,</span> <span class="n">data_frame</span><span class="p">);</span>
 
-            <span class="n">Unpack</span><span class="p">(</span><span class="n">msgBuffer</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">natnet_version</span><span class="p">.</span><span class="n">v_major</span><span class="p">,</span> <span class="n">natnet_version</span><span class="p">.</span><span class="n">v_minor</span><span class="p">,</span> <span class="n">data_frame</span><span class="p">);</span>
+                <span class="n">ros</span><span class="o">::</span><span class="n">Time</span> <span class="n">time</span> <span class="o">=</span> <span class="n">ros</span><span class="o">::</span><span class="n">Time</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
 
-            <span class="n">ros</span><span class="o">::</span><span class="n">Time</span> <span class="n">time</span> <span class="o">=</span> <span class="n">ros</span><span class="o">::</span><span class="n">Time</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">optitrack_coordinate</span> <span class="o">==</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">NatNetBridgeDynParam_Y_UP</span><span class="p">){</span>
+                    <span class="n">tf</span><span class="o">::</span><span class="n">Quaternion</span> <span class="n">world2optitrack_quaternion</span><span class="p">(</span><span class="n">M_SQRT2</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">M_SQRT2</span><span class="o">/</span><span class="mf">2.</span><span class="p">);</span>
+                    <span class="n">tf</span><span class="o">::</span><span class="n">Vector3</span> <span class="n">world2optitrack_vec</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">);</span>
+                    <span class="n">tfPublisher</span><span class="p">.</span><span class="n">sendTransform</span><span class="p">(</span>
+                            <span class="n">tf</span><span class="o">::</span><span class="n">StampedTransform</span><span class="p">(</span><span class="n">tf</span><span class="o">::</span><span class="n">Transform</span><span class="p">(</span><span class="n">world2optitrack_quaternion</span><span class="p">,</span> <span class="n">world2optitrack_vec</span><span class="p">),</span>
+                                                 <span class="n">time</span><span class="p">,</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_world_frame</span><span class="p">,</span> <span class="n">tf_optitrack_frame</span><span class="p">));</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">optitrack_coordinate</span> <span class="o">==</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">NatNetBridgeDynParam_Z_UP</span><span class="p">){</span>
+                    <span class="n">tf</span><span class="o">::</span><span class="n">Quaternion</span> <span class="n">world2optitrack_quaternion</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">);</span>
+                    <span class="n">tf</span><span class="o">::</span><span class="n">Vector3</span> <span class="n">world2optitrack_vec</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">);</span>
+                    <span class="n">tfPublisher</span><span class="p">.</span><span class="n">sendTransform</span><span class="p">(</span>
+                            <span class="n">tf</span><span class="o">::</span><span class="n">StampedTransform</span><span class="p">(</span><span class="n">tf</span><span class="o">::</span><span class="n">Transform</span><span class="p">(</span><span class="n">world2optitrack_quaternion</span><span class="p">,</span> <span class="n">world2optitrack_vec</span><span class="p">),</span>
+                                                 <span class="n">time</span><span class="p">,</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_world_frame</span><span class="p">,</span> <span class="n">tf_optitrack_frame</span><span class="p">));</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                    <span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;Not right optitrack coordinate configuration&quot;</span><span class="p">);</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">optitrack_coordinate</span> <span class="o">==</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">NatNetBridgeDynParam_Y_UP</span><span class="p">){</span>
-                <span class="n">tf</span><span class="o">::</span><span class="n">Quaternion</span> <span class="n">world2optitrack_quaternion</span><span class="p">(</span><span class="n">M_SQRT2</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">M_SQRT2</span><span class="o">/</span><span class="mf">2.</span><span class="p">);</span>
-                <span class="n">tf</span><span class="o">::</span><span class="n">Vector3</span> <span class="n">world2optitrack_vec</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">);</span>
-                <span class="n">tfPublisher</span><span class="p">.</span><span class="n">sendTransform</span><span class="p">(</span>
-                    <span class="n">tf</span><span class="o">::</span><span class="n">StampedTransform</span><span class="p">(</span><span class="n">tf</span><span class="o">::</span><span class="n">Transform</span><span class="p">(</span><span class="n">world2optitrack_quaternion</span><span class="p">,</span> <span class="n">world2optitrack_vec</span><span class="p">),</span>
-                                 <span class="n">time</span><span class="p">,</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_world_frame</span><span class="p">,</span> <span class="n">tf_optitrack_frame</span><span class="p">));</span>
+                <span class="c1">// Publish rigid bodies tf 2d</span>
+                <span class="k">this</span><span class="o">-&gt;</span> <span class="n">publish_rigid_3d_tf</span><span class="p">(</span><span class="n">data_frame</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">use_2d_bool</span><span class="p">)</span>
+                    <span class="k">this</span><span class="o">-&gt;</span><span class="n">publish_rigid_2d_tf</span><span class="p">(</span><span class="n">data_frame</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">publish_unidentified</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">unlabeled_markers</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">publish_skeleton</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">skeletons</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">publish_rigid_body</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">rigid_bodies</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">publish_marker_assets</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">marker_sets</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">publish_labeled_marker</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">labeled_markers</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">publish_unlabeled_marker</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">unlabeled_markers</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+                <span class="n">data_frame</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">;</span>
+                <span class="n">data_frame</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">&quot;header&quot;</span><span class="p">;</span>
+                <span class="n">data_frame</span><span class="p">.</span><span class="n">reference_frame</span> <span class="o">=</span> <span class="n">tf_optitrack_frame</span><span class="p">;</span>
+                <span class="n">natnet_frame_publisher</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">data_frame</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">optitrack_coordinate</span> <span class="o">==</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">NatNetBridgeDynParam_Z_UP</span><span class="p">){</span>
-                <span class="n">tf</span><span class="o">::</span><span class="n">Quaternion</span> <span class="n">world2optitrack_quaternion</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">);</span>
-                <span class="n">tf</span><span class="o">::</span><span class="n">Vector3</span> <span class="n">world2optitrack_vec</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">);</span>
-                <span class="n">tfPublisher</span><span class="p">.</span><span class="n">sendTransform</span><span class="p">(</span>
-                    <span class="n">tf</span><span class="o">::</span><span class="n">StampedTransform</span><span class="p">(</span><span class="n">tf</span><span class="o">::</span><span class="n">Transform</span><span class="p">(</span><span class="n">world2optitrack_quaternion</span><span class="p">,</span> <span class="n">world2optitrack_vec</span><span class="p">),</span>
-                                <span class="n">time</span><span class="p">,</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">tf_world_frame</span><span class="p">,</span> <span class="n">tf_optitrack_frame</span><span class="p">));</span>
-            <span class="p">}</span>
-            <span class="k">else</span>
-                <span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;Not right optitrack coordinate configuration&quot;</span><span class="p">);</span>
-
-            <span class="c1">// Publish rigid bodies tf 2d</span>
-            <span class="k">this</span><span class="o">-&gt;</span> <span class="n">publish_rigid_3d_tf</span><span class="p">(</span><span class="n">data_frame</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">use_2d_bool</span><span class="p">)</span>
-                <span class="k">this</span><span class="o">-&gt;</span><span class="n">publish_rigid_2d_tf</span><span class="p">(</span><span class="n">data_frame</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
-
-            <span class="k">if</span> <span class="p">(</span><span class="n">publish_unidentified</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">unlabeled_markers</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">publish_skeleton</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">skeletons</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">publish_rigid_body</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">rigid_bodies</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">publish_marker_assets</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">marker_sets</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">publish_labeled_marker</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">labeled_markers</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">publish_unlabeled_marker</span><span class="p">)</span> <span class="n">data_frame</span><span class="p">.</span><span class="n">unlabeled_markers</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-            <span class="n">data_frame</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">;</span>
-            <span class="n">data_frame</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">&quot;header&quot;</span><span class="p">;</span>
-            <span class="n">data_frame</span><span class="p">.</span><span class="n">reference_frame</span> <span class="o">=</span> <span class="n">tf_optitrack_frame</span><span class="p">;</span>
-            <span class="n">natnet_frame_publisher</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">data_frame</span><span class="p">);</span>
-            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
         <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kt">bool</span> <span class="n">NatNetBridge</span><span class="o">::</span><span class="n">connect_server</span><span class="p">()</span> <span class="p">{</span>
@@ -382,6 +393,49 @@
             <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="kt">bool</span> <span class="n">NatNetBridge</span><span class="o">::</span><span class="n">get_model_def</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">bool</span> <span class="n">connected</span><span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n_trial</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+        <span class="k">while</span><span class="p">(</span> <span class="n">ros</span><span class="o">::</span><span class="n">ok</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">n_trial</span><span class="o">--</span><span class="p">)){</span>
+
+            <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">connect_command_msg</span><span class="p">;</span>
+            <span class="n">buildModelDefPacket</span><span class="p">(</span><span class="n">connect_command_msg</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">multicastClientSocketPtr</span><span class="o">-&gt;</span><span class="n">send</span><span class="p">(</span><span class="n">connect_command_msg</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">connect_command_msg</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">command_port</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">==</span> <span class="mi">-1</span><span class="p">)</span> <span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;Failed for sending Msg CONNECT to server, I will try again &quot;</span><span class="p">);</span>
+
+            <span class="kt">int</span> <span class="n">numBytesReceived</span> <span class="o">=</span> <span class="n">multicastClientSocketPtr</span><span class="o">-&gt;</span><span class="n">recv</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">numBytesReceived</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="c1">// Grab latest message buffer</span>
+                <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">pMsgBuffer</span> <span class="o">=</span> <span class="n">multicastClientSocketPtr</span><span class="o">-&gt;</span><span class="n">getBuffer</span><span class="p">();</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">msgBuffer</span><span class="p">(</span><span class="n">pMsgBuffer</span><span class="p">,</span> <span class="n">pMsgBuffer</span> <span class="o">+</span> <span class="n">numBytesReceived</span><span class="p">);</span>
+
+                <span class="k">const</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">sPacket</span><span class="o">*</span> <span class="n">replyPacket</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">sPacket</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">msgBuffer</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">replyPacket</span><span class="o">-&gt;</span><span class="n">iMessage</span> <span class="o">==</span> <span class="n">natnet_config</span><span class="o">::</span><span class="n">MessageType</span><span class="o">::</span><span class="n">ModelDef</span><span class="p">){</span>
+                    <span class="n">natnet_bridge</span><span class="o">::</span><span class="n">Unpack2</span><span class="p">(</span><span class="n">msgBuffer</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">model_def</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">model_def</span><span class="p">.</span><span class="n">has_valid_def</span><span class="p">){</span>
+                        <span class="n">connected</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                        <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;received model definition&quot;</span><span class="p">);</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span> <span class="k">else</span><span class="p">{</span>
+                        <span class="n">connected</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="n">ros</span><span class="o">::</span><span class="n">Duration</span><span class="p">(</span><span class="mf">0.001</span><span class="p">).</span><span class="n">sleep</span><span class="p">();</span>
+            <span class="n">ros</span><span class="o">::</span><span class="n">spinOnce</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">connected</span><span class="p">){</span>
+            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;your data definition is wrong, re-check it in windows please&quot;</span><span class="p">);</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
     <span class="n">NatNetBridge</span><span class="o">::</span><span class="n">NatNetBridge</span><span class="p">(</span><span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span><span class="o">&amp;</span> <span class="n">nh</span><span class="p">,</span> <span class="k">const</span> <span class="n">NatNetBridgeDynParamConfig</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">)</span><span class="o">:</span> <span class="n">p_nh</span><span class="p">(</span><span class="n">nh</span><span class="p">){</span>
         <span class="n">re_init_natnet</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
         <span class="n">re_init_publish</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
@@ -391,7 +445,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

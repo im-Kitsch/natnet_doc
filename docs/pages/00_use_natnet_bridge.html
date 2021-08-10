@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Quick start for natnet_bridge &mdash; natnet_bridge 1.00 documentation</title>
@@ -170,7 +171,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="quick-start-for-natnet-bridge">
+  <section id="quick-start-for-natnet-bridge">
 <h1>Quick start for natnet_bridge<a class="headerlink" href="#quick-start-for-natnet-bridge" title="Permalink to this headline">¶</a></h1>
 <p>Clone the repo into <code class="docutils literal notranslate"><span class="pre">ROS_Workspace</span></code>, and run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">catkin_make</span></code>.</p>
 <dl>
@@ -212,12 +213,21 @@ running.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch natnet_bridge natnet_bridge.launch launch_reconfigure:=true
 </pre></div>
 </div>
-<div class="figure align-default">
-<img alt="../_images/dyn_conf1.png" src="../_images/dyn_conf1.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The rigid bodys’ name will be identical with the definition in windows’ Motive side setting.
+But you have to firstly name the rigid body’s before run natnet_node.
+Since in case of updating of rigid body’s setting like ID/name, Motive will not notify receiver.</p>
+<p>Make sure your setting of rigid bodies, ID and names do not repeat. It is important.
+NatnetNode will check repeating while initializing but does not check while receiving.
+If you add rigid body while receiving, the unknown rigid body will be published as <code class="docutils literal notranslate"><span class="pre">&quot;unknown&quot;+ID</span></code>.</p>
 </div>
+<figure class="align-default">
+<img alt="../_images/dyn_conf1.png" src="../_images/dyn_conf1.png" />
+</figure>
 </dd>
 </dl>
-<div class="section" id="comparison-with-prior-optitrack-bridge">
+<section id="comparison-with-prior-optitrack-bridge">
 <h2>Comparison with prior optitrack_bridge<a class="headerlink" href="#comparison-with-prior-optitrack-bridge" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
@@ -231,8 +241,8 @@ running.:</p>
 <li><p>Friendly parameter setting, friendly information print out…</p></li>
 </ul>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

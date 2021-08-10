@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Advices future work &mdash; natnet_bridge 1.00 documentation</title>
@@ -172,22 +173,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="advices-future-work">
+  <section id="advices-future-work">
 <h1>Advices future work<a class="headerlink" href="#advices-future-work" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="software-latency">
+<section id="software-latency">
 <h2>Software latency<a class="headerlink" href="#software-latency" title="Permalink to this headline">¶</a></h2>
 <p>It seems that motive has not enough information about time format.
 Otherwise it is possibly to use it and estimate the software latency.
 The official API has a estimation of transpose latency, including camera latency and transpose latency…
 But parsing the data packet has not enough description about this.</p>
-</div>
-<div class="section" id="data-description">
+</section>
+<section id="data-description">
 <h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">¶</a></h2>
 <p>The message for data description is also very useful. But currently it is not needed. It is worth to parse also data description.
 It seems it should need firstly send corresponding message to Motive or the DataDescription methods are sent after initial
 communicate but not sent regularly like dataframe.</p>
-</div>
-<div class="section" id="linux-library">
+</section>
+<section id="linux-library">
 <h2>Linux Library<a class="headerlink" href="#linux-library" title="Permalink to this headline">¶</a></h2>
 <p>Besides manually parse the data from Multicast via low level Linux APIs, NatNet provide pre-compiled library since Motive 3.0.
 Using there interface it’s also possible to parse the data and communicate Motive in Windows-side.</p>
@@ -197,8 +198,8 @@ download the Linux version. Follow the instructions, build and run it. But there
 not enough/well documented documentations for that.</p>
 <p>It is also contained in <em>Reference/natnet_sdk</em> folder.
 It is good to use it for developer to validate communication and compare with ROS pkg.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

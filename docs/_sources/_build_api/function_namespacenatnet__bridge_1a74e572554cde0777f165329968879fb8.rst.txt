@@ -1,0 +1,13 @@
+.. _exhale_function_namespacenatnet__bridge_1a74e572554cde0777f165329968879fb8:
+
+Function natnet_bridge::Unpack2
+===============================
+
+- Defined in :ref:`file_natnet_bridge_src_unpack.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: natnet_bridge::Unpack2(char *, int, int, natnet_bridge::RigidBodyModelDef&)

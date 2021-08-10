@@ -17,11 +17,12 @@ Program Listing for File unpack.h
    #ifndef NATNET_BRIDGE_UNPACK_H
    #define NATNET_BRIDGE_UNPACK_H
    #include "natnet_bridge/NatNetFrame.h"
-   
+   #include "natnet_bridge/model_def.h"
    
    namespace natnet_bridge{
    
    void Unpack(char* pData, int major, int minor, natnet_bridge::NatNetFrame& natnet_data);
+   void Unpack2(char* pData, int major, int minor, natnet_bridge::RigidBodyModelDef & model_def);
    
    }
    

@@ -21,6 +21,8 @@ Classes
 
 - :ref:`exhale_class_classnatnet__bridge_1_1NatNetBridge`
 
+- :ref:`exhale_class_classnatnet__bridge_1_1RigidBodyModelDef`
+
 - :ref:`exhale_class_classnatnet__bridge_1_1Version`
 
 
@@ -29,6 +31,8 @@ Functions
 
 
 - :ref:`exhale_function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b`
+
+- :ref:`exhale_function_namespacenatnet__bridge_1a8cfb238ad92b1ea1268af28f80bda232`
 
 - :ref:`exhale_function_namespacenatnet__bridge_1a7964729af44f528fdb5ca019d7f70fc6`
 
@@ -43,6 +47,8 @@ Functions
 - :ref:`exhale_function_namespacenatnet__bridge_1a030f578de4dba15ffc8bf1f8e5e166f9`
 
 - :ref:`exhale_function_namespacenatnet__bridge_1adfff94168324ba87d569569feadeec73`
+
+- :ref:`exhale_function_namespacenatnet__bridge_1a74e572554cde0777f165329968879fb8`
 
 
 Typedefs

@@ -40,6 +40,16 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_natnet_bridge_src_model_def.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_natnet_bridge_include_natnet_bridge_model_def.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_natnet_bridge_src_natnet_bridge.cpp.rst
 
 .. toctree::

@@ -67,6 +67,8 @@ Functions
 
 - :ref:`exhale_function_namespacenatnet__bridge_1adfff94168324ba87d569569feadeec73`
 
+- :ref:`exhale_function_namespacenatnet__bridge_1a74e572554cde0777f165329968879fb8`
+
 
 Defines
 -------

@@ -30,6 +30,14 @@ Program Listing for File server_parser.cpp
            buffer.resize(4);
            memcpy(buffer.data(), &packet, 4);
        }
+       void buildModelDefPacket(std::vector<char> & buffer)
+       {
+           sPacket packet;
+           packet.iMessage = natnet_config::MessageType::RequestModelDef;
+           packet.nDataBytes = 0;
+           buffer.resize(4);
+           memcpy(buffer.data(), &packet, 4);
+       }
        int server_info_parser(std::vector<char> & buffer, Version & server_version, Version & natnet_version){
            /*
             *  return 1 for successful

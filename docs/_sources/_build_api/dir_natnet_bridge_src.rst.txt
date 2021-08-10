@@ -15,6 +15,7 @@ Directory src
 Files
 -----
 
+- :ref:`file_natnet_bridge_src_model_def.cpp`
 - :ref:`file_natnet_bridge_src_natnet_bridge.cpp`
 - :ref:`file_natnet_bridge_src_optitrack_node.cpp`
 - :ref:`file_natnet_bridge_src_server_parser.cpp`

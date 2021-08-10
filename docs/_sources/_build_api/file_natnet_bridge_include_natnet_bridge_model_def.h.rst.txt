@@ -1,0 +1,65 @@
+
+.. _file_natnet_bridge_include_natnet_bridge_model_def.h:
+
+File model_def.h
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_natnet_bridge_include_natnet_bridge>` (``natnet_bridge/include/natnet_bridge``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``natnet_bridge/include/natnet_bridge/model_def.h``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_natnet_bridge_include_natnet_bridge_model_def.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``map``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_natnet_bridge_include_natnet_bridge_natnet_bridge.h`
+
+- :ref:`file_natnet_bridge_include_natnet_bridge_unpack.h`
+
+- :ref:`file_natnet_bridge_src_model_def.cpp`
+
+- :ref:`file_natnet_bridge_src_optitrack_node.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_natnet_bridge`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classnatnet__bridge_1_1RigidBodyModelDef`
+

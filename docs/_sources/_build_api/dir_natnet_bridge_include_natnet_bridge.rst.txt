@@ -15,6 +15,7 @@ Directory bridge
 Files
 -----
 
+- :ref:`file_natnet_bridge_include_natnet_bridge_model_def.h`
 - :ref:`file_natnet_bridge_include_natnet_bridge_natnet_bridge.h`
 - :ref:`file_natnet_bridge_include_natnet_bridge_server_parser.h`
 - :ref:`file_natnet_bridge_include_natnet_bridge_unpack.h`

@@ -22,6 +22,12 @@ Program Listing for File optitrack_node.cpp
    #include <stdio.h>
    #include <natnet_bridge/NatNetFrame.h>
    #include <ros/console.h>
+   #include "natnet_bridge/server_parser.h"
+   #include "natnet/natnet_definition.h"
+   #include "natnet_bridge/unpack.h"
+   #include "natnet_bridge/model_def.h"
+   #include <map>
+   
    
    class NatnetDynReconfigure{
    public:
@@ -69,8 +75,11 @@ Program Listing for File optitrack_node.cpp
        natnet_reconfigure.reconfigure_responded();
    
        bool server_connected = natnet_node.connect_server();
+       bool has_model_def = natnet_node.get_model_def(); // actually merged to connect server
    
-       ros::Rate loop_rate(500);
+       server_connected = server_connected && has_model_def;
+   
+       ros::Rate loop_rate(240); // adjust it with optitrack in windows
        while (ros::ok())
        {
            // if dynamic_reconfigure triggered, re_configure node
@@ -88,6 +97,9 @@ Program Listing for File optitrack_node.cpp
            if (!server_connected){
                ROS_WARN("Server has not connected, trying to connect with server");
                server_connected = natnet_node.connect_server();
+               has_model_def = natnet_node.get_model_def();
+   
+               server_connected = server_connected && has_model_def;
                loop_rate.reset(); // reset this since it costs much time
            }
    

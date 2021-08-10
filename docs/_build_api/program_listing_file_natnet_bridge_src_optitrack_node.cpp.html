@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Program Listing for File optitrack_node.cpp &mdash; natnet_bridge 1.00 documentation</title>
@@ -165,7 +166,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="program-listing-for-file-optitrack-node-cpp">
+  <section id="program-listing-for-file-optitrack-node-cpp">
 <span id="program-listing-file-natnet-bridge-src-optitrack-node-cpp"></span><h1>Program Listing for File optitrack_node.cpp<a class="headerlink" href="#program-listing-for-file-optitrack-node-cpp" title="Permalink to this headline">¶</a></h1>
 <p>↰ <a class="reference internal" href="file_natnet_bridge_src_optitrack_node.cpp.html#file-natnet-bridge-src-optitrack-node-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">natnet_bridge/src/optitrack_node.cpp</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
@@ -180,6 +181,12 @@
 <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;natnet_bridge/NatNetFrame.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;ros/console.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/server_parser.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;natnet/natnet_definition.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/unpack.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;natnet_bridge/model_def.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
+
 
 <span class="k">class</span> <span class="nc">NatnetDynReconfigure</span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -227,8 +234,11 @@
     <span class="n">natnet_reconfigure</span><span class="p">.</span><span class="n">reconfigure_responded</span><span class="p">();</span>
 
     <span class="kt">bool</span> <span class="n">server_connected</span> <span class="o">=</span> <span class="n">natnet_node</span><span class="p">.</span><span class="n">connect_server</span><span class="p">();</span>
+    <span class="kt">bool</span> <span class="n">has_model_def</span> <span class="o">=</span> <span class="n">natnet_node</span><span class="p">.</span><span class="n">get_model_def</span><span class="p">();</span> <span class="c1">// actually merged to connect server</span>
 
-    <span class="n">ros</span><span class="o">::</span><span class="n">Rate</span> <span class="n">loop_rate</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+    <span class="n">server_connected</span> <span class="o">=</span> <span class="n">server_connected</span> <span class="o">&amp;&amp;</span> <span class="n">has_model_def</span><span class="p">;</span>
+
+    <span class="n">ros</span><span class="o">::</span><span class="n">Rate</span> <span class="n">loop_rate</span><span class="p">(</span><span class="mi">240</span><span class="p">);</span> <span class="c1">// adjust it with optitrack in windows</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">ros</span><span class="o">::</span><span class="n">ok</span><span class="p">())</span>
     <span class="p">{</span>
         <span class="c1">// if dynamic_reconfigure triggered, re_configure node</span>
@@ -246,6 +256,9 @@
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">server_connected</span><span class="p">){</span>
             <span class="n">ROS_WARN</span><span class="p">(</span><span class="s">&quot;Server has not connected, trying to connect with server&quot;</span><span class="p">);</span>
             <span class="n">server_connected</span> <span class="o">=</span> <span class="n">natnet_node</span><span class="p">.</span><span class="n">connect_server</span><span class="p">();</span>
+            <span class="n">has_model_def</span> <span class="o">=</span> <span class="n">natnet_node</span><span class="p">.</span><span class="n">get_model_def</span><span class="p">();</span>
+
+            <span class="n">server_connected</span> <span class="o">=</span> <span class="n">server_connected</span> <span class="o">&amp;&amp;</span> <span class="n">has_model_def</span><span class="p">;</span>
             <span class="n">loop_rate</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span> <span class="c1">// reset this since it costs much time</span>
         <span class="p">}</span>
 
@@ -265,7 +278,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

@@ -534,5 +534,210 @@ Program Listing for File unpack.cpp
    
    }
    
+   // copied from SDK, adjust it when protocol changes
+   void Unpack2(char* pData, int major, int minor, natnet_bridge::RigidBodyModelDef & model_def){
+       // Checks for NatNet Version number. Used later in function. Packets may be different depending on NatNet version.
+       
+       char *ptr = pData;
+   
+   //    printf("Begin Packet\n-------\n");
+       ROS_DEBUG("Begin Packet\n-------\n");
+   
+       // First 2 Bytes is message ID
+       int MessageID = 0;
+       memcpy(&MessageID, ptr, 2); ptr += 2;
+   //    printf("Message ID : %d\n", MessageID);
+       ROS_DEBUG("Message ID : %d\n", MessageID);
+   
+       // Second 2 Bytes is the size of the packet
+       int nBytes = 0;
+       memcpy(&nBytes, ptr, 2); ptr += 2;
+   //    printf("Byte count : %d\n", nBytes);
+       ROS_DEBUG("Byte count : %d\n", nBytes);
+   
+   
+       if(MessageID == 5) // Data Descriptions
+       {
+           model_def.begin_update();
+           // number of datasets
+           int nDatasets = 0; memcpy(&nDatasets, ptr, 4); ptr += 4;
+   //        printf("Dataset Count : %d\n", nDatasets);
+           ROS_DEBUG("Dataset Count : %d\n", nDatasets);
+   
+           for(int i=0; i < nDatasets; i++)
+           {
+   //            printf("Dataset %d\n", i);
+               ROS_DEBUG("Dataset %d\n", i);
+   
+               int type = 0; memcpy(&type, ptr, 4); ptr += 4;
+   //            printf("Type : %d\n", i, type);
+               // printf("Type : %d\n", type);  // SDK is wrong here
+               ROS_DEBUG("Type : %d\n", type);
+   
+               if(type == 0)   // markerset
+               {
+                   // name
+                   char szName[256];
+                   strcpy(szName, ptr);
+                   int nDataBytes = (int) strlen(szName) + 1;
+                   ptr += nDataBytes;
+                   // printf("Markerset Name: %s\n", szName);
+                   ROS_DEBUG("Markerset Name: %s\n", szName);
+   
+                   // marker data
+                   int nMarkers = 0; memcpy(&nMarkers, ptr, 4); ptr += 4;
+                   // printf("Marker Count : %d\n", nMarkers);
+                   ROS_DEBUG("Marker Count : %d\n", nMarkers);
+   
+                   for(int j=0; j < nMarkers; j++)
+                   {
+                       char szName[256];
+                       strcpy(szName, ptr);
+                       int nDataBytes = (int) strlen(szName) + 1;
+                       ptr += nDataBytes;
+                       // printf("Marker Name: %s\n", szName);
+                       ROS_DEBUG("Marker Name: %s\n", szName);
+                   }
+               }
+               else if(type ==1)   // rigid body
+               {
+                   std::string _name;
+                   if(major >= 2)
+                   {
+                       // name
+                       char szName[MAX_NAMELENGTH];
+                       strcpy(szName, ptr);
+                       ptr += strlen(ptr) + 1;
+   //                    printf("Name: %s\n", szName);
+                       ROS_DEBUG("Name: %s\n", szName);
+                       _name = szName;
+                   } else{
+                       _name = "rigid_body";
+                       ROS_ERROR("you have to update NatNet version to enable define the name");
+                   }
+   
+                   int ID = 0; memcpy(&ID, ptr, 4); ptr +=4;
+   //                printf("ID : %d\n", ID);
+                   ROS_DEBUG("ID : %d\n", ID);
+   
+                   model_def.push_pair(ID, _name);
+   
+                   int parentID = 0; memcpy(&parentID, ptr, 4); ptr +=4;
+   //                printf("Parent ID : %d\n", parentID);
+                   ROS_DEBUG("Parent ID : %d\n", parentID);
+   
+                   float xoffset = 0; memcpy(&xoffset, ptr, 4); ptr +=4;
+   //                printf("X Offset : %3.2f\n", xoffset);
+                   ROS_DEBUG("X Offset : %3.2f\n", xoffset);
+   
+                   float yoffset = 0; memcpy(&yoffset, ptr, 4); ptr +=4;
+   //                printf("Y Offset : %3.2f\n", yoffset);
+                   ROS_DEBUG("Y Offset : %3.2f\n", yoffset);
+   
+                   float zoffset = 0; memcpy(&zoffset, ptr, 4); ptr +=4;
+   //                printf("Z Offset : %3.2f\n", zoffset);
+                   ROS_DEBUG("Z Offset : %3.2f\n", zoffset);
+   
+                   // Per-marker data (NatNet 3.0 and later)
+                   if ( major >= 3 )
+                   {
+                       int nMarkers = 0; memcpy( &nMarkers, ptr, 4 ); ptr += 4;
+   
+                       // Marker positions
+                       nBytes = nMarkers * 3 * sizeof( float );
+                       float* markerPositions = (float*)malloc( nBytes );
+                       memcpy( markerPositions, ptr, nBytes );
+                       ptr += nBytes;
+   
+                       // Marker required active labels
+                       nBytes = nMarkers * sizeof( int );
+                       int* markerRequiredLabels = (int*)malloc( nBytes );
+                       memcpy( markerRequiredLabels, ptr, nBytes );
+                       ptr += nBytes;
+   
+                       for ( int markerIdx = 0; markerIdx < nMarkers; ++markerIdx )
+                       {
+                           float* markerPosition = markerPositions + markerIdx * 3;
+                           const int markerRequiredLabel = markerRequiredLabels[markerIdx];
+   
+   //                        printf( "\tMarker #%d:\n", markerIdx );
+   //                        printf( "\t\tPosition: %.2f, %.2f, %.2f\n", markerPosition[0], markerPosition[1], markerPosition[2] );
+                           ROS_DEBUG( "\tMarker #%d:\n", markerIdx );
+                           ROS_DEBUG( "\t\tPosition: %.2f, %.2f, %.2f\n", markerPosition[0], markerPosition[1], markerPosition[2] );
+   
+                           if ( markerRequiredLabel != 0 )
+                           {
+   //                            printf( "\t\tRequired active label: %d\n", markerRequiredLabel );
+                               ROS_DEBUG( "\t\tRequired active label: %d\n", markerRequiredLabel );
+                           }
+                       }
+   
+                       free( markerPositions );
+                       free( markerRequiredLabels );
+                   }
+               }
+               else if(type ==2)   // skeleton
+               {
+                   char szName[MAX_NAMELENGTH];
+                   strcpy(szName, ptr);
+                   ptr += strlen(ptr) + 1;
+   //                printf("Name: %s\n", szName);
+                   ROS_DEBUG("Name: %s\n", szName);
+   
+                   int ID = 0; memcpy(&ID, ptr, 4); ptr +=4;
+   //                printf("ID : %d\n", ID);
+                   ROS_DEBUG("ID : %d\n", ID);
+   
+                   int nRigidBodies = 0; memcpy(&nRigidBodies, ptr, 4); ptr +=4;
+   //                printf("RigidBody (Bone) Count : %d\n", nRigidBodies);
+                   ROS_DEBUG("RigidBody (Bone) Count : %d\n", nRigidBodies);
+   
+                   for(int i=0; i< nRigidBodies; i++)
+                   {
+                       if(major >= 2)
+                       {
+                           // RB name
+                           char szName[MAX_NAMELENGTH];
+                           strcpy(szName, ptr);
+                           ptr += strlen(ptr) + 1;
+   //                        printf("Rigid Body Name: %s\n", szName);
+                           ROS_DEBUG("Rigid Body Name: %s\n", szName);
+                       }
+   
+                       int ID = 0; memcpy(&ID, ptr, 4); ptr +=4;
+   //                    printf("RigidBody ID : %d\n", ID);
+                       ROS_DEBUG("RigidBody ID : %d\n", ID);
+   
+                       int parentID = 0; memcpy(&parentID, ptr, 4); ptr +=4;
+   //                    printf("Parent ID : %d\n", parentID);
+                       ROS_DEBUG("Parent ID : %d\n", parentID);
+   
+                       float xoffset = 0; memcpy(&xoffset, ptr, 4); ptr +=4;
+   //                    printf("X Offset : %3.2f\n", xoffset);
+                       ROS_DEBUG("X Offset : %3.2f\n", xoffset);
+   
+                       float yoffset = 0; memcpy(&yoffset, ptr, 4); ptr +=4;
+   //                    printf("Y Offset : %3.2f\n", yoffset);
+                       ROS_DEBUG("Y Offset : %3.2f\n", yoffset);
+   
+                       float zoffset = 0; memcpy(&zoffset, ptr, 4); ptr +=4;
+   //                    printf("Z Offset : %3.2f\n", zoffset);
+                       ROS_DEBUG("Z Offset : %3.2f\n", zoffset);
+                   }
+               }
+   
+           }   // next dataset
+   
+           // printf("End Packet\n-------------\n");
+           ROS_DEBUG("End Packet\n-------------\n");
+   
+           bool succes = model_def.finish_update();
+       }
+       else
+       {
+           // printf("Unrecognized Packet Type.\n");
+           ROS_DEBUG("Unrecognized Packet Type.");
+       }
+   }
    }
    

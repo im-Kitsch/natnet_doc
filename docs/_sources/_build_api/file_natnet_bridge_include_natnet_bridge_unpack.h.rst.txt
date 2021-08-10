@@ -31,6 +31,8 @@ Includes
 
 - ``natnet_bridge/NatNetFrame.h``
 
+- ``natnet_bridge/model_def.h`` (:ref:`file_natnet_bridge_include_natnet_bridge_model_def.h`)
+
 
 
 Included By
@@ -38,6 +40,8 @@ Included By
 
 
 - :ref:`file_natnet_bridge_src_natnet_bridge.cpp`
+
+- :ref:`file_natnet_bridge_src_optitrack_node.cpp`
 
 - :ref:`file_natnet_bridge_src_unpack.cpp`
 

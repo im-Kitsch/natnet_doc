@@ -1,0 +1,108 @@
+
+.. _program_listing_file_natnet_bridge_src_model_def.cpp:
+
+Program Listing for File model_def.cpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_natnet_bridge_src_model_def.cpp>` (``natnet_bridge/src/model_def.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by yuan on 2021/8/6.
+   //
+   
+   #include "ros/ros.h"
+   #include "natnet_bridge/model_def.h"
+   
+   
+   namespace natnet_bridge{
+   
+   RigidBodyModelDef::RigidBodyModelDef() {
+       has_valid_def = false;
+       name_map.clear();
+       key_list.clear();
+       id_list.clear();
+   }
+   
+   void RigidBodyModelDef::begin_update() {
+       has_valid_def = false;
+       name_map.clear();
+       key_list.clear();
+       id_list.clear();
+   }
+   
+   bool RigidBodyModelDef::push_pair(int id, std::string name) {
+       key_list.push_back(name);
+       id_list.push_back(id);
+       return true;
+   //    auto feedback = name_map.insert(std::pair<int, std::string>(id, name));
+   //    if (feedback.second){
+   //        return true;
+   //    } else{
+   //        ROS_ERROR(" Rigid body's ID %d, %s, %s repeated check it please",
+   //                  id, name.c_str(), feedback.first->second.c_str());
+   //        this->has_ID_repeat = true;
+   //        return false;
+   //    }
+   
+   }
+   
+   bool RigidBodyModelDef::finish_update() {
+       has_valid_def= false;
+       int len_name_list = key_list.size();
+       std::map<std::string, int> aux_key_id_map;
+       for (int i = 0; i < len_name_list; ++i) {
+           auto _key = key_list[i];
+           auto _id = id_list[i];
+           auto feedback1 = aux_key_id_map.insert(std::pair<std::string, int>(_key, _id));
+           auto feedback2 = name_map.insert(std::pair<int, std::string>(_id, _key));
+   
+           if (!feedback1.second){
+               ROS_ERROR("Rigid body names, ID %d, ID %d, name, %s %s repeated",
+                         _id, feedback1.first->second, _key.c_str(), feedback1.first->first.c_str());
+               return false;
+           }
+           if (!feedback2.second){
+               ROS_ERROR("Rigid body name, ID %d %d, name %s, %s repeated",
+                         _id, feedback2.first->first, _key.c_str(), feedback2.first->second.c_str());
+               return false;
+           }
+       }
+       has_valid_def= true;
+       return true;
+   //    if (has_ID_repeat){
+   //        has_valid_def = false;
+   //        return false;
+   //    }
+   //    // check if the keys repeated
+   //    std::set<std::string> key_set;
+   //    for (auto const & p: this->name_map) {
+   //        auto feedback = key_set.insert(p.second);
+   //        if (!feedback.second) {
+   //            ROS_ERROR("Rigid body name %s repeated, recheck your definition in windows please", feedback.first->c_str());
+   //            has_valid_def = false;
+   //            return false;
+   //        }
+   //    }
+   //    has_valid_def = true;
+   //    return true;
+   }
+   
+   std::string RigidBodyModelDef::assign_name(int rigid_body_id) {
+       auto ele = name_map.find(rigid_body_id);
+       if (ele != name_map.end()){
+           return ele->second;
+       } else{
+           std::string ss = "unknown_name" + std::to_string(rigid_body_id);
+           ROS_ERROR("Important error, your model definition in windows side has changed "
+                     "rerun the node and redo the record!");
+           return ss;
+       }
+   }
+   
+   
+   
+   }

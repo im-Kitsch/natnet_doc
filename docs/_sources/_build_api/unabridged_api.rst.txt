@@ -38,6 +38,11 @@ Classes and Structs
 .. toctree::
    :maxdepth: 5
 
+   classnatnet__bridge_1_1RigidBodyModelDef.rst
+
+.. toctree::
+   :maxdepth: 5
+
    classnatnet__bridge_1_1Version.rst
 
 .. toctree::
@@ -68,6 +73,11 @@ Functions
    :maxdepth: 5
 
    function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacenatnet__bridge_1a8cfb238ad92b1ea1268af28f80bda232.rst
 
 .. toctree::
    :maxdepth: 5
@@ -103,6 +113,11 @@ Functions
    :maxdepth: 5
 
    function_namespacenatnet__bridge_1adfff94168324ba87d569569feadeec73.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacenatnet__bridge_1a74e572554cde0777f165329968879fb8.rst
 
 Variables
 *********

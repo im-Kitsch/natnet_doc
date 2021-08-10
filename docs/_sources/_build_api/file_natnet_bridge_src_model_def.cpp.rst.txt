@@ -1,0 +1,46 @@
+
+.. _file_natnet_bridge_src_model_def.cpp:
+
+File model_def.cpp
+==================
+
+|exhale_lsh| :ref:`Parent directory <dir_natnet_bridge_src>` (``natnet_bridge/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``natnet_bridge/src/model_def.cpp``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_natnet_bridge_src_model_def.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``natnet_bridge/model_def.h`` (:ref:`file_natnet_bridge_include_natnet_bridge_model_def.h`)
+
+- ``ros/ros.h``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_natnet_bridge`
+

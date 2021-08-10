@@ -28,6 +28,7 @@ Program Listing for File server_parser.h
    
        int server_info_parser(std::vector<char> & buffer, Version & server_version, Version & natnet_version);
        void buildConnectPacket(std::vector<char> & buffer);
+       void buildModelDefPacket(std::vector<char> & buffer);
    
    }
    

@@ -53,5 +53,7 @@ Functions
 
 - :ref:`exhale_function_namespacenatnet__bridge_1a958c2690b29b5c36de71179f9bf4c79b`
 
+- :ref:`exhale_function_namespacenatnet__bridge_1a8cfb238ad92b1ea1268af28f80bda232`
+
 - :ref:`exhale_function_namespacenatnet__bridge_1afec92c2de51f4b49c6d13bdf9161bda9`
 

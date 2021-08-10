@@ -1,0 +1,13 @@
+.. _exhale_function_namespacenatnet__bridge_1a8cfb238ad92b1ea1268af28f80bda232:
+
+Function natnet_bridge::buildModelDefPacket
+===========================================
+
+- Defined in :ref:`file_natnet_bridge_src_server_parser.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: natnet_bridge::buildModelDefPacket(std::vector<char>&)
